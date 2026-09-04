@@ -1,0 +1,787 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-82G48DYECF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-82G48DYECF');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATLAS TO PARADISE | HATTORI AI</title>
+<style>
+  body{margin:0;padding:0;overflow:hidden;background:#050510;font-family:'Helvetica Neue',Arial,sans-serif;}
+  #canvas-container{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;}
+
+  .ui{position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;pointer-events:none;
+      display:flex;flex-direction:column;justify-content:space-between;padding:40px;box-sizing:border-box;color:#fff;}
+
+  header{max-width:600px;pointer-events:auto;}
+  .eyebrow{font-size:11px;letter-spacing:0.25em;color:#00ffcc;opacity:0.8;margin-bottom:10px;}
+  h1{font-size:clamp(1.3rem, 2.6vw, 2.1rem);font-weight:800;letter-spacing:0.04em;
+     margin:0 0 14px;line-height:1.4;min-height:2.8rem;white-space:nowrap;
+     font-family:'Helvetica Neue',Arial,sans-serif;
+     background:linear-gradient(90deg,#00ffcc 0%,#5ad1ff 35%,#00ffcc 70%,#5ad1ff 100%);
+     background-size:300% auto;
+     -webkit-background-clip:text;background-clip:text;color:transparent;
+     text-shadow:0 0 18px rgba(0,255,204,0.35);
+     animation:titleShift 6s linear infinite;}
+  @keyframes titleShift{0%{background-position:0% center;}100%{background-position:300% center;}}
+  #typing-title::after{content:'';display:inline-block;width:2px;height:0.9em;margin-left:4px;
+     background:#00ffcc;vertical-align:-0.1em;animation:blinkCursor 0.9s steps(1) infinite;
+     box-shadow:0 0 8px rgba(0,255,204,0.8);}
+  @keyframes blinkCursor{0%,49%{opacity:1;}50%,100%{opacity:0;}}
+  .lede{font-size:0.85rem;color:#a0aec0;line-height:1.8;max-width:380px;margin-bottom:14px;}
+
+  .role-badge{display:inline-flex;align-items:center;gap:9px;
+     background:linear-gradient(90deg,rgba(0,255,204,0.12),rgba(90,209,255,0.12));
+     border:1px solid rgba(0,255,204,0.5);border-radius:999px;
+     padding:8px 18px;margin-bottom:22px;pointer-events:auto;
+     box-shadow:0 0 16px rgba(0,255,204,0.2),inset 0 0 12px rgba(0,255,204,0.08);
+     backdrop-filter:blur(6px);}
+  .role-badge__pulse{width:7px;height:7px;border-radius:50%;background:#00ffcc;flex-shrink:0;
+     box-shadow:0 0 8px #00ffcc;animation:badgePulse 1.8s ease-in-out infinite;}
+  @keyframes badgePulse{0%,100%{opacity:0.4;transform:scale(0.85);}50%{opacity:1;transform:scale(1.15);}}
+  .role-badge__text{font-size:0.78rem;color:#dff7f0;letter-spacing:0.04em;white-space:nowrap;}
+  .role-badge__text b{color:#00ffcc;font-weight:800;letter-spacing:0.08em;
+     text-shadow:0 0 10px rgba(0,255,204,0.7);margin-left:2px;}
+  @media (max-width:600px){ .role-badge__text{font-size:0.7rem;} }
+  .cta-open{background:linear-gradient(135deg,rgba(0,255,204,0.25),rgba(0,150,255,0.25));
+     border:1px solid #00ffcc;color:#00ffcc;padding:13px 28px;border-radius:8px;cursor:pointer;
+     font-weight:bold;letter-spacing:0.08em;font-size:0.85rem;transition:all .25s ease;pointer-events:auto;}
+  .cta-open:hover{background:rgba(0,255,204,0.4);box-shadow:0 0 25px rgba(0,255,204,0.5);transform:translateY(-2px);}
+
+  .line-cta{display:flex;align-items:center;gap:12px;margin-top:14px;pointer-events:auto;}
+  .line-btn{display:inline-flex;align-items:center;gap:8px;background:#06C755;color:#fff;
+     padding:11px 20px;border-radius:8px;text-decoration:none;font-size:0.8rem;font-weight:bold;
+     letter-spacing:0.04em;transition:all .2s ease;box-shadow:0 0 0 rgba(6,199,85,0);}
+  .line-btn:hover{box-shadow:0 0 20px rgba(6,199,85,0.5);transform:translateY(-1px);}
+  .line-btn svg{width:16px;height:16px;fill:#fff;}
+
+  .side-panel{display:flex;flex-direction:column;gap:14px;pointer-events:auto;width:fit-content;align-items:flex-end;}
+  .lang-toggle{display:flex;gap:6px;pointer-events:auto;}
+  .lang-btn{background:rgba(5,5,20,0.6);border:1px solid rgba(0,255,204,0.35);color:#8899a6;
+     font-size:11px;padding:6px 12px;border-radius:20px;cursor:pointer;letter-spacing:0.05em;}
+  .lang-btn.active{color:#00ffcc;border-color:#00ffcc;}
+  .status-box{background:rgba(5,5,20,0.6);backdrop-filter:blur(15px);border:1px solid rgba(0,255,204,0.3);
+     padding:22px;border-radius:12px;width:280px;box-shadow:0 4px 30px rgba(0,0,0,0.7);}
+  .status-line{display:flex;justify-content:space-between;margin-bottom:10px;font-size:0.82rem;color:#a0aec0;}
+  .status-line:last-child{margin-bottom:0;}
+  .status-val{font-weight:bold;color:#00ffcc;text-shadow:0 0 5px rgba(0,255,204,0.5);}
+
+  .site-copyright{font-size:10px;color:#5a6472;letter-spacing:0.04em;text-align:right;margin-top:2px;}
+
+  .chat-trigger{position:absolute;bottom:40px;right:40px;width:64px;height:64px;border:2px solid #00ffcc;
+     border-radius:50%;background:rgba(5,5,20,0.85);backdrop-filter:blur(10px);
+     box-shadow:0 0 20px rgba(0,255,204,0.4);cursor:pointer;pointer-events:auto;z-index:10;
+     display:flex;align-items:center;justify-content:center;transition:all .3s ease;}
+  .chat-trigger:hover{transform:scale(1.08);box-shadow:0 0 30px #00ffcc;}
+  .chat-trigger::before{content:'';position:absolute;inset:-2px;border:2px solid #00ffcc;border-radius:50%;
+     animation:pulseWave 2s infinite;}
+  .chat-trigger svg{width:26px;height:26px;fill:#00ffcc;}
+  @keyframes pulseWave{0%{transform:scale(1);opacity:.6;}100%{transform:scale(1.6);opacity:0;}}
+
+  .chat-window{position:absolute;bottom:118px;right:40px;width:380px;max-width:calc(100% - 40px);height:560px;
+     background:rgba(5,5,20,0.9);backdrop-filter:blur(20px);border:1px solid rgba(0,255,204,0.5);
+     border-radius:16px;box-shadow:0 10px 50px rgba(0,0,0,0.8),0 0 30px rgba(0,255,204,0.1);
+     z-index:10;pointer-events:auto;display:flex;flex-direction:column;overflow:hidden;
+     transform:translateY(20px);opacity:0;visibility:hidden;transition:all .3s cubic-bezier(.19,1,.22,1);}
+  .chat-window.active{transform:translateY(0);opacity:1;visibility:visible;}
+
+  .chat-header{background:rgba(0,255,204,0.08);border-bottom:1px solid rgba(0,255,204,0.3);
+     padding:14px 18px;display:flex;justify-content:space-between;align-items:center;}
+  .chat-header h3{margin:0;font-size:0.9rem;color:#00ffcc;letter-spacing:0.08em;}
+  .chat-close{background:none;border:none;color:#8899a6;cursor:pointer;font-size:1.2rem;line-height:1;}
+  .chat-close:hover{color:#00ffcc;}
+
+  .chat-messages{flex:1;padding:18px;overflow-y:auto;display:flex;flex-direction:column;gap:12px;}
+  .msg{max-width:82%;padding:10px 14px;border-radius:10px;font-size:0.85rem;line-height:1.6;
+     animation:fadeIn .35s ease both;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+  .msg.ai{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:#e8ecef;align-self:flex-start;}
+  .msg.user{background:rgba(0,255,204,0.15);border:1px solid rgba(0,255,204,0.4);color:#00ffcc;align-self:flex-end;}
+  .thinking{align-self:flex-start;font-size:0.8rem;color:#8899a6;font-style:italic;}
+
+  .starters{display:flex;flex-wrap:wrap;gap:6px;padding:0 18px 14px;}
+  .starter{font-size:0.72rem;color:#a0aec0;border:1px solid rgba(0,255,204,0.25);padding:6px 11px;
+     border-radius:16px;cursor:pointer;background:transparent;}
+  .starter:hover{border-color:#00ffcc;color:#00ffcc;}
+
+  .chat-input-area{border-top:1px solid rgba(0,255,204,0.2);padding:14px;display:flex;gap:8px;background:rgba(0,0,0,0.3);}
+  .chat-input{flex:1;background:rgba(255,255,255,0.05);border:1px solid rgba(0,255,204,0.3);border-radius:6px;
+     padding:10px;color:#fff;font-size:0.85rem;}
+  .chat-input:focus{outline:none;border-color:#00ffcc;box-shadow:0 0 10px rgba(0,255,204,0.3);}
+  .chat-send-btn{background:#00ffcc;border:none;color:#050510;padding:0 16px;border-radius:6px;
+     font-weight:bold;cursor:pointer;transition:all .2s;}
+  .chat-send-btn:hover{background:#fff;box-shadow:0 0 15px #00ffcc;}
+  .chat-send-btn:disabled{opacity:.4;cursor:default;}
+  .chat-footnote{font-size:10px;color:#5a6472;text-align:center;padding:0 14px 12px;letter-spacing:0.03em;}
+
+  .login-gate{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+     gap:16px;padding:24px;text-align:center;}
+  .login-gate p{font-size:0.8rem;color:#a0aec0;line-height:1.8;max-width:260px;margin:0;}
+  .login-gate .g-badge{width:40px;height:40px;border-radius:50%;border:1px solid rgba(0,255,204,0.35);
+     display:flex;align-items:center;justify-content:center;color:#00ffcc;font-size:0.9rem;}
+  #googleBtnHolder{margin-top:4px;}
+  .quota-note{font-size:11px;color:#5a6472;margin-top:6px;}
+  /* ===== 右上：レーダー探知機風のポートフォリオ導線（再構築） ===== */
+  .radar-nav{position:absolute;top:32px;right:32px;z-index:7;pointer-events:auto;
+     display:flex;flex-direction:column;align-items:center;gap:6px;}
+  .radar-link{position:relative;width:76px;height:76px;border-radius:50%;
+     background:radial-gradient(circle at center,rgba(0,40,35,0.9) 0%,rgba(2,10,12,0.95) 70%);
+     border:1px solid rgba(0,255,204,0.55);text-decoration:none;
+     display:flex;align-items:center;justify-content:center;overflow:hidden;
+     box-shadow:0 0 18px rgba(0,255,204,0.25),inset 0 0 20px rgba(0,255,204,0.08);
+     transition:box-shadow .25s ease,transform .25s ease;}
+  .radar-link:hover{box-shadow:0 0 32px rgba(0,255,204,0.55),inset 0 0 24px rgba(0,255,204,0.15);
+     transform:scale(1.05);}
+  /* 同心円グリッド */
+  .radar-link::before{content:'';position:absolute;inset:10px;border-radius:50%;
+     border:1px solid rgba(0,255,204,0.25);}
+  .radar-link .ring2{position:absolute;inset:22px;border-radius:50%;border:1px solid rgba(0,255,204,0.18);}
+  /* 回転するスイープライン */
+  .radar-sweep{position:absolute;inset:0;border-radius:50%;
+     background:conic-gradient(from 0deg,rgba(0,255,204,0.55) 0deg,rgba(0,255,204,0) 55deg,rgba(0,255,204,0) 360deg);
+     animation:radarSpin 3.2s linear infinite;}
+  @keyframes radarSpin{to{transform:rotate(360deg);}}
+  /* 探知ブリップ（点滅する点） */
+  .radar-blip{position:absolute;width:5px;height:5px;border-radius:50%;background:#00ffcc;
+     top:28px;left:48px;box-shadow:0 0 6px #00ffcc;animation:blipPulse 2.4s ease-in-out infinite;}
+  @keyframes blipPulse{0%,100%{opacity:0.2;}50%{opacity:1;}}
+  .radar-label{position:relative;z-index:2;font-family:'JetBrains Mono',monospace,sans-serif;
+     font-size:8.5px;letter-spacing:0.12em;color:#00ffcc;text-align:center;line-height:1.5;
+     text-shadow:0 0 6px rgba(0,255,204,0.8);}
+  .radar-caption{font-size:10px;color:#ff9500;letter-spacing:0.05em;white-space:nowrap;}
+  @media (max-width:600px){
+    .radar-nav{top:18px;right:18px;}
+    .radar-link{width:60px;height:60px;}
+    .radar-caption{display:none;}
+  }
+
+  /* ===== 右下：3D操作ヒント（スクロール=ズーム／左ドラッグ=視点回転） ===== */
+  .controls-hint{position:absolute;bottom:118px;right:40px;z-index:4;pointer-events:none;
+     font-size:11px;color:#ff9500;text-align:right;line-height:1.8;letter-spacing:0.02em;
+     text-shadow:0 1px 4px rgba(0,0,0,0.8);}
+  .controls-hint b{color:#00ffcc;font-weight:500;}
+  @media (max-width:600px){ .controls-hint{display:none;} }
+
+  /* ===== スマホ専用：タッチ操作ヒント ===== */
+  .controls-hint-sp{display:none;}
+  @media (max-width:600px){
+    .controls-hint-sp{display:block;position:absolute;bottom:98px;right:20px;z-index:4;pointer-events:none;
+       font-size:10px;color:#ff9500;text-align:right;line-height:1.7;letter-spacing:0.02em;
+       text-shadow:0 1px 4px rgba(0,0,0,0.8);}
+    .controls-hint-sp b{color:#00ffcc;font-weight:500;}
+  }
+
+  @media (max-width:600px){
+    h1{font-size:clamp(0.85rem, 4.6vw, 1.3rem);min-height:2.4rem;}
+    .ui{padding:20px;}
+    .chat-window{width:calc(100% - 40px);right:20px;bottom:104px;height:70vh;}
+    .chat-trigger{right:20px;bottom:20px;}
+    .side-panel{align-items:flex-end;}
+    .status-box{width:200px;padding:16px;}
+    .line-cta{flex-wrap:wrap;}
+  }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+
+<div id="canvas-container"></div>
+
+<!-- 右上：レーダー探知機風のポートフォリオ導線 -->
+<div class="radar-nav">
+  <a href="profile.html" class="radar-link" aria-label="実績・スキルを見る">
+    <div class="ring2"></div>
+    <div class="radar-sweep"></div>
+    <div class="radar-blip"></div>
+    <span class="radar-label" data-i18n-html="radarLabel">WORKS<br>SCAN</span>
+  </a>
+  <span class="radar-caption" data-i18n="portfolioLink">実績・スキルを見る</span>
+</div>
+
+<!-- 右下：3Dロケット操作方法のヒント（マウス操作の説明） -->
+<div class="controls-hint" data-i18n-html="controlsHint">
+  <b>スクロール</b>：ズーム イン/アウト<br>
+  <b>左ドラッグ</b>：視点を回転
+</div>
+
+<!-- 右下：3Dロケット操作方法のヒント（スマホ・タッチ操作の説明） -->
+<div class="controls-hint-sp" data-i18n-html="controlsHintSp">
+  <b>ピンチ</b>：ズーム イン/アウト<br>
+  <b>スワイプ</b>：視点を回転
+</div>
+
+<div class="ui">
+  <header>
+    <div class="eyebrow">ATLAS TO PARADISE — 楽園への古地図</div>
+    <h1><span id="typing-title"></span></h1>
+    <p class="lede" data-i18n="lede">SEO・SNS運用・LP改善・AI活用を、幅広くサポートします。</p>
+    <div class="role-badge">
+      <span class="role-badge__pulse"></span>
+      <span class="role-badge__text" data-i18n-html="roleBadge">旅するWebマーケター <b>HATTORI</b></span>
+    </div>
+    <button class="cta-open" id="ctaOpen" data-i18n="ctaOpen">AIに無料相談する</button>
+
+    <!-- 公式LINEへの導線：AI相談ボタンの下に配置 -->
+    <div class="line-cta">
+      <a href="https://lin.ee/sIuBYQ9" target="_blank" rel="noopener" class="line-btn">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 5.94 2 10.7c0 4.27 3.58 7.85 8.42 8.55.33.07.78.22.89.5.1.26.06.66.03.93l-.14.86c-.04.26-.2 1.01.89.55 1.08-.46 5.86-3.45 8-5.9C21.42 14.5 22 12.7 22 10.7 22 5.94 17.52 2 12 2z"/></svg>
+        <span data-i18n="lineBtn">公式LINEで相談する</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="side-panel">
+    <div class="lang-toggle" id="langToggle">
+      <button class="lang-btn active" data-lang="ja">日本語</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+    <div class="status-box">
+      <div class="status-line"><span data-i18n="statLoc">現在地</span><span class="status-val" id="statLoc">JAPAN</span></div>
+      <div class="status-line"><span data-i18n="statClients">対応実績</span><span class="status-val">15社〜</span></div>
+      <div class="status-line"><span data-i18n="statRetain">継続率</span><span class="status-val">90%</span></div>
+    </div>
+    <div class="site-copyright">ATLAS TO PARADISE © 2026 HATTORI</div>
+  </div>
+</div>
+
+<div class="chat-trigger" id="chatTrigger">
+  <svg viewBox="0 0 24 24"><path d="M12,2A10,10,0,0,0,2,12c0,2.63,1,5.04,2.68,6.86L3,22l3.22-1.39A9.92,9.92,0,0,0,12,22a10,10,0,0,0,10-10A10,10,0,0,0,12,2M12,17A1.5,1.5,0,1,1,13.5,15.5,1.5,1.5,0,0,1,12,17m3-5.5a2.5,2.5,0,0,1-2.5,2.5,1,1,0,0,0-1,1V15a1,1,0,0,1-2,0V14a3,3,0,0,1,3-3,1.5,1.5,0,0,0,1.5-1.5,1.5,1.5,0,0,0-3,0,1,1,0,0,1-2,0,3.5,3.5,0,0,1,7,0Z"/></svg>
+</div>
+
+<div class="chat-window" id="chatWindow">
+  <div class="chat-header">
+    <h3 data-i18n="chatTitle">HATTORI AI ナビゲーター</h3>
+    <button class="chat-close" id="chatClose">×</button>
+  </div>
+  <!-- ステップ1：本人確認としてのGoogleログイン（課金とは無関係） -->
+  <div class="login-gate" id="loginGate">
+    <div class="g-badge">G</div>
+    <p data-i18n="loginPrompt">まずGoogleでログインしてください（本人確認のみ。課金は発生しません）。</p>
+    <div id="googleBtnHolder"></div>
+  </div>
+
+  <!-- ステップ2：訪問者ご自身のAnthropic APIキーを入力（利用分の課金は訪問者ご自身に発生） -->
+  <div class="login-gate" id="apiKeyGate" style="display:none;">
+    <div class="g-badge">🔑</div>
+    <p data-i18n="apiKeyPrompt">ご自身のAnthropic APIキーを入力してください。ご利用分の料金はあなたご自身に請求されます（当サイト運営者には一切共有・請求されません）。</p>
+    <input type="password" id="apiKeyInput" class="chat-input" style="width:220px;text-align:center;"
+           data-i18n-ph="apiKeyPlaceholder" placeholder="sk-ant-...">
+    <button class="cta-open" id="apiKeySubmit" style="padding:9px 20px;font-size:0.78rem;" data-i18n="apiKeyButton">この鍵で始める</button>
+    <p class="quota-note"><a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener" style="color:#00ffcc;" data-i18n="apiKeyHelp">APIキーの取得はこちら →</a></p>
+    <p class="quota-note" data-i18n="apiKeyNote">このブラウザ内だけで使われ、サーバーには送信・保存されません。</p>
+  </div>
+
+  <div class="chat-messages" id="chatMessages" style="display:none;"></div>
+  <div class="starters" id="starters" style="display:none;"></div>
+  <div class="chat-input-area" id="inputArea" style="display:none;">
+    <input type="text" class="chat-input" id="chatInput" data-i18n-ph="inputPh" placeholder="悩みを一言で教えてください">
+    <button class="chat-send-btn" id="sendBtn" data-i18n="send">送信</button>
+  </div>
+  <div class="chat-footnote" data-i18n="footnote" id="footnoteEl" style="display:none;">回答はAIによる自動生成です。詳細はご相談時に確認します。</div>
+</div>
+
+<script>
+/* ===================== 多言語辞書 ===================== */
+const I18N = {
+  ja:{
+    title:"あなたの事業を、次の軌道へ",
+    lede:"SEO・SNS運用・LP改善・AI活用を、幅広くサポートします。",
+    roleBadge:"旅するWebマーケター <b>HATTORI</b>",
+    ctaOpen:"AIに無料相談する",
+    lineBtn:"公式LINEで相談する",
+    statLoc:"現在地", statClients:"対応実績", statRetain:"継続率",
+    chatTitle:"HATTORI AI ナビゲーター",
+    inputPh:"悩みを一言で教えてください",
+    send:"送信",
+    footnote:"回答はAIによる自動生成です。詳細はご相談時に確認します。",
+    greeting:"お悩みを一言お聞かせください。似た事例から、今すぐできる一手をお返しします。",
+    starters:["SNSで集客できていない","問い合わせが増えない","AI活用の相談がしたい"],
+    thinking:"考え中…",
+    errNet:"通信エラーが発生しました。時間をおいて再度お試しください。",
+    portfolioLink:"実績・スキルを見る",
+    radarLabel:"WORKS<br>SCAN",
+    controlsHint:"<b>スクロール</b>：ズーム イン/アウト<br><b>左ドラッグ</b>：視点を回転",
+    controlsHintSp:"<b>ピンチ</b>：ズーム イン/アウト<br><b>スワイプ</b>：視点を回転",
+    loginPrompt:"まずGoogleでログインしてください（本人確認のみ。課金は発生しません）。",
+    apiKeyPrompt:"ご自身のAnthropic APIキーを入力してください。ご利用分の料金はあなたご自身に請求されます（当サイト運営者には一切共有・請求されません）。",
+    apiKeyPlaceholder:"sk-ant-...",
+    apiKeyButton:"この鍵で始める",
+    apiKeyHelp:"APIキーの取得はこちら →",
+    apiKeyNote:"このブラウザ内だけで使われ、サーバーには送信・保存されません。",
+    apiKeyInvalid:"キーが正しくないか、有効期限切れの可能性があります。もう一度ご確認ください。",
+    loginFailed:"ログインに失敗しました。もう一度お試しください。"
+  },
+  en:{
+    title:"Launch your business into orbit",
+    lede:"SEO, social media, landing pages, and AI adoption — all in one place.",
+    roleBadge:"Nomadic Web Marketer <b>HATTORI</b>",
+    ctaOpen:"Talk to the AI — free",
+    lineBtn:"Chat on LINE",
+    statLoc:"Location", statClients:"Clients served", statRetain:"Retention",
+    chatTitle:"HATTORI AI Navigator",
+    inputPh:"Tell me your challenge in one line",
+    send:"Send",
+    footnote:"Responses are AI-generated. We'll confirm details in a real consultation.",
+    greeting:"Tell me a bit about your challenge — I'll suggest one concrete next step.",
+    starters:["Social media isn't converting","Website gets no inquiries","Want to use AI in my business"],
+    thinking:"Thinking…",
+    errNet:"A network error occurred. Please try again shortly.",
+    portfolioLink:"See my work",
+    radarLabel:"WORKS<br>SCAN",
+    controlsHint:"<b>Scroll</b>: zoom in / out<br><b>Left-drag</b>: rotate view",
+    controlsHintSp:"<b>Pinch</b>: zoom in / out<br><b>Swipe</b>: rotate view",
+    loginPrompt:"Sign in with Google first (identity check only — no charge to you here).",
+    apiKeyPrompt:"Enter your own Anthropic API key. Usage is billed to your own account — never shared with or billed to the site owner.",
+    apiKeyPlaceholder:"sk-ant-...",
+    apiKeyButton:"Start with this key",
+    apiKeyHelp:"Get an API key →",
+    apiKeyNote:"Used only in this browser. Never sent to or stored on any server.",
+    apiKeyInvalid:"That key looks invalid or expired. Please double-check and try again.",
+    loginFailed:"Sign-in failed. Please try again."
+  }
+};
+let currentLang = "ja";
+
+function applyI18n(){
+  const dict = I18N[currentLang];
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const key = el.dataset.i18n;
+    if(dict[key]) el.textContent = dict[key];
+  });
+  document.querySelectorAll("[data-i18n-ph]").forEach(el=>{
+    const key = el.dataset.i18nPh;
+    if(dict[key]) el.placeholder = dict[key];
+  });
+  document.querySelectorAll("[data-i18n-html]").forEach(el=>{
+    const key = el.dataset.i18nHtml;
+    if(dict[key]) el.innerHTML = dict[key];
+  });
+  document.getElementById('statLoc').textContent = "JAPAN";
+  renderStarters();
+}
+
+document.getElementById('langToggle').addEventListener('click', (e)=>{
+  const btn = e.target.closest('.lang-btn');
+  if(!btn) return;
+  currentLang = btn.dataset.lang;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active', b===btn));
+  applyI18n();
+  restartTyping();
+});
+
+/* ===================== タイピングタイトル ===================== */
+const typingEl = document.getElementById('typing-title');
+let typeIndex = 0, typeTimer = null;
+function restartTyping(){
+  clearTimeout(typeTimer);
+  typingEl.textContent = "";
+  typeIndex = 0;
+  typeWriter();
+}
+function typeWriter(){
+  const text = I18N[currentLang].title;
+  if(typeIndex < text.length){
+    typingEl.textContent += text.charAt(typeIndex);
+    typeIndex++;
+    typeTimer = setTimeout(typeWriter, 90);
+  } else {
+    typeTimer = setTimeout(()=>{ typingEl.textContent=""; typeIndex=0; typeWriter(); }, 4500);
+  }
+}
+
+/* ===================== チャット制御（マルチターン） ===================== */
+const chatWindow = document.getElementById('chatWindow');
+const chatMessages = document.getElementById('chatMessages');
+const chatInput = document.getElementById('chatInput');
+const sendBtn = document.getElementById('sendBtn');
+const startersEl = document.getElementById('starters');
+
+let history = [];   // {role,content} を積み続ける -> 会話が継続する
+let opened = false;
+let idToken = null;       // Googleログイン後のIDトークン（本人確認のみ・課金とは無関係）
+let visitorApiKey = null; // 訪問者ご自身のAnthropic APIキー（このブラウザ内メモリのみで保持、送信も保存もしない）
+
+/*
+  Google Cloud Console で発行したクライアントIDに書き換えてください。
+  取得手順は納品メッセージを参照。
+*/
+const GOOGLE_CLIENT_ID = "589049145849-j9mstbcjsng1kmej78pm1lmctollodd3.apps.googleusercontent.com";
+
+document.getElementById('chatTrigger').addEventListener('click', openChat);
+document.getElementById('ctaOpen').addEventListener('click', openChat);
+document.getElementById('chatClose').addEventListener('click', ()=> chatWindow.classList.remove('active'));
+
+function openChat(){
+  chatWindow.classList.add('active');
+  initGoogleSignIn();
+}
+
+function initGoogleSignIn(){
+  if(idToken || document.getElementById('googleBtnHolder').childElementCount) return;
+
+  // GSIスクリプトがブロックされた/読み込めなかった場合（通信環境・アプリ内ブラウザ等）
+  if(!window.google || !window.google.accounts){
+    showGoogleLoginError();
+    return;
+  }
+
+  try{
+    google.accounts.id.initialize({
+      client_id: GOOGLE_CLIENT_ID,
+      callback: onGoogleLogin,
+      itp_support: true,        // Safari/モバイルのITP(トラッキング防止)対策
+      use_fedcm_for_prompt: true
+    });
+    google.accounts.id.renderButton(
+      document.getElementById('googleBtnHolder'),
+      { theme:'outline', size:'medium', text:'signin_with', shape:'pill' }
+    );
+  }catch(e){
+    console.error('Google Sign-In init error:', e);
+    showGoogleLoginError();
+  }
+}
+
+function showGoogleLoginError(){
+  const holder = document.getElementById('googleBtnHolder');
+  const msg = (currentLang === 'en')
+    ? 'Google Sign-In is unavailable right now (blocked by browser/network, or in-app browser). Please try Chrome/Safari directly, or contact us via LINE.'
+    : 'Googleログインをご利用いただけません（ブラウザ/通信環境の制限、またはアプリ内ブラウザの可能性）。Chrome/Safariで直接開くか、LINEからご相談ください。';
+  holder.innerHTML = `<div style="font-size:11px;color:#ff9500;line-height:1.6;max-width:260px;">${msg}</div>`;
+}
+
+function onGoogleLogin(response){
+  idToken = response.credential;
+  document.getElementById('loginGate').style.display = 'none';
+  document.getElementById('apiKeyGate').style.display = 'flex';
+}
+
+/* ステップ2：訪問者ご自身のAPIキーを受け取る（このブラウザ内メモリだけで保持） */
+document.getElementById('apiKeySubmit').addEventListener('click', () => {
+  const key = document.getElementById('apiKeyInput').value.trim();
+  if(!key) return;
+  visitorApiKey = key;
+  document.getElementById('apiKeyGate').style.display = 'none';
+  document.getElementById('chatMessages').style.display = 'flex';
+  document.getElementById('starters').style.display = 'flex';
+  document.getElementById('inputArea').style.display = 'flex';
+  document.getElementById('footnoteEl').style.display = 'block';
+  if(!opened){
+    opened = true;
+    addMessage('ai', I18N[currentLang].greeting);
+  }
+});
+
+function renderStarters(){
+  startersEl.innerHTML = "";
+  I18N[currentLang].starters.forEach(q=>{
+    const b = document.createElement('button');
+    b.className = 'starter';
+    b.textContent = q;
+    b.addEventListener('click', ()=> submitMessage(q));
+    startersEl.appendChild(b);
+  });
+}
+
+function addMessage(role, text){
+  const div = document.createElement('div');
+  div.className = 'msg ' + role;
+  div.textContent = text;
+  chatMessages.appendChild(div);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+  return div;
+}
+
+function addThinking(){
+  const div = document.createElement('div');
+  div.className = 'thinking';
+  div.textContent = I18N[currentLang].thinking;
+  chatMessages.appendChild(div);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+  return div;
+}
+
+chatInput.addEventListener('keypress', e=>{ if(e.key==='Enter') doSend(); });
+sendBtn.addEventListener('click', doSend);
+function doSend(){
+  const text = chatInput.value.trim();
+  if(!text) return;
+  chatInput.value = "";
+  submitMessage(text);
+}
+
+/*
+  HATTORI AIの人格設定（system prompt）。
+  以前はサーバー(Worker)側に置いていましたが、今回の構成では
+  訪問者ご自身のAPIキーでブラウザから直接Anthropic APIを呼ぶため、
+  ここに置いています。
+*/
+const SYSTEM_PROMPTS = {
+  ja: `あなたは「HATTORI AI」。フリーランスのWebマーケター/クリエイター、HATTORI（ブランド名：ATLAS TO PARADISE 楽園への古地図）の思考パターンを再現した相談用AIです。
+
+# HATTORIのプロフィール
+- 6年の独立稼働経験を持つデジタルノマド
+- 得意領域：SNS運用代行、AIコンサルティング、SEOブログ戦略、ネイティブ日本語翻訳、日本語コーチング
+- 技術力：HTML/CSS/JS、Python(scikit-image, OpenCV, NetworkX)を用いた高度な作品制作も自力で行う
+- 美意識：日本の余白美・ミニマリズムを軸にしたクリエイティブ
+- ライフスタイル：日本を拠点にバンライフをしながら活動
+
+# 応答ルール
+1. ユーザーの業種・課題を聞いたら、具体的な一手を1〜2個提案する
+2. 断定しすぎず、「まずは無料相談で詳しく伺えます」という着地に自然につなげる
+3. 日本語、丁寧だが堅すぎない口調
+4. 1回の返答は150〜200字程度で簡潔に
+5. 料金の断定は避ける`,
+  en: `You are "HATTORI AI", modeled on HATTORI, a freelance nomadic web marketer and creator (brand: ATLAS TO PARADISE).
+Skills: social media management, AI consulting, SEO content strategy, native Japanese translation, Japanese coaching, and hands-on frontend/Python development.
+Rules: suggest 1-2 concrete next steps based on the visitor's challenge, keep replies to about 80-120 words, end by naturally inviting them to a free consultation, avoid quoting exact prices, respond only in English.`
+};
+
+async function submitMessage(text){
+  addMessage('user', text);
+  history.push({ role:'user', content:text });
+  sendBtn.disabled = true;
+  const thinkingEl = addThinking();
+
+  try{
+    // 訪問者ご自身のAPIキーで、ブラウザから直接Anthropic APIを呼び出す
+    // （HATTORIさんのサーバーは一切経由しない＝HATTORIさんに費用は発生しない）
+    const res = await fetch("https://api.anthropic.com/v1/messages", {
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json',
+        'x-api-key': visitorApiKey,
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-direct-browser-access': 'true'
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-6',
+        max_tokens: 500,
+        system: SYSTEM_PROMPTS[currentLang] || SYSTEM_PROMPTS.ja,
+        messages: history
+      })
+    });
+
+    if(res.status === 401 || res.status === 403){
+      thinkingEl.remove();
+      addMessage('ai', I18N[currentLang].apiKeyInvalid);
+      visitorApiKey = null;
+      document.getElementById('apiKeyGate').style.display = 'flex';
+      document.getElementById('chatMessages').style.display = 'none';
+      document.getElementById('starters').style.display = 'none';
+      document.getElementById('inputArea').style.display = 'none';
+      return;
+    }
+
+    const data = await res.json();
+    const reply = (data.content || [])
+      .filter(b => b.type === 'text')
+      .map(b => b.text)
+      .join('\n') || I18N[currentLang].errNet;
+    thinkingEl.remove();
+    addMessage('ai', reply);
+    history.push({ role:'assistant', content:reply });
+  }catch(err){
+    thinkingEl.remove();
+    addMessage('ai', I18N[currentLang].errNet);
+    console.error(err);
+  }finally{
+    sendBtn.disabled = false;
+  }
+}
+
+applyI18n();
+typeWriter();
+
+/* ===================== Three.js ロケット演出 ===================== */
+const container = document.getElementById('canvas-container');
+const scene = new THREE.Scene();
+scene.fog = new THREE.FogExp2(0x050510, 0.0005);
+
+const camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 0.1, 2000);
+camera.position.set(0, 50, 20);
+
+const renderer = new THREE.WebGLRenderer({ antialias:true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+container.appendChild(renderer.domElement);
+
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+// マウス操作の割り当て:
+//   スクロール(ホイール)      → ズーム イン/アウト
+//   左クリック押下したまま移動 → カメラの視点を回転
+// (画面右下の controls-hint 要素に同じ内容をUIとしても表示)
+controls.enableDamping = true;
+controls.dampingFactor = 0.05;
+controls.maxDistance = 1500;
+controls.enablePan = false;
+
+scene.add(new THREE.AmbientLight(0x444444));
+const dirLight = new THREE.DirectionalLight(0xffffff, 1.2);
+dirLight.position.set(100,100,50);
+scene.add(dirLight);
+
+const earthGeo = new THREE.SphereGeometry(150, 64, 64);
+const earthMat = new THREE.MeshStandardMaterial({ color:0x00ffcc, wireframe:true, opacity:0.4, transparent:true });
+const earth = new THREE.Mesh(earthGeo, earthMat);
+earth.position.set(0,-160,0);
+scene.add(earth);
+
+const rocket = new THREE.Group();
+const bodyGeo = new THREE.CylinderGeometry(0.5,0.5,5,16);
+const bodyMat = new THREE.MeshStandardMaterial({ color:0xffffff });
+const body = new THREE.Mesh(bodyGeo, bodyMat);
+body.position.y = 2.5;
+rocket.add(body);
+scene.add(rocket);
+
+function createParticles(count, color, size){
+  const geo = new THREE.BufferGeometry();
+  const pos = new Float32Array(count*3);
+  geo.setAttribute('position', new THREE.BufferAttribute(pos,3));
+  const mat = new THREE.PointsMaterial({ color, size, transparent:true, blending:THREE.AdditiveBlending, depthWrite:false });
+  return new THREE.Points(geo, mat);
+}
+const fireParticles = createParticles(800, 0x00ffff, 1.2);
+const smokeParticles = createParticles(1500, 0x00ffcc, 1.5);
+const dustParticles = createParticles(5000, 0xffffff, 0.3);
+scene.add(fireParticles, smokeParticles, dustParticles);
+
+const dustPos = dustParticles.geometry.attributes.position.array;
+for(let i=0;i<dustPos.length;i+=3){
+  dustPos[i]=(Math.random()-0.5)*1000;
+  dustPos[i+1]=(Math.random()-0.5)*1000;
+  dustPos[i+2]=(Math.random()-0.5)*1000;
+}
+dustParticles.geometry.attributes.position.needsUpdate = true;
+
+/* ===================== 流れ星（シューティングスター） ===================== */
+const SHOOTING_STAR_COUNT = 26; // 本数を増量
+const shootingStars = [];
+const starsGroup = new THREE.Group();
+
+function resetShootingStar(star){
+  const startX = (Math.random()-0.5) * 1400;
+  const startY = 200 + Math.random() * 500;
+  const startZ = (Math.random()-0.5) * 1400;
+  const dir = new THREE.Vector3(
+    -0.6 - Math.random()*0.6,
+    -0.3 - Math.random()*0.4,
+    (Math.random()-0.5)*0.4
+  ).normalize();
+  star.userData.pos = new THREE.Vector3(startX, startY, startZ);
+  star.userData.dir = dir;
+  star.userData.speed = 6 + Math.random()*10;
+  star.userData.life = 0;
+  star.userData.maxLife = 1.4 + Math.random()*1.6;
+  star.userData.delay = Math.random()*6; // 出現タイミングをずらす
+  star.visible = false;
+}
+
+for(let i=0;i<SHOOTING_STAR_COUNT;i++){
+  const len = 6 + Math.random()*5;
+  const geo = new THREE.BufferGeometry().setFromPoints([
+    new THREE.Vector3(0,0,0),
+    new THREE.Vector3(-len,0,0)
+  ]);
+  const mat = new THREE.LineBasicMaterial({
+    color: 0xffffff, transparent:true, opacity:0.9,
+    blending: THREE.AdditiveBlending
+  });
+  const star = new THREE.Line(geo, mat);
+  resetShootingStar(star);
+  starsGroup.add(star);
+  shootingStars.push(star);
+}
+scene.add(starsGroup);
+
+function updateShootingStars(delta){
+  shootingStars.forEach(star=>{
+    const d = star.userData;
+    if(d.delay > 0){ d.delay -= delta; return; }
+    if(!star.visible){ star.visible = true; }
+    d.life += delta;
+    d.pos.addScaledVector(d.dir, d.speed);
+    star.position.copy(d.pos);
+    star.lookAt(d.pos.clone().add(d.dir));
+    const fadeIn = Math.min(d.life / 0.2, 1);
+    const fadeOut = Math.max(0, 1 - Math.max(0, d.life - (d.maxLife-0.3)) / 0.3);
+    star.material.opacity = 0.9 * Math.min(fadeIn, fadeOut);
+    if(d.life > d.maxLife){ resetShootingStar(star); }
+  });
+}
+
+const fireData = Array.from({length:800},()=>({vx:0,vy:0,vz:0,life:0}));
+const smokeData = Array.from({length:1500},()=>({vx:0,vy:0,vz:0,life:0}));
+const clock = new THREE.Clock();
+let time = 0;
+
+function animate(){
+  requestAnimationFrame(animate);
+  const delta = clock.getDelta();
+  time += delta;
+  let rocketY=0, rocketRotZ=0;
+
+  if(time<3){ rocketY=0; }
+  else if(time<20){ rocketY=(time-3)*3; }
+  else if(time<40){
+    const progress=(time-20)/20;
+    rocketY = 51 + progress*30;
+    rocketRotZ = -progress*(Math.PI/1.6);
+  } else {
+    rocketY=81; rocketRotZ=-Math.PI/1.6;
+    earth.rotation.y -= 0.001;
+    dustParticles.rotation.y += 0.0005;
+  }
+  rocket.position.y = rocketY;
+  rocket.rotation.z = rocketRotZ;
+  controls.target.copy(rocket.position);
+
+  const firePos = fireParticles.geometry.attributes.position.array;
+  for(let i=0;i<800;i++){
+    const idx=i*3;
+    if(fireData[i].life<=0 && time<40){
+      fireData[i]={vx:(Math.random()-0.5)*1.0, vy:-5-Math.random()*8, vz:(Math.random()-0.5)*1.0, life:1.0};
+      firePos[idx]=rocket.position.x; firePos[idx+1]=rocket.position.y; firePos[idx+2]=rocket.position.z;
+    }
+    firePos[idx]+=fireData[i].vx*0.1; firePos[idx+1]+=fireData[i].vy*0.1; firePos[idx+2]+=fireData[i].vz*0.1;
+    fireData[i].life -= delta*3;
+  }
+  fireParticles.geometry.attributes.position.needsUpdate = true;
+
+  const smokePos = smokeParticles.geometry.attributes.position.array;
+  for(let i=0;i<1500;i++){
+    const idx=i*3;
+    if(smokeData[i].life<=0 && time<40){
+      smokeData[i]={vx:(Math.random()-0.5)*3.0, vy:-3-Math.random()*5, vz:(Math.random()-0.5)*3.0, life:2.0};
+      smokePos[idx]=rocket.position.x; smokePos[idx+1]=rocket.position.y; smokePos[idx+2]=rocket.position.z;
+    }
+    smokePos[idx]+=smokeData[i].vx*0.05; smokePos[idx+1]+=smokeData[i].vy*0.05; smokePos[idx+2]+=smokeData[i].vz*0.05;
+    smokeData[i].life -= delta;
+  }
+  smokeParticles.geometry.attributes.position.needsUpdate = true;
+
+  updateShootingStars(delta);
+
+  controls.update();
+  renderer.render(scene, camera);
+}
+window.addEventListener('resize', ()=>{
+  camera.aspect = window.innerWidth/window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
+animate();
+</script>
+</body>
+</html>
