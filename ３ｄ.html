@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -53,7 +52,8 @@
   @media (max-width:600px){ .role-badge__text{font-size:0.7rem;} }
   .cta-open{background:linear-gradient(135deg,rgba(0,255,204,0.25),rgba(0,150,255,0.25));
      border:1px solid #00ffcc;color:#00ffcc;padding:13px 28px;border-radius:8px;cursor:pointer;
-     font-weight:bold;letter-spacing:0.08em;font-size:0.85rem;transition:all .25s ease;pointer-events:auto;}
+     font-weight:bold;letter-spacing:0.08em;font-size:0.85rem;transition:all .25s ease;pointer-events:auto;
+     display:inline-block;text-decoration:none;}
   .cta-open:hover{background:rgba(0,255,204,0.4);box-shadow:0 0 25px rgba(0,255,204,0.5);transform:translateY(-2px);}
 
   .line-cta{display:flex;align-items:center;gap:12px;margin-top:14px;pointer-events:auto;}
@@ -199,7 +199,7 @@
 
 <!-- 右上：レーダー探知機風のポートフォリオ導線 -->
 <div class="radar-nav">
-  <a href="profile.html" class="radar-link" aria-label="実績・スキルを見る">
+  <a href="https://2026webai-lab.github.io/newprofile/" target="_blank" rel="noopener" class="radar-link" aria-label="実績・スキルを見る">
     <div class="ring2"></div>
     <div class="radar-sweep"></div>
     <div class="radar-blip"></div>
@@ -229,7 +229,7 @@
       <span class="role-badge__pulse"></span>
       <span class="role-badge__text" data-i18n-html="roleBadge">旅するWebマーケター <b>HATTORI</b></span>
     </div>
-    <button class="cta-open" id="ctaOpen" data-i18n="ctaOpen">AIに無料相談する</button>
+    <a class="cta-open" id="ctaOpen" href="mailto:2026webai@gmail.com" data-i18n="ctaOpen">e-mailでお問い合わせ</a>
 
     <!-- 公式LINEへの導線：AI相談ボタンの下に配置 -->
     <div class="line-cta">
@@ -297,7 +297,7 @@ const I18N = {
     title:"あなたの事業を、次の軌道へ",
     lede:"SEO・SNS運用・LP改善・AI活用を、幅広くサポートします。",
     roleBadge:"旅するWebマーケター <b>HATTORI</b>",
-    ctaOpen:"AIに無料相談する",
+    ctaOpen:"e-mailでお問い合わせ",
     lineBtn:"公式LINEで相談する",
     statLoc:"現在地", statClients:"対応実績", statRetain:"継続率",
     chatTitle:"HATTORI AI ナビゲーター",
@@ -325,7 +325,7 @@ const I18N = {
     title:"Launch your business into orbit",
     lede:"SEO, social media, landing pages, and AI adoption — all in one place.",
     roleBadge:"Nomadic Web Marketer <b>HATTORI</b>",
-    ctaOpen:"Talk to the AI — free",
+    ctaOpen:"Email us",
     lineBtn:"Chat on LINE",
     statLoc:"Location", statClients:"Clients served", statRetain:"Retention",
     chatTitle:"HATTORI AI Navigator",
@@ -418,7 +418,6 @@ let visitorApiKey = null; // 訪問者ご自身のAnthropic APIキー（この�
 const GOOGLE_CLIENT_ID = "589049145849-j9mstbcjsng1kmej78pm1lmctollodd3.apps.googleusercontent.com";
 
 document.getElementById('chatTrigger').addEventListener('click', openChat);
-document.getElementById('ctaOpen').addEventListener('click', openChat);
 document.getElementById('chatClose').addEventListener('click', ()=> chatWindow.classList.remove('active'));
 
 function openChat(){
