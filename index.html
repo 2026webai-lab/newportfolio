@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATLAS TO PARADISE | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#050510;
+    --surface:#0B0B18;
+    --surface-2:#101025;
+    --accent:#00ffcc;
+    --accent-dim:rgba(0,255,204,0.15);
+    --text:#F2F4F3;
+    --text-dim:#8899a6;
+    --line:rgba(0,255,204,0.16);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Noto Sans JP',sans-serif;
+    line-height:1.7;
+  }
+  .mono{font-family:'JetBrains Mono',monospace;}
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif;letter-spacing:0.01em;}
+
+  .wrap{max-width:920px;margin:0 auto;padding:0 28px;}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:20;background:rgba(5,5,16,0.85);backdrop-filter:blur(12px);
+     border-bottom:1px solid var(--line);}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.95rem;letter-spacing:0.05em;color:var(--accent);text-decoration:none;}
+  .back-link{font-size:0.78rem;color:var(--text-dim);text-decoration:none;border:1px solid var(--line);
+     padding:7px 14px;border-radius:20px;transition:all .2s;}
+  .back-link:hover{color:var(--accent);border-color:var(--accent);}
+  .lang-switch{display:flex;border:1px solid var(--line);border-radius:20px;overflow:hidden;}
+  .lang-btn{font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.05em;
+     background:transparent;color:var(--text-dim);border:none;padding:7px 14px;cursor:pointer;
+     transition:all .2s;}
+  .lang-btn.active{background:var(--accent);color:#04140f;font-weight:700;}
+  .lang-btn:not(.active):hover{color:var(--accent);}
+
+  /* hero */
+  .hero{padding:96px 0 64px;border-bottom:1px solid var(--line);position:relative;overflow:hidden;}
+  .hero::before{content:"";position:absolute;top:-40%;right:-10%;width:520px;height:520px;
+     border:1px solid var(--line);border-radius:50%;}
+  .hero::after{content:"";position:absolute;top:-25%;right:5%;width:340px;height:340px;
+     border:1px solid var(--line);border-radius:50%;}
+  .eyebrow{font-size:0.7rem;letter-spacing:0.3em;color:var(--accent);margin-bottom:18px;}
+  .hero h1{font-size:2.6rem;font-weight:700;max-width:680px;line-height:1.35;margin-bottom:20px;}
+  .hero h1 span{color:var(--accent);}
+  .hero p{color:var(--text-dim);max-width:520px;font-size:0.95rem;margin-bottom:32px;}
+  .hero-ctas{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn{font-size:0.82rem;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:500;
+     letter-spacing:0.03em;transition:all .2s;display:inline-block;}
+  .btn-primary{background:var(--accent);color:#04140f;}
+  .btn-primary:hover{box-shadow:0 0 24px rgba(0,255,204,0.4);transform:translateY(-1px);}
+  .btn-ghost{border:1px solid var(--line);color:var(--text);}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
+
+  section{padding:72px 0;border-bottom:1px solid var(--line);}
+  .section-head{margin-bottom:40px;}
+  .section-num{font-size:0.7rem;color:var(--accent);letter-spacing:0.2em;margin-bottom:10px;}
+  .section-head h2{font-size:1.6rem;font-weight:700;}
+
+  /* can-do */
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .skill-card{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:26px;
+     position:relative;overflow:hidden;transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease;}
+  .skill-card::before{content:"";position:absolute;inset:0;border-radius:6px;padding:1px;
+     background:linear-gradient(135deg,var(--accent),transparent 40%,transparent 60%,var(--accent));
+     -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+     -webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .35s ease;pointer-events:none;}
+  .skill-card::after{content:"";position:absolute;top:-40%;right:-40%;width:140px;height:140px;
+     background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);opacity:0;transition:opacity .35s ease;}
+  .skill-card:hover{transform:translateY(-4px);border-color:transparent;
+     box-shadow:0 16px 40px -12px rgba(0,255,204,0.25);}
+  .skill-card:hover::before,.skill-card:hover::after{opacity:1;}
+  .skill-card .tag{font-size:0.68rem;color:var(--accent);letter-spacing:0.1em;margin-bottom:12px;
+     display:inline-block;padding:3px 10px;border:1px solid var(--line);border-radius:100px;
+     position:relative;z-index:1;}
+  .skill-card h3{font-size:1rem;font-weight:700;margin-bottom:10px;position:relative;z-index:1;}
+  .skill-card p{font-size:0.82rem;color:var(--text-dim);position:relative;z-index:1;line-height:1.7;}
+
+  /* works */
+  .work-item{display:grid;grid-template-columns:280px 1fr;gap:28px;padding:32px 0;border-bottom:1px solid var(--line);align-items:start;}
+  .work-item:last-child{border-bottom:none;}
+  .work-media{width:100%;border-radius:8px;overflow:hidden;border:1px solid var(--line);background:var(--surface-2);}
+  .work-media img, .work-media video{width:100%;height:180px;object-fit:cover;display:block;}
+  .media-fallback{width:100%;height:180px;display:flex;align-items:center;justify-content:center;
+     text-align:center;font-size:0.72rem;color:var(--text-dim);padding:0 16px;background:var(--surface-2);}
+  .work-media-split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;min-height:180px;}
+  .work-media-split img{width:100%;height:180px;min-width:0;object-fit:cover;}
+  .work-item .wnum{font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--accent);margin-bottom:4px;}
+  .work-item h3{font-size:1.1rem;margin-bottom:10px;}
+  .work-item p{font-size:0.85rem;color:var(--text-dim);margin-bottom:12px;line-height:1.6;}
+  .work-item p a{color:var(--accent);text-decoration:none;margin-left:6px;font-weight:500;}
+  .work-item p a:hover{text-decoration:underline;}
+  .work-item p a + a{margin-left:14px;}
+  .work-item p a::before{content:"→ ";}
+  .work-item .stack{display:flex;flex-wrap:wrap;gap:6px;}
+  .chip{font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--text-dim);
+     border:1px solid var(--line);padding:3px 9px;border-radius:12px;}
+  .fiction-note{display:inline-block;font-size:0.62rem;font-weight:400;color:#ff9500;
+     border:1px solid rgba(255,149,0,0.4);border-radius:10px;padding:2px 8px;
+     margin-left:8px;vertical-align:middle;letter-spacing:0.02em;}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:start;}
+  .about-grid p{font-size:0.9rem;color:var(--text-dim);margin-bottom:16px;}
+  .toolbox{display:flex;flex-wrap:wrap;gap:8px;}
+  .toolbox .chip{transition:transform .25s ease,border-color .25s ease,color .25s ease;}
+  .toolbox .chip:hover{transform:translateY(-2px);border-color:var(--accent);color:var(--accent);}
+
+  .name-note{margin-top:32px;background:var(--surface);border:1px solid var(--line);border-radius:8px;
+     padding:24px 28px;}
+  .name-note-title{font-size:0.72rem;letter-spacing:0.1em;color:var(--accent);margin-bottom:12px;font-weight:700;}
+  .name-note p{font-size:0.8rem;color:var(--text-dim);line-height:1.85;margin-bottom:10px;}
+  .name-note p:last-child{margin-bottom:0;}
+  .name-note strong{color:#e6f7f2;}
+
+  .about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+     border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:28px;}
+  .about-stat{background:var(--surface);padding:20px 16px;text-align:center;}
+  .about-stat .num{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;font-weight:700;color:var(--accent);
+     line-height:1;margin-bottom:6px;}
+  .about-stat .lbl{font-size:0.68rem;color:var(--text-dim);letter-spacing:0.05em;}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.is-visible{opacity:1;transform:translateY(0);}
+
+  /* impact */
+  .impact-lead{font-size:0.92rem;color:var(--text-dim);max-width:640px;margin-bottom:36px;line-height:1.9;}
+
+  /* faq */
+  .faq-item{padding:18px 0;border-bottom:1px solid var(--line);}
+  .faq-item:last-child{border-bottom:none;}
+  .faq-item .q{font-size:0.92rem;font-weight:500;margin-bottom:8px;display:flex;gap:10px;}
+  .faq-item .q span{color:var(--accent);}
+  .faq-item .a{font-size:0.84rem;color:var(--text-dim);padding-left:22px;}
+
+  /* contact */
+  .contact-box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:40px;text-align:center;}
+  .contact-box h2{font-size:1.4rem;margin-bottom:12px;}
+  .contact-box p{color:var(--text-dim);font-size:0.88rem;margin-bottom:26px;max-width:440px;margin-left:auto;margin-right:auto;}
+  .contact-form{max-width:440px;margin:0 auto;text-align:left;}
+  .form-row{margin-bottom:18px;}
+  .form-row label{display:block;font-size:0.78rem;color:var(--text-dim);letter-spacing:0.03em;margin-bottom:8px;}
+  .form-row input,.form-row textarea{width:100%;background:var(--surface-2);border:1px solid var(--line);
+     border-radius:6px;color:var(--text);font-family:'Noto Sans JP',sans-serif;font-size:0.88rem;
+     padding:10px 12px;resize:vertical;transition:border-color .2s;}
+  .form-row input:focus,.form-row textarea:focus{outline:none;border-color:var(--accent);}
+  .contact-form .btn{width:100%;border:none;cursor:pointer;}
+  .contact-email-note{margin-top:16px;font-size:0.7rem;color:var(--text-dim);text-align:center;}
+  footer{padding:40px 0;text-align:center;font-size:0.72rem;color:var(--text-dim);letter-spacing:0.05em;}
+
+  @media (max-width:760px){
+    .hero h1{font-size:1.9rem;}
+    .grid-3{grid-template-columns:1fr;}
+    .work-item{grid-template-columns:1fr;}
+    .work-media img, .work-media video{height:auto;max-height:220px;}
+    .about-grid{grid-template-columns:1fr;}
+  }
+
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="index.html" class="brand">ATLAS TO PARADISE</a>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="ja">JA</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="index.html" class="back-link" data-i18n="backLink">← AIナビゲーターに戻る</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="heroEyebrow">HATTORI ICHIDAI — WEB MARKETER / CREATOR</div>
+    <h1 data-i18n-html="heroH1">データと美意識で、<br>事業の<span>伸びしろ</span>を形にする。</h1>
+    <p data-i18n="heroP">フルリモートでの独立稼働歴6年。SEO・SNS運用・LP改善・AI活用を、分析力と実装力の両輪で支援します。</p>
+    <div class="hero-ctas">
+      <a href="index.html" class="btn btn-primary" data-i18n="heroCta1">AIに無料相談する</a>
+      <a href="#works" class="btn btn-ghost" data-i18n="heroCta2">実績を見る</a>
+    </div>
+  </div>
+</header>
+
+<section id="candoo">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num mono">01 / CAN DO</div>
+      <h2 data-i18n="candooTitle">提供できること</h2>
+    </div>
+    <div class="grid-3">
+      <div class="skill-card">
+        <div class="tag mono">SEO</div>
+        <h3 data-i18n="skill1h">SEOブログ戦略</h3>
+        <p data-i18n="skill1p">「検索されない」を終わらせる。キーワード選定から競合分析、リライト構成案まで一気通貫。実際にアクセスが伸びた設計思想をそのまま提供します。</p>
+      </div>
+      <div class="skill-card">
+        <div class="tag mono">LP / WEB</div>
+        <h3 data-i18n="skill2h">LP・Web改善</h3>
+        <p data-i18n="skill2p">アクセスはあるのに成果が出ない、その原因を数値で特定。ユーザー導線(FV/CTA)を再設計し、Figmaでのワイヤーフレーム作成まで一貫対応します。</p>
+      </div>
+      <div class="skill-card">
+        <div class="tag mono">SNS</div>
+        <h3 data-i18n="skill3h">SNS運用代行</h3>
+        <p data-i18n="skill3p">フォロワーではなく、届く投稿を。Instagram実運用で培った設計・分析ノウハウをもとに、継続的に伸びる仕組みを構築します。</p>
+      </div>
+      <div class="skill-card">
+        <div class="tag mono">AI</div>
+        <h3 data-i18n="skill4h">AIコンサルティング</h3>
+        <p data-i18n="skill4p">「AIを使いたいが何から」に答えます。業務のどこに組み込めば効果が出るかを見極め、実装まで自分の手で仕上げます。</p>
+      </div>
+      <div class="skill-card">
+        <div class="tag mono">JP ⇄</div>
+        <h3 data-i18n="skill5h">ネイティブ日本語翻訳</h3>
+        <p data-i18n="skill5p">翻訳臭さのない、自然な日本語に。ローカライズと日本語コーチングの両面から、伝わる言葉に仕上げます。</p>
+      </div>
+      <div class="skill-card">
+        <div class="tag mono">DEV</div>
+        <h3 data-i18n="skill6h">フロントエンド実装</h3>
+        <p data-i18n="skill6p">アイデアを形にするまで、外注ゼロ。HTML/CSS/JS、Python(画像処理・データ処理)を用いた高度な演出・作品制作も自力で完結します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="works">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num mono">02 / WORKS</div>
+      <h2 data-i18n="worksTitle">実績・制作事例</h2>
+    </div>
+
+    <!-- WORK 01 -->
+    <div class="work-item">
+      <div class="work-media">
+        <img src="./１.png" alt="WORK 01"
+             onerror="this.onerror=null;this.replaceWith(Object.assign(document.createElement('div'),{className:'media-fallback',textContent:'画像を読み込めません（image/１.png）'}));">
+      </div>
+      <div>
+        <div class="wnum">WORK 01</div>
+        <h3 data-i18n="w1h">書道スクロールサイト</h3>
+        <p data-i18n-html="w1p">
+          Python画像処理(scikit-image, OpenCV, NetworkX)で実際の墨の中心線を出し、正しい筆順でSVGアニメーションとして再現した書道スクロールサイト。
+          <a href="work-01-shinpuru.html">詳細を見る (work-01-shinpuru.html)</a>
+        </p>
+        <div class="stack">
+          <span class="chip">Python</span><span class="chip">OpenCV</span><span class="chip">SVG Animation</span><span class="chip">NetworkX</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- WORK 02 -->
+    <div class="work-item">
+      <div class="work-media">
+        <video autoplay loop muted playsinline preload="metadata">
+          <source src="./van.mp4" type="video/mp4">
+          お使いのブラウザは動画の再生に対応していません。
+        </video>
+      </div>
+      <div>
+        <div class="wnum">WORK 02</div>
+        <h3 data-i18n-html="w2h">Wandering Ledger — バンライフ 会計士の冒険記 <span class="fiction-note">※主人公は架空の人物です</span></h3>
+        <p data-i18n-html="w2p">
+          ダークパレット×アンバーアクセントのバンライフ物語マガジンサイト。モーフィングするヒーローテキストと、複数エピソードの交互レイアウトで構成。
+          <a href="work-02-wandering-ledger.html">詳細を見る (work-02-wandering-ledger.html)</a>
+        </p>
+        <div class="stack">
+          <span class="chip">HTML/CSS</span><span class="chip">JS Animation</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- WORK 03 -->
+    <div class="work-item">
+      <div class="work-media">
+        <video autoplay loop muted playsinline preload="metadata">
+          <source src="./202608-19-5.mp4" type="video/mp4">
+          お使いのブラウザは動画の再生に対応していません。
+        </video>
+      </div>
+      <div>
+        <div class="wnum">WORK 03</div>
+        <h3 data-i18n="w3h">Taichung Travel Prototype</h3>
+        <p data-i18n-html="w3p">
+          台湾の観光地・グルメ・文化の魅力を伝える、台湾観光PR向けのWebサイト。モーダル表示・レスポンシブ対応を備えたビジュアル訴求型のページ構成で、旅行意欲を喚起するデザインに仕上げました。
+          <a href="work-03-taiwan.html">詳細を見る (work-03-taiwan.html)</a>
+        </p>
+        <div class="stack">
+          <span class="chip">HTML/CSS</span><span class="chip">Python (BeautifulSoup)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- WORK 04 -->
+    <div class="work-item">
+      <div class="work-media">
+        <img src="./２.png" alt="WORK 04"
+             onerror="this.onerror=null;this.replaceWith(Object.assign(document.createElement('div'),{className:'media-fallback',textContent:'画像を読み込めません（image/２.png）'}));">
+      </div>
+      <div>
+        <div class="wnum">WORK 04</div>
+        <h3 data-i18n="w4h">リフォーム会社のご提案用サイト</h3>
+        <p data-i18n-html="w4p">
+          住まいの刷新や改修事例を魅力的に伝えるリフォーム事業者向けのデザインプロトタイプ。見やすさと見積もり・相談導線を両立したレイアウト設計。
+          <a href="work-04-reform.html">詳細を見る (work-04-reform.html)</a>
+        </p>
+        <div class="stack">
+          <span class="chip">HTML/CSS</span><span class="chip">Figma</span><span class="chip">UI/UX Design</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- WORK 05 -->
+    <div class="work-item">
+      <div class="work-media">
+        <img src="./３.png" alt="WORK 05"
+             onerror="this.onerror=null;this.replaceWith(Object.assign(document.createElement('div'),{className:'media-fallback',textContent:'画像を読み込めません（image/３.png）'}));">
+      </div>
+      <div>
+        <div class="wnum">WORK 05</div>
+        <h3 data-i18n="w5h">レストランご提案用サイト</h3>
+        <p data-i18n-html="w5p">
+          料理の世界観や店舗の雰囲気を伝える、飲食店向けのデザインプロトタイプ。メニューの閲覧性やオンライン予約へのスムーズな接続を意識した構成。
+          <a href="https://2026webai-lab.github.io/resutorant/">詳細を見る (レストランご提案用)</a>
+        </p>
+        <div class="stack">
+          <span class="chip">HTML/CSS</span><span class="chip">UI/UX Design</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- WORK 06 -->
+    <div class="work-item">
+      <div class="work-media">
+        <img src="./４.png" alt="WORK 06"
+             onerror="this.onerror=null;this.replaceWith(Object.assign(document.createElement('div'),{className:'media-fallback',textContent:'画像を読み込めません（image/４.png）'}));">
+      </div>
+      <div>
+        <div class="wnum">WORK 06</div>
+        <h3 data-i18n="w6h">ブライダルご提案用サイト</h3>
+        <p data-i18n-html="w6p">
+          エレガントかつ洗練された世界観で特別な一日をプロデュースする、ブライダル事業者向けWebデザイン。ビジュアル重視の構成と見学予約導線。
+          <a href="https://2026webai-lab.github.io/buraidaru/">詳細を見る (ブライダルご提案用)</a>
+        </p>
+        <div class="stack">
+          <span class="chip">HTML/CSS</span><span class="chip">UI/UX Design</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- WORK 07 -->
+    <div class="work-item">
+      <div class="work-media">
+        <img src="./5.png" alt="WORK 07"
+             onerror="this.onerror=null;this.replaceWith(Object.assign(document.createElement('div'),{className:'media-fallback',textContent:'画像を読み込めません（image/5.png）'}));">
+      </div>
+      <div>
+        <div class="wnum">WORK 07</div>
+        <h3 data-i18n="w7h">ATLAS TO PARADISE トップページ — 3D AIナビゲーター</h3>
+        <p data-i18n-html="w7p">
+          Three.jsで構築したフルスクリーン3Dロケット演出。打ち上げ→大気圏離脱→地球周回まで、パーティクル(炎・煙・宇宙塵)と流れ星をリアルタイム物理でアニメーション。多言語AIチャット窓口とGoogleログインゲート、訪問者自身のAPIキーによる直接接続を統合した、最新3D×AIの統合フロントエンド。
+          <a href="index.html">詳細を見る (index.html)</a>
+        </p>
+        <div class="stack">
+          <span class="chip">Three.js</span><span class="chip">WebGL Particles</span><span class="chip">AI Chat UI</span><span class="chip">Google OAuth</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- WORK 08 -->
+    <div class="work-item">
+      <div class="work-media">
+        <img src="./9.png" alt="WORK 08"
+             onerror="this.onerror=null;this.replaceWith(Object.assign(document.createElement('div'),{className:'media-fallback',textContent:'画像を読み込めません（image/9.png）'}));">
+      </div>
+      <div>
+        <div class="wnum">WORK 08</div>
+        <h3 data-i18n="w8h">建設会社様向け 採用インパクトLP「現場まつり」</h3>
+        <p data-i18n-html="w8p">
+          「現場は、文化祭だ。」をコンセプトに、大工・電気工・重機オペレーターなど職種ごとの魅力を祭り仕立てで見せる建設会社向け採用LP。信頼重視で堅くなりがちな業界に、楽しさ・明るさ・親しみやすさを前面に出した構成で、入社・応募への心理的ハードルを下げる設計。
+          <a href="https://2026webai-lab.github.io/kennsetukaisya/">詳細を見る (現場まつり)</a>
+        </p>
+        <div class="stack">
+          <span class="chip">HTML/CSS</span><span class="chip">UI/UX Design</span><span class="chip">採用LP</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- WORK 09 -->
+    <div class="work-item">
+      <div class="work-media work-media-split">
+        <img src="./７.png" alt="ネガポジ変換アプリ"
+             onerror="this.onerror=null;this.replaceWith(Object.assign(document.createElement('div'),{className:'media-fallback',textContent:'画像を読み込めません（７.png）'}));">
+        <img src="./８.png" alt="マトリクス思考ロードマップ生成アプリ"
+             onerror="this.onerror=null;this.replaceWith(Object.assign(document.createElement('div'),{className:'media-fallback',textContent:'画像を読み込めません（８.png）'}));">
+      </div>
+      <div>
+        <div class="wnum">WORK 09</div>
+        <h3 data-i18n="w9h">あなたのアイデアを形に。— Webアプリ / PHPアプリ開発</h3>
+        <p data-i18n-html="w9p">
+          企画から実装まで、Webアプリ・PHPアプリの開発に対応。Googleストア掲載を見据えた設計も可能です。以下は実際に公開している例です。
+          <a href="https://2026webai-lab.github.io/web-app/">ネガポジ変換アプリ</a>
+          <a href="https://2026webai-lab.github.io/matrix-app/">マトリクス思考ロードマップ生成アプリ</a>
+        </p>
+        <div class="stack">
+          <span class="chip">Web App</span><span class="chip">PHP</span><span class="chip">Google Play対応</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- WORK 10 -->
+    <div class="work-item">
+      <div class="work-media">
+        <img src="./a.png" alt="WORK 10"
+             onerror="this.onerror=null;this.replaceWith(Object.assign(document.createElement('div'),{className:'media-fallback',textContent:'画像を読み込めません（image/a.png）'}));">
+      </div>
+      <div>
+        <div class="wnum">WORK 10</div>
+        <h3 data-i18n="w10h">『四星球のキセキ 〜初期ドラゴンボール徹底考察〜』ファンサイト構築</h3>
+        <p data-i18n-html="w10p">
+          初期ドラゴンボールを徹底考察する非公式ファンブログサイトを企画・構築。世界観を活かしたビジュアルと読みやすい記事構成を意識した設計です。当サイトは個人が趣味で運営する非公式のファンブログであり、版権元である著者、出版社、アニメ制作会社等の各企業様とは一切関係ありません。ブログ内で使用・引用している画像、台詞、キャラクター等の著作権・肖像権・商標権などのすべての知的財産権は、著作者（鳥山明 / とよたろう / バード・スタジオ）、出版社（集英社）、東映アニメーション、およびその権利所有者に帰属します。
+          <a href="https://2026webai-lab.github.io/doragonnew/">詳細を見る（四星球のキセキ）</a>
+        </p>
+        <div class="stack">
+          <span class="chip">HTML/CSS</span><span class="chip">ファンサイト</span><span class="chip">コンテンツ企画</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num mono">03 / ABOUT</div>
+      <h2 data-i18n="aboutTitle">自己紹介</h2>
+    </div>
+    <div class="about-stats reveal">
+      <div class="about-stat"><div class="num">6+</div><div class="lbl">YEARS REMOTE</div></div>
+      <div class="about-stat"><div class="num">15+</div><div class="lbl">CLIENTS</div></div>
+      <div class="about-stat"><div class="num">100%</div><div class="lbl">FULL REMOTE</div></div>
+    </div>
+    <div class="about-grid">
+      <div class="reveal">
+        <p data-i18n="aboutP1">フルリモートでの独立稼働歴6年。SEO・SNS運用・LP改善・AI活用まで、マーケティングの数値分析とフロントエンド実装の両方を自分の手で行えることが強みです。</p>
+        <p data-i18n="aboutP2">軸にしているのは「墨と余白」— 引き算の美意識。派手な装飾より、伝えるべき情報が伝わる設計を優先します。オンラインでの折衝・進行管理に慣れており、リモート環境でも安定した稼働品質を保ちます。</p>
+      </div>
+      <div class="reveal">
+        <div class="section-num mono" style="margin-bottom:14px;">TOOLBOX</div>
+        <div class="toolbox">
+          <span class="chip">GA4</span><span class="chip">Search Console</span><span class="chip">Figma</span>
+          <span class="chip">Notion</span><span class="chip">ラッコキーワード</span><span class="chip">Python</span>
+          <span class="chip">Three.js</span><span class="chip">D3.js</span>
+        </div>
+      </div>
+    </div>
+    <div class="name-note reveal">
+      <div class="name-note-title" data-i18n="nameNoteTitle">名前表記について</div>
+      <p data-i18n-html="nameNoteP1"><strong>HATTORI ICHIDAI</strong>（服部一大）が本名で、業務・実務のご連絡はすべてこの名義で承ります。</p>
+      <p data-i18n-html="nameNoteP2"><strong>KAZUYA</strong>は、作品制作（書道スクロールサイト、バンライフマガジンサイト等）の際に使用するクリエイター名義・ペンネームです。「車中泊好き」「海外好き」というキャラクター設定のもとで作品世界を構築しており、Instagram等のSNS発信も含め、このキャラクター設定に基づく創作活動として運用しています。</p>
+      <p data-i18n="nameNoteP3">実務者としてのHATTORI ICHIDAIの稼働形態・所在地・対応可能時間等については、面談時に個別にご説明いたします。</p>
+    </div>
+  </div>
+</section>
+
+<section id="impact">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num mono">04 / IMPACT</div>
+      <h2 data-i18n="impactTitle">社会的意義</h2>
+    </div>
+    <p class="impact-lead reveal" data-i18n="impactLead">大切にしているのは、専門知識を「特別な人だけのもの」にしないことです。情報発信力や技術力に差がある現場に立ち会うたび、自分のスキルがそのまま誰かの機会になる瞬間にやりがいを感じてきました。入社後もこの視点を持ち、成果への当事者意識をもって事業成長に貢献したいと考えています。</p>
+    <div class="grid-3">
+      <div class="skill-card reveal">
+        <div class="tag mono">OWNERSHIP</div>
+        <h3 data-i18n="impact1h">成果に責任を持つ、実行力</h3>
+        <p data-i18n="impact1p">中小事業者の情報発信を、SEO・SNS設計を通じて「届くべき顧客に届く」状態へ改善。数値に基づいた仮説検証を繰り返し、成果への当事者意識を持って取り組んできました。</p>
+      </div>
+      <div class="skill-card reveal">
+        <div class="tag mono">DELIVERY</div>
+        <h3 data-i18n="impact2h">専門知識を、独占せず届ける姿勢</h3>
+        <p data-i18n="impact2p">書道などの専門技術をデジタル技術で再構築し、ネイティブ翻訳と組み合わせて国内外へ発信。専門性を独り占めせず、正しい形で広く伝えることを重視しています。</p>
+      </div>
+      <div class="skill-card reveal">
+        <div class="tag mono">GROWTH</div>
+        <h3 data-i18n="impact3h">変化を恐れず、学び続ける姿勢</h3>
+        <p data-i18n="impact3p">AI活用やフロントエンドの新技術など、常に新しい領域を独学で吸収し、実務に落とし込んできました。この学習意欲と実行力を、入社後の事業成長にも還元したいと考えています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num mono">05 / FAQ</div>
+      <h2 data-i18n="faqTitle">よくある質問</h2>
+    </div>
+    <div class="faq-item">
+      <div class="q"><span>Q.</span><span data-i18n="faq1q">HATTORIとKAZUYA、名義を分けているのはなぜですか？</span></div>
+      <div class="a" data-i18n="faq1a">業務用の本名義（HATTORI ICHIDAI）と、個人の創作活動用のペンネーム（KAZUYA）を明確に分けて運用しています。入社後も、業務に支障のない範囲で個人制作活動を継続する想定です。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q"><span>Q.</span><span data-i18n="faq2q">フルリモートでの稼働実績が中心ですが、出社や常駐勤務は可能ですか？</span></div>
+      <div class="a" data-i18n="faq2a">はい、業務内容や貴社の運用に応じて柔軟に対応可能です。稼働形態の詳細は面談時にご相談させてください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q"><span>Q.</span><span data-i18n="faq3q">フリーランス経験が中心ですが、チームでの業務経験はありますか？</span></div>
+      <div class="a" data-i18n="faq3a">フリーランスとして案件を進める中で、クライアント企業のご担当者様やチームと連携しながら、進行管理・共同作業を継続的に行ってきました。</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="contact-box">
+      <h2 data-i18n="contactTitle">お問い合わせ</h2>
+      <p data-i18n="contactP">ご質問・ご依頼など、お気軽に以下のフォームからお問い合わせください。送信ボタンを押すと、お使いのメールソフトが起動します。</p>
+      <form id="contact-form" class="contact-form">
+        <div class="form-row">
+          <label for="cf-name" data-i18n="contactNameLabel">お名前</label>
+          <input type="text" id="cf-name" name="name" required>
+        </div>
+        <div class="form-row">
+          <label for="cf-email" data-i18n="contactEmailLabel">メールアドレス</label>
+          <input type="email" id="cf-email" name="email" required>
+        </div>
+        <div class="form-row">
+          <label for="cf-message" data-i18n="contactMessageLabel">お問い合わせ内容</label>
+          <textarea id="cf-message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" data-i18n="contactCta">送信する</button>
+        <p class="contact-email-note mono" data-i18n="contactEmailNote">送信先：2026webai@gmail.com</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap mono">ATLAS TO PARADISE — 楽園への古地図 © 2026 HATTORI ICHIDAI</div>
+</footer>
+
+<script>
+const I18N = {
+  ja:{
+    backLink:"← AIナビゲーターに戻る",
+    heroEyebrow:"HATTORI ICHIDAI — WEB MARKETER / CREATOR",
+    heroH1:"データと美意識で、<br>事業の<span>伸びしろ</span>を形にする。",
+    heroP:"フルリモートでの独立稼働歴6年。SEO・SNS運用・LP改善・AI活用を、分析力と実装力の両輪で支援します。",
+    heroCta1:"AIに無料相談する",
+    heroCta2:"実績を見る",
+    candooTitle:"提供できること",
+    skill1h:"SEOブログ戦略",
+    skill1p:"「検索されない」を終わらせる。キーワード選定から競合分析、リライト構成案まで一気通貫。実際にアクセスが伸びた設計思想をそのまま提供します。",
+    skill2h:"LP・Web改善",
+    skill2p:"アクセスはあるのに成果が出ない、その原因を数値で特定。ユーザー導線(FV/CTA)を再設計し、Figmaでのワイヤーフレーム作成まで一貫対応します。",
+    skill3h:"SNS運用代行",
+    skill3p:"フォロワーではなく、届く投稿を。Instagram実運用で培った設計・分析ノウハウをもとに、継続的に伸びる仕組みを構築します。",
+    skill4h:"AIコンサルティング",
+    skill4p:"「AIを使いたいが何から」に答えます。業務のどこに組み込めば効果が出るかを見極め、実装まで自分の手で仕上げます。",
+    skill5h:"ネイティブ日本語翻訳",
+    skill5p:"翻訳臭さのない、自然な日本語に。ローカライズと日本語コーチングの両面から、伝わる言葉に仕上げます。",
+    skill6h:"フロントエンド実装",
+    skill6p:"アイデアを形にするまで、外注ゼロ。HTML/CSS/JS、Python(画像処理・データ処理)を用いた高度な演出・作品制作も自力で完結します。",
+    worksTitle:"実績・制作事例",
+    w1h:"書道スクロールサイト",
+    w1p:'Python画像処理(scikit-image, OpenCV, NetworkX)で実際の墨の中心線を出し、正しい筆順でSVGアニメーションとして再現した書道スクロールサイト。<a href="work-01-shinpuru.html">詳細を見る (work-01-shinpuru.html)</a>',
+    w2h:'Wandering Ledger — バンライフ 会計士の冒険記 <span class="fiction-note">※主人公は架空の人物です</span>',
+    w2p:'ダークパレット×アンバーアクセントのバンライフ物語マガジンサイト。モーフィングするヒーローテキストと、複数エピソードの交互レイアウトで構成。<a href="work-02-wandering-ledger.html">詳細を見る (work-02-wandering-ledger.html)</a>',
+    w3h:"Taichung Travel Prototype",
+    w3p:'台湾の観光地・グルメ・文化の魅力を伝える、台湾観光PR向けのWebサイト。モーダル表示・レスポンシブ対応を備えたビジュアル訴求型のページ構成で、旅行意欲を喚起するデザインに仕上げました。<a href="work-03-taiwan.html">詳細を見る (work-03-taiwan.html)</a>',
+    w4h:"リフォーム会社のご提案用サイト",
+    w4p:'住まいの刷新や改修事例を魅力的に伝えるリフォーム事業者向けのデザインプロトタイプ。見やすさと見積もり・相談導線を両立したレイアウト設計。<a href="work-04-reform.html">詳細を見る (work-04-reform.html)</a>',
+    w5h:"レストランご提案用サイト",
+    w5p:'料理の世界観や店舗の雰囲気を伝える、飲食店向けのデザインプロトタイプ。メニューの閲覧性やオンライン予約へのスムーズな接続を意識した構成。<a href="https://2026webai-lab.github.io/resutorant/">詳細を見る (レストランご提案用)</a>',
+    w6h:"ブライダルご提案用サイト",
+    w6p:'エレガントかつ洗練された世界観で特別な一日をプロデュースする、ブライダル事業者向けWebデザイン。ビジュアル重視の構成と見学予約導線。<a href="https://2026webai-lab.github.io/buraidaru/">詳細を見る (ブライダルご提案用)</a>',
+    w7h:"ATLAS TO PARADISE トップページ — 3D AIナビゲーター",
+    w7p:'Three.jsで構築したフルスクリーン3Dロケット演出。打ち上げ→大気圏離脱→地球周回まで、パーティクル(炎・煙・宇宙塵)と流れ星をリアルタイム物理でアニメーション。多言語AIチャット窓口とGoogleログインゲート、訪問者自身のAPIキーによる直接接続を統合した、最新3D×AIの統合フロントエンド。<a href="index.html">詳細を見る (index.html)</a>',
+    w8h:"建設会社様向け 採用インパクトLP「現場まつり」",
+    w8p:'「現場は、文化祭だ。」をコンセプトに、大工・電気工・重機オペレーターなど職種ごとの魅力を祭り仕立てで見せる建設会社向け採用LP。信頼重視で堅くなりがちな業界に、楽しさ・明るさ・親しみやすさを前面に出した構成で、入社・応募への心理的ハードルを下げる設計。<a href="https://2026webai-lab.github.io/kennsetukaisya/">詳細を見る (現場まつり)</a>',
+    w9h:"あなたのアイデアを形に。— Webアプリ / PHPアプリ開発",
+    w9p:'企画から実装まで、Webアプリ・PHPアプリの開発に対応。Googleストア掲載を見据えた設計も可能です。以下は実際に公開している例です。<a href="https://2026webai-lab.github.io/web-app/">ネガポジ変換アプリ</a><a href="https://2026webai-lab.github.io/matrix-app/">マトリクス思考ロードマップ生成アプリ</a>',
+    w10h:"『四星球のキセキ 〜初期ドラゴンボール徹底考察〜』ファンサイト構築",
+    w10p:'初期ドラゴンボールを徹底考察する非公式ファンブログサイトを企画・構築。世界観を活かしたビジュアルと読みやすい記事構成を意識した設計です。当サイトは個人が趣味で運営する非公式のファンブログであり、版権元である著者、出版社、アニメ制作会社等の各企業様とは一切関係ありません。ブログ内で使用・引用している画像、台詞、キャラクター等の著作権・肖像権・商標権などのすべての知的財産権は、著作者（鳥山明 / とよたろう / バード・スタジオ）、出版社（集英社）、東映アニメーション、およびその権利所有者に帰属します。<a href="https://2026webai-lab.github.io/doragonnew/">詳細を見る（四星球のキセキ）</a>',
+    aboutTitle:"自己紹介",
+    aboutP1:"フルリモートでの独立稼働歴6年。SEO・SNS運用・LP改善・AI活用まで、マーケティングの数値分析とフロントエンド実装の両方を自分の手で行えることが強みです。",
+    aboutP2:"軸にしているのは「墨と余白」— 引き算の美意識。派手な装飾より、伝えるべき情報が伝わる設計を優先します。オンラインでの折衝・進行管理に慣れており、リモート環境でも安定した稼働品質を保ちます。",
+    nameNoteTitle:"名前表記について",
+    nameNoteP1:"<strong>HATTORI ICHIDAI</strong>（服部一大）が本名で、業務・実務のご連絡はすべてこの名義で承ります。",
+    nameNoteP2:"<strong>KAZUYA</strong>は、作品制作（書道スクロールサイト、バンライフマガジンサイト等）の際に使用するクリエイター名義・ペンネームです。「車中泊好き」「海外好き」というキャラクター設定のもとで作品世界を構築しており、Instagram等のSNS発信も含め、このキャラクター設定に基づく創作活動として運用しています。",
+    nameNoteP3:"実務者としてのHATTORI ICHIDAIの稼働形態・所在地・対応可能時間等については、面談時に個別にご説明いたします。",
+    impactTitle:"社会的意義",
+    impactLead:"大切にしているのは、専門知識を「特別な人だけのもの」にしないことです。情報発信力や技術力に差がある現場に立ち会うたび、自分のスキルがそのまま誰かの機会になる瞬間にやりがいを感じてきました。入社後もこの視点を持ち、成果への当事者意識をもって事業成長に貢献したいと考えています。",
+    impact1h:"成果に責任を持つ、実行力",
+    impact1p:"中小事業者の情報発信を、SEO・SNS設計を通じて「届くべき顧客に届く」状態へ改善。数値に基づいた仮説検証を繰り返し、成果への当事者意識を持って取り組んできました。",
+    impact2h:"専門知識を、独占せず届ける姿勢",
+    impact2p:"書道などの専門技術をデジタル技術で再構築し、ネイティブ翻訳と組み合わせて国内外へ発信。専門性を独り占めせず、正しい形で広く伝えることを重視しています。",
+    impact3h:"変化を恐れず、学び続ける姿勢",
+    impact3p:"AI活用やフロントエンドの新技術など、常に新しい領域を独学で吸収し、実務に落とし込んできました。この学習意欲と実行力を、入社後の事業成長にも還元したいと考えています。",
+    faqTitle:"よくある質問",
+    faq1q:"HATTORIとKAZUYA、名義を分けているのはなぜですか？", faq1a:"業務用の本名義（HATTORI ICHIDAI）と、個人の創作活動用のペンネーム（KAZUYA）を明確に分けて運用しています。入社後も、業務に支障のない範囲で個人制作活動を継続する想定です。",
+    faq2q:"フルリモートでの稼働実績が中心ですが、出社や常駐勤務は可能ですか？", faq2a:"はい、業務内容や貴社の運用に応じて柔軟に対応可能です。稼働形態の詳細は面談時にご相談させてください。",
+    faq3q:"フリーランス経験が中心ですが、チームでの業務経験はありますか？", faq3a:"フリーランスとして案件を進める中で、クライアント企業のご担当者様やチームと連携しながら、進行管理・共同作業を継続的に行ってきました。",
+    contactTitle:"お問い合わせ",
+    contactP:"ご質問・ご依頼など、お気軽に以下のフォームからお問い合わせください。送信ボタンを押すと、お使いのメールソフトが起動します。",
+    contactNameLabel:"お名前",
+    contactEmailLabel:"メールアドレス",
+    contactMessageLabel:"お問い合わせ内容",
+    contactCta:"送信する",
+    contactEmailNote:"送信先：2026webai@gmail.com"
+  },
+  en:{
+    backLink:"← Back to AI Navigator",
+    heroEyebrow:"HATTORI ICHIDAI — WEB MARKETER / CREATOR",
+    heroH1:"Turning data and craft<br>into <span>growth</span> for your business.",
+    heroP:"6 years of independent, fully remote work. Supporting SEO, SNS management, LP improvement, and AI adoption with both analysis and hands-on implementation.",
+    heroCta1:"Talk to the AI for free",
+    heroCta2:"View works",
+    candooTitle:"What I Offer",
+    skill1h:"SEO Blog Strategy",
+    skill1p:"End the cycle of being unseen in search. From keyword research to competitor analysis and rewrite planning — a full pipeline built on strategies that actually moved traffic.",
+    skill2h:"LP / Web Improvement",
+    skill2p:"Traffic without conversions has a cause — I find it with data. Redesigning user flow (FV/CTA) through to wireframing in Figma, end to end.",
+    skill3h:"SNS Management",
+    skill3p:"Not just followers — posts that actually reach people. Built on hands-on Instagram operation experience, with a system for continuous improvement.",
+    skill4h:"AI Consulting",
+    skill4p:"For 'I want to use AI but don't know where to start' — I identify where it moves the needle in your operations and implement it myself.",
+    skill5h:"Native Japanese Translation",
+    skill5p:"Natural Japanese that doesn't read as translated. Localization and Japanese coaching, refined into language that actually connects.",
+    skill6h:"Frontend Development",
+    skill6p:"From idea to finished product, zero outsourcing. Advanced production with HTML/CSS/JS and Python (image & data processing), all handled in-house.",
+    worksTitle:"Works",
+    w1h:"Calligraphy Scroll Site",
+    w1p:'A calligraphy scroll site that extracts the actual ink centerline via Python image processing (scikit-image, OpenCV, NetworkX) and replays it as an SVG animation in authentic stroke order. <a href="work-01-shinpuru.html">View details (work-01-shinpuru.html)</a>',
+    w2h:'Wandering Ledger — A Van-Life Accountant\'s Journey <span class="fiction-note">Fictional protagonist</span>',
+    w2p:'A van-life story magazine site in a dark palette with amber accents, featuring morphing hero text and alternating layouts across multiple episodes. <a href="work-02-wandering-ledger.html">View details (work-02-wandering-ledger.html)</a>',
+    w3h:"Taichung Travel Prototype",
+    w3p:'A tourism-PR website introducing Taiwan\'s attractions, food culture, and scenery. Built with modal galleries and full responsive support, the visually-driven layout is designed to spark travel interest. <a href="work-03-taiwan.html">View details (work-03-taiwan.html)</a>',
+    w4h:"Renovation Company Proposal Site",
+    w4p:'A design prototype for renovation businesses that showcases refurbishment case studies. Layout balances visual appeal with clear quote/consultation flows. <a href="work-04-reform.html">View details (work-04-reform.html)</a>',
+    w5h:"Restaurant Proposal Site",
+    w5p:'A design prototype for restaurants that conveys the cuisine\'s world and atmosphere. Built for easy menu browsing and a smooth path to online reservations. <a href="https://2026webai-lab.github.io/resutorant/">View details (Restaurant Proposal)</a>',
+    w6h:"Bridal Proposal Site",
+    w6p:'An elegant, refined web design for bridal businesses producing a couple\'s special day. Visual-first layout with a clear venue-tour booking flow. <a href="https://2026webai-lab.github.io/buraidaru/">View details (Bridal Proposal)</a>',
+    w7h:"ATLAS TO PARADISE Top Page — 3D AI Navigator",
+    w7p:'A fullscreen 3D rocket sequence built with Three.js — launch, atmospheric exit, orbit — animated in real time with particle effects (fire, smoke, stardust) and shooting stars. Integrates a multilingual AI chat desk, a Google login gate, and a visitor-supplied API key for direct connection. <a href="index.html">View details (index.html)</a>',
+    w8h:"Construction Company Recruiting Impact LP — \"Genba Matsuri\"",
+    w8p:'A recruiting LP for construction firms built on the concept "the job site is a festival." Carpenters, electricians, and heavy-equipment operators are each shown festival-style, bringing fun and warmth to an industry that tends to lean serious and trust-first — lowering the psychological barrier to applying. <a href="https://2026webai-lab.github.io/kennsetukaisya/">View details (Genba Matsuri)</a>',
+    w9h:"Turning Your Idea Into Reality — Web App / PHP App Development",
+    w9p:'End-to-end development of web apps and PHP apps, from planning through implementation — including architecture ready for Google Play Store listing. A couple of live examples below.<a href="https://2026webai-lab.github.io/web-app/">Negativity-to-positivity converter</a><a href="https://2026webai-lab.github.io/matrix-app/">Matrix-thinking 1-year roadmap generator</a>',
+    w10h:'"Traces of the Four-Star Ball — A Deep Dive into Early Dragon Ball" Fan Site',
+    w10p:'Planned and built an unofficial fan-blog site offering an in-depth look at early Dragon Ball, with visuals and article layouts designed to honor the series\' world. This is an unofficial, hobby-run fan blog with no affiliation to the rights holders — the original author, publisher, or animation studio. All copyrights, portrait rights, and trademarks for images, dialogue, characters, and other material quoted on the blog belong to the creators (Akira Toriyama / Toyotarou / Bird Studio), the publisher (Shueisha), Toei Animation, and their respective rights holders. <a href="https://2026webai-lab.github.io/doragonnew/">View details (Traces of the Four-Star Ball)</a>',
+    aboutTitle:"About",
+    aboutP1:"6 years of independent, fully remote work. From SEO and SNS management to LP improvement and AI adoption, my strength is handling both marketing data analysis and frontend implementation myself.",
+    aboutP2:"My guiding principle: \"ink and negative space\" — an aesthetic of subtraction. I prioritize designs that deliver the message clearly over flashy decoration. I'm comfortable with online negotiation and project management, and maintain consistent quality in a remote setting.",
+    nameNoteTitle:"About the Names",
+    nameNoteP1:"<strong>HATTORI ICHIDAI</strong> is my legal name, and all professional and business correspondence is handled under this name.",
+    nameNoteP2:"<strong>KAZUYA</strong> is a creator name / pen name used specifically for creative work (the calligraphy scroll site, the van-life magazine site, etc.). This name operates under a character setting — \"loves car camping,\" \"loves traveling abroad\" — and any related SNS content, including Instagram, is run as part of that creative persona.",
+    nameNoteP3:"Details of HATTORI ICHIDAI's working arrangement, location, and availability as a professional will be explained individually during an interview.",
+    impactTitle:"Why It Matters",
+    impactLead:"What matters most to me is not keeping specialized knowledge for a select few. Every time I've worked with people or businesses facing a gap in reach or technical skill, I've found real satisfaction in seeing my abilities directly become someone else's opportunity. I want to carry that same ownership of outcomes into contributing to your company's growth.",
+    impact1h:"Ownership: taking responsibility for results",
+    impact1p:"Improved small businesses' visibility through SEO and SNS strategy so they reach the customers they should. I've repeatedly tested hypotheses against real data, always with a strong sense of ownership over the outcome.",
+    impact2h:"Sharing expertise instead of gatekeeping it",
+    impact2p:"Rebuilt specialized crafts like calligraphy using digital technology and paired them with native translation to reach audiences at home and abroad — sharing expertise widely and accurately rather than keeping it to myself.",
+    impact3h:"Staying adaptable and never done learning",
+    impact3p:"I've continually taught myself new areas — from AI adoption to the latest frontend technologies — and put them straight into practice. I want to bring that same learning drive and execution to your company's growth.",
+    faqTitle:"FAQ",
+    faq1q:"Why do you use two names, HATTORI and KAZUYA?", faq1a:"I keep a clear separation between my professional legal name (HATTORI ICHIDAI) and a pen name used for personal creative work (KAZUYA). After joining a company, I'd continue personal creative projects only to the extent they don't interfere with work.",
+    faq2q:"Your track record is mainly fully remote — are you open to in-office or on-site work?", faq2a:"Yes, I can adapt flexibly depending on the role and your company's setup. I'm happy to discuss working arrangements in more detail during an interview.",
+    faq3q:"Your experience is mainly freelance — do you have experience working within a team?", faq3a:"While working as a freelancer, I've consistently collaborated with client-side teams and stakeholders on project management and joint work.",
+    contactTitle:"Contact",
+    contactP:"For any questions or requests, please feel free to reach out using the form below. Submitting will open your email client with the message pre-filled.",
+    contactNameLabel:"Name",
+    contactEmailLabel:"Email address",
+    contactMessageLabel:"Message",
+    contactCta:"Send",
+    contactEmailNote:"Sent to: 2026webai@gmail.com"
+  }
+};
+
+let currentLang = "ja";
+
+function applyI18n(){
+  const dict = I18N[currentLang];
+  document.documentElement.lang = currentLang;
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const key = el.getAttribute("data-i18n");
+    if(dict[key]) el.textContent = dict[key];
+  });
+  document.querySelectorAll("[data-i18n-html]").forEach(el=>{
+    const key = el.getAttribute("data-i18n-html");
+    if(dict[key]) el.innerHTML = dict[key];
+  });
+}
+
+document.querySelectorAll(".lang-btn").forEach(btn=>{
+  btn.addEventListener("click", ()=>{
+    currentLang = btn.dataset.lang;
+    document.querySelectorAll(".lang-btn").forEach(b=>b.classList.toggle("active", b===btn));
+    applyI18n();
+  });
+});
+
+applyI18n();
+
+const contactForm = document.getElementById('contact-form');
+if(contactForm){
+  contactForm.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const name = document.getElementById('cf-name').value.trim();
+    const email = document.getElementById('cf-email').value.trim();
+    const message = document.getElementById('cf-message').value.trim();
+    const subject = encodeURIComponent(`【お問い合わせ】${name}様より`);
+    const body = encodeURIComponent(`お名前: ${name}\nメールアドレス: ${email}\n\nお問い合わせ内容:\n${message}`);
+    window.location.href = `mailto:2026webai@gmail.com?subject=${subject}&body=${body}`;
+  });
+}
+
+const revealEls = document.querySelectorAll('.reveal');
+if('IntersectionObserver' in window && revealEls.length){
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  },{threshold:0.15});
+  revealEls.forEach(el=>io.observe(el));
+}else{
+  revealEls.forEach(el=>el.classList.add('is-visible'));
+}
+</script>
+</body>
+</html>
