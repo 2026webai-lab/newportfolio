@@ -157,6 +157,8 @@
   .form-row input:focus,.form-row textarea:focus{outline:none;border-color:var(--accent);}
   .contact-form .btn{width:100%;border:none;cursor:pointer;}
   .contact-email-note{margin-top:16px;font-size:0.7rem;color:var(--text-dim);text-align:center;}
+  .line-qr{width:220px;max-width:70%;height:auto;border-radius:12px;background:#fff;padding:14px;
+     border:1px solid var(--line);}
   footer{padding:40px 0;text-align:center;font-size:0.72rem;color:var(--text-dim);letter-spacing:0.05em;}
 
   @media (max-width:760px){
@@ -526,6 +528,17 @@
   </div>
 </section>
 
+<section id="line" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="contact-box">
+      <h2 data-i18n="lineTitle">公式LINE</h2>
+      <p data-i18n="lineP">QRコードを読み取って、公式LINEからもお気軽にお問い合わせいただけます。</p>
+      <img src="./公式LINE.png" alt="公式LINE QRコード" class="line-qr"
+           onerror="this.onerror=null;this.replaceWith(Object.assign(document.createElement('div'),{className:'media-fallback',textContent:'画像を読み込めません（image/公式LINE.png）'}));">
+    </div>
+  </div>
+</section>
+
 <section id="contact" style="border-bottom:none;">
   <div class="wrap">
     <div class="contact-box">
@@ -618,6 +631,8 @@ const I18N = {
     faq2q:"フルリモートでの稼働実績が中心ですが、出社や常駐勤務は可能ですか？", faq2a:"はい、業務内容や貴社の運用に応じて柔軟に対応可能です。稼働形態の詳細は面談時にご相談させてください。",
     faq3q:"フリーランス経験が中心ですが、チームでの業務経験はありますか？", faq3a:"フリーランスとして案件を進める中で、クライアント企業のご担当者様やチームと連携しながら、進行管理・共同作業を継続的に行ってきました。",
     contactTitle:"お問い合わせ",
+    lineTitle:"公式LINE",
+    lineP:"QRコードを読み取って、公式LINEからもお気軽にお問い合わせいただけます。",
     contactP:"ご質問・ご依頼など、お気軽に以下のフォームからお問い合わせください。送信ボタンを押すと、お使いのメールソフトが起動します。",
     contactNameLabel:"お名前",
     contactEmailLabel:"メールアドレス",
@@ -686,6 +701,8 @@ const I18N = {
     faq2q:"Your track record is mainly fully remote — are you open to in-office or on-site work?", faq2a:"Yes, I can adapt flexibly depending on the role and your company's setup. I'm happy to discuss working arrangements in more detail during an interview.",
     faq3q:"Your experience is mainly freelance — do you have experience working within a team?", faq3a:"While working as a freelancer, I've consistently collaborated with client-side teams and stakeholders on project management and joint work.",
     contactTitle:"Contact",
+    lineTitle:"Official LINE",
+    lineP:"Scan the QR code to reach out via our official LINE account as well.",
     contactP:"For any questions or requests, please feel free to reach out using the form below. Submitting will open your email client with the message pre-filled.",
     contactNameLabel:"Name",
     contactEmailLabel:"Email address",
