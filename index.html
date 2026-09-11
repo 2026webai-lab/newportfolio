@@ -159,6 +159,11 @@
   .contact-email-note{margin-top:16px;font-size:0.7rem;color:var(--text-dim);text-align:center;}
   .line-qr{width:220px;max-width:70%;height:auto;border-radius:12px;background:#fff;padding:14px;
      border:1px solid var(--line);}
+  .qr-row{display:flex;justify-content:center;align-items:flex-start;gap:36px;flex-wrap:wrap;}
+  .qr-card{display:flex;flex-direction:column;align-items:center;gap:12px;}
+  .qr-img{width:200px;max-width:60vw;height:auto;border-radius:12px;background:#fff;padding:14px;
+     border:1px solid var(--line);}
+  .qr-label{font-size:0.8rem;color:var(--text-dim);letter-spacing:0.03em;}
   footer{padding:40px 0;text-align:center;font-size:0.72rem;color:var(--text-dim);letter-spacing:0.05em;}
 
   @media (max-width:760px){
@@ -512,10 +517,20 @@
 <section id="line" style="border-bottom:none;">
   <div class="wrap">
     <div class="contact-box">
-      <h2 data-i18n="lineTitle">公式LINE</h2>
-      <p data-i18n="lineP">QRコードを読み取って、公式LINEからもお気軽にお問い合わせいただけます。</p>
-      <img src="./kousikil.png" alt="公式LINE QRコード" class="line-qr"
-           onerror="this.onerror=null;this.replaceWith(Object.assign(document.createElement('div'),{className:'media-fallback',textContent:'画像を読み込めません（image/kousikil.png）'}));">
+      <h2 data-i18n="lineTitle">公式LINE・WhatsApp</h2>
+      <p data-i18n="lineP">QRコードを読み取って、公式LINEまたはWhatsAppビジネスアカウントからもお気軽にお問い合わせいただけます。</p>
+      <div class="qr-row">
+        <div class="qr-card">
+          <img src="./kousikil.png" alt="公式LINE QRコード" class="qr-img"
+               onerror="this.onerror=null;this.replaceWith(Object.assign(document.createElement('div'),{className:'media-fallback',textContent:'画像を読み込めません（image/kousikil.png）'}));">
+          <div class="qr-label" data-i18n="lineQrLabel">公式LINE</div>
+        </div>
+        <div class="qr-card">
+          <img src="./whatsapp.png" alt="WhatsAppビジネスアカウント QRコード" class="qr-img"
+               onerror="this.onerror=null;this.replaceWith(Object.assign(document.createElement('div'),{className:'media-fallback',textContent:'画像を読み込めません（image/whatsapp.png）'}));">
+          <div class="qr-label" data-i18n="whatsappQrLabel">WhatsAppビジネス</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -610,8 +625,10 @@ const I18N = {
     faq2q:"フルリモートでの稼働実績が中心ですが、出社や常駐勤務は可能ですか？", faq2a:"はい、業務内容や貴社の運用に応じて柔軟に対応可能です。稼働形態の詳細は面談時にご相談させてください。",
     faq3q:"フリーランス経験が中心ですが、チームでの業務経験はありますか？", faq3a:"フリーランスとして案件を進める中で、クライアント企業のご担当者様やチームと連携しながら、進行管理・共同作業を継続的に行ってきました。",
     contactTitle:"お問い合わせ",
-    lineTitle:"公式LINE",
-    lineP:"QRコードを読み取って、公式LINEからもお気軽にお問い合わせいただけます。",
+    lineTitle:"公式LINE・WhatsApp",
+    lineP:"QRコードを読み取って、公式LINEまたはWhatsAppビジネスアカウントからもお気軽にお問い合わせいただけます。",
+    lineQrLabel:"公式LINE",
+    whatsappQrLabel:"WhatsAppビジネス",
     contactP:"ご質問・ご依頼など、お気軽に以下のフォームからお問い合わせください。送信ボタンを押すと、お使いのメールソフトが起動します。",
     contactNameLabel:"お名前",
     contactEmailLabel:"メールアドレス",
@@ -678,8 +695,10 @@ const I18N = {
     faq2q:"Your track record is mainly fully remote — are you open to in-office or on-site work?", faq2a:"Yes, I can adapt flexibly depending on the role and your company's setup. I'm happy to discuss working arrangements in more detail during an interview.",
     faq3q:"Your experience is mainly freelance — do you have experience working within a team?", faq3a:"While working as a freelancer, I've consistently collaborated with client-side teams and stakeholders on project management and joint work.",
     contactTitle:"Contact",
-    lineTitle:"Official LINE",
-    lineP:"Scan the QR code to reach out via our official LINE account as well.",
+    lineTitle:"Official LINE & WhatsApp",
+    lineP:"Scan the QR code to reach out via our official LINE account or WhatsApp Business account as well.",
+    lineQrLabel:"Official LINE",
+    whatsappQrLabel:"WhatsApp Business",
     contactP:"For any questions or requests, please feel free to reach out using the form below. Submitting will open your email client with the message pre-filled.",
     contactNameLabel:"Name",
     contactEmailLabel:"Email address",
