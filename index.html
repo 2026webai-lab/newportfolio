@@ -86,6 +86,25 @@
      position:relative;z-index:1;}
   .skill-card h3{font-size:1rem;font-weight:700;margin-bottom:10px;position:relative;z-index:1;}
   .skill-card p{font-size:0.82rem;color:var(--text-dim);position:relative;z-index:1;line-height:1.7;}
+  .skill-img-wrap{margin-top:18px;border-radius:8px;overflow:hidden;position:relative;z-index:1;
+     border:1px solid var(--line);}
+  .skill-img-wrap img{width:100%;display:block;cursor:zoom-in;transition:transform .45s ease;}
+  .skill-img-wrap:hover img{transform:scale(1.08);}
+  .skill-img-wrap img.skill-img-en{display:none;}
+  html[lang="en"] .skill-img-wrap img.skill-img-ja{display:none;}
+  html[lang="en"] .skill-img-wrap img.skill-img-en{display:block;}
+
+  /* lightbox (click any image to view larger) */
+  .work-media img, .work-media-split img, .qr-img{cursor:zoom-in;}
+  .lightbox-overlay{position:fixed;inset:0;background:rgba(2,2,8,0.92);z-index:1000;
+     display:none;align-items:center;justify-content:center;padding:32px;backdrop-filter:blur(4px);}
+  .lightbox-overlay.is-open{display:flex;}
+  .lightbox-overlay img{max-width:90vw;max-height:88vh;border-radius:8px;
+     box-shadow:0 20px 60px rgba(0,0,0,0.6);}
+  .lightbox-close{position:absolute;top:22px;right:28px;width:42px;height:42px;border-radius:50%;
+     background:var(--surface);border:1px solid var(--line);color:var(--text);font-size:1.1rem;
+     cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .2s,color .2s;}
+  .lightbox-close:hover{border-color:var(--accent);color:var(--accent);}
 
   /* works */
   .work-item{display:grid;grid-template-columns:280px 1fr;gap:28px;padding:32px 0;border-bottom:1px solid var(--line);align-items:start;}
@@ -227,31 +246,55 @@
         <div class="tag mono">SEO</div>
         <h3 data-i18n="skill1h">SEOブログ戦略</h3>
         <p data-i18n="skill1p">「検索されない」を終わらせる。キーワード選定から競合分析、リライト構成案まで一気通貫。実際にアクセスが伸びた設計思想をそのまま提供します。</p>
+        <div class="skill-img-wrap">
+          <img src="./seo.png" alt="SEOブログ戦略" class="skill-img-ja">
+          <img src="./seoa.png" alt="SEO Blog Strategy" class="skill-img-en">
+        </div>
       </div>
       <div class="skill-card">
         <div class="tag mono">LP / WEB</div>
         <h3 data-i18n="skill2h">LP・Web改善</h3>
         <p data-i18n="skill2p">アクセスはあるのに成果が出ない、その原因を数値で特定。ユーザー導線(FV/CTA)を再設計し、Figmaでのワイヤーフレーム作成まで一貫対応します。</p>
+        <div class="skill-img-wrap">
+          <img src="./lpweb.png" alt="LP・Web改善" class="skill-img-ja">
+          <img src="./lpweba.png" alt="LP・Web Optimization" class="skill-img-en">
+        </div>
       </div>
       <div class="skill-card">
         <div class="tag mono">SNS</div>
         <h3 data-i18n="skill3h">SNS運用代行</h3>
         <p data-i18n="skill3p">フォロワーではなく、届く投稿を。Instagram実運用で培った設計・分析ノウハウをもとに、継続的に伸びる仕組みを構築します。</p>
+        <div class="skill-img-wrap">
+          <img src="./sns.png" alt="SNS運用代行" class="skill-img-ja">
+          <img src="./snsa.png" alt="SNS Management Service" class="skill-img-en">
+        </div>
       </div>
       <div class="skill-card">
         <div class="tag mono">AI</div>
         <h3 data-i18n="skill4h">AIコンサルティング</h3>
         <p data-i18n="skill4p">「AIを使いたいが何から」に答えます。業務のどこに組み込めば効果が出るかを見極め、実装まで自分の手で仕上げます。</p>
+        <div class="skill-img-wrap">
+          <img src="./ai.png" alt="AIコンサルティング" class="skill-img-ja">
+          <img src="./aia.png" alt="AI Consulting" class="skill-img-en">
+        </div>
       </div>
       <div class="skill-card">
         <div class="tag mono">JP ⇄</div>
         <h3 data-i18n="skill5h">ネイティブ日本語翻訳</h3>
         <p data-i18n="skill5p">翻訳臭さのない、自然な日本語に。ローカライズと日本語コーチングの両面から、伝わる言葉に仕上げます。</p>
+        <div class="skill-img-wrap">
+          <img src="./jp.png" alt="ネイティブ日本語翻訳" class="skill-img-ja">
+          <img src="./jpa.png" alt="Translation & Japanese Coaching" class="skill-img-en">
+        </div>
       </div>
       <div class="skill-card">
         <div class="tag mono">DEV</div>
         <h3 data-i18n="skill6h">フロントエンド実装</h3>
         <p data-i18n="skill6p">アイデアを形にするまで、外注ゼロ。HTML/CSS/JS、Python(画像処理・データ処理)を用いた高度な演出・作品制作も自力で完結します。</p>
+        <div class="skill-img-wrap">
+          <img src="./dev.png" alt="フロントエンド実装" class="skill-img-ja">
+          <img src="./deva.png" alt="Front-end Development" class="skill-img-en">
+        </div>
       </div>
     </div>
   </div>
@@ -596,6 +639,12 @@
   <div class="wrap mono">ATLAS TO PARADISE — 楽園への古地図 © 2026 HATTORI ICHIDAI</div>
 </footer>
 
+
+<div class="lightbox-overlay" id="lightbox-overlay">
+  <div class="lightbox-close" id="lightbox-close">✕</div>
+  <img id="lightbox-img" src="" alt="拡大画像">
+</div>
+
 <script>
 const I18N = {
   ja:{
@@ -802,6 +851,34 @@ if('IntersectionObserver' in window && revealEls.length){
 }else{
   revealEls.forEach(el=>el.classList.add('is-visible'));
 }
+
+/* lightbox: click any content image to view it enlarged */
+const lightboxOverlay = document.getElementById('lightbox-overlay');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxClose = document.getElementById('lightbox-close');
+
+function openLightbox(src, alt){
+  lightboxImg.src = src;
+  lightboxImg.alt = alt || '';
+  lightboxOverlay.classList.add('is-open');
+}
+function closeLightbox(){
+  lightboxOverlay.classList.remove('is-open');
+  lightboxImg.src = '';
+}
+
+document.querySelectorAll('.wrap img, .contact-box img').forEach(img=>{
+  if(img.id === 'lightbox-img') return;
+  img.addEventListener('click', ()=> openLightbox(img.currentSrc || img.src, img.alt));
+});
+
+lightboxClose.addEventListener('click', closeLightbox);
+lightboxOverlay.addEventListener('click', (e)=>{
+  if(e.target === lightboxOverlay) closeLightbox();
+});
+document.addEventListener('keydown', (e)=>{
+  if(e.key === 'Escape') closeLightbox();
+});
 </script>
 </body>
 </html>
