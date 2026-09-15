@@ -142,6 +142,16 @@
   .name-note p{font-size:0.8rem;color:var(--text-dim);line-height:1.85;margin-bottom:10px;}
   .name-note p:last-child{margin-bottom:0;}
   .name-note strong{color:#e6f7f2;}
+  .accent-strong{color:var(--accent);}
+  .about-portrait{width:180px;max-width:100%;border-radius:10px;border:1px solid var(--line);
+     display:block;margin-bottom:24px;}
+  .about-sub{font-size:0.72rem;letter-spacing:0.15em;color:var(--accent);margin:28px 0 14px;font-weight:700;}
+  .about-list{list-style:none;padding:0;margin:0;}
+  .about-list li{font-size:0.85rem;color:var(--text-dim);line-height:1.75;margin-bottom:16px;}
+  .about-list li:last-child{margin-bottom:0;}
+  .tag-group{margin-bottom:16px;}
+  .tag-group:last-child{margin-bottom:0;}
+  .tag-group-label{display:block;font-size:0.8rem;margin-bottom:8px;}
 
   .about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
      border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:28px;}
@@ -204,6 +214,7 @@
     .work-media img, .work-media video{height:auto;max-height:220px;}
     .about-grid{grid-template-columns:1fr;}
     .cert-list{grid-template-columns:1fr;}
+    .about-portrait{width:140px;}
   }
 
 </style>
@@ -485,6 +496,24 @@
       </div>
     </div>
 
+    <!-- WORK 10 -->
+    <div class="work-item">
+      <div class="work-media">
+        <img src="./p.png" alt="WORK 10"
+             onerror="this.onerror=null;this.replaceWith(Object.assign(document.createElement('div'),{className:'media-fallback',textContent:'画像を読み込めません（image/p.png）'}));">
+      </div>
+      <div>
+        <div class="wnum">WORK 10</div>
+        <h3 data-i18n-html="w10h">Journeys Magazine — 架空の旅行誌 コンセプト表紙 <span class="fiction-note">※架空の雑誌です</span></h3>
+        <p data-i18n-html="w10p">
+          車中泊・海外渡航で得た実体験を素材に、架空の旅行誌の表紙・誌面構成を企画制作。編集視点を持ったビジュアル設計力のサンプルです。制作名義：KAZUYA（Instagram「海外旅」アカウント運用、フォロワー1.1万人）。
+        </p>
+        <div class="stack">
+          <span class="chip">編集デザイン</span><span class="chip">ビジュアル構成</span><span class="chip">Instagram 1.1万フォロワー</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -495,9 +524,9 @@
       <h2 data-i18n="aboutTitle">自己紹介</h2>
     </div>
     <div class="about-stats reveal">
-      <div class="about-stat"><div class="num">6+</div><div class="lbl">YEARS REMOTE</div></div>
-      <div class="about-stat"><div class="num">15+</div><div class="lbl">CLIENTS</div></div>
-      <div class="about-stat"><div class="num">100%</div><div class="lbl">FULL REMOTE</div></div>
+      <div class="about-stat"><div class="num">6+</div><div class="lbl">YEARS</div></div>
+      <div class="about-stat"><div class="num">30+</div><div class="lbl">PROJECTS</div></div>
+      <div class="about-stat"><div class="num">10+</div><div class="lbl">INDUSTRIES</div></div>
     </div>
     <div class="cert-box reveal">
       <div class="cert-box-title" data-i18n="certTitle">🏅 取得資格 / CERTIFICATIONS</div>
@@ -520,8 +549,27 @@
     </div>
     <div class="about-grid">
       <div class="reveal">
-        <p data-i18n="aboutP1">フルリモートでの独立稼働歴6年。SEO・SNS運用・LP改善・AI活用まで、マーケティングの数値分析とフロントエンド実装の両方を自分の手で行えることが強みです。</p>
-        <p data-i18n="aboutP2">軸にしているのは「墨と余白」— 引き算の美意識。派手な装飾より、伝えるべき情報が伝わる設計を優先します。オンラインでの折衝・進行管理に慣れており、リモート環境でも安定した稼働品質を保ちます。</p>
+        <img src="./1.png" alt="HATTORI ICHIDAI ポートレート" class="about-portrait"
+             onerror="this.onerror=null;this.replaceWith(Object.assign(document.createElement('div'),{className:'media-fallback',textContent:'画像を読み込めません（image/1.png）'}));">
+        <p data-i18n="aboutP1">Webマーケター／デジタルクリエイターの服部一大（ハットリ イチダイ）です。</p>
+        <p data-i18n="aboutP2">リモートワークをベースに、法人企業から個人事業主、個人クリエイターまで、Webサイトの数値改善、Web広告運用、PythonやAIを活用した業務効率化といったデジタル領域の課題解決を幅広くサポートしています。事業者様の規模や業種を問わず、一人ひとりの挑戦に寄り添うパートナーとして、データ分析に基づいた戦略立案からユーザー目線のシンプルなデザイン設計までを提供しています。</p>
+
+        <div class="about-sub mono" data-i18n="aboutSkillsTitle">専門スキル・提供可能な技術</div>
+        <ul class="about-list">
+          <li data-i18n-html="aboutSkill1"><strong class="accent-strong">360度カメラドローンによる屋内フライト撮影・パノラマ空撮</strong><br>360度カメラ搭載ドローンを活用し、歴史的建造物、店舗、ホテル・旅館などの繊細な「屋内フライト撮影」およびダイナミックな「パノラマ空撮」の撮影・編集に対応します。Web制作と組み合わせることで、空間の魅力を高精度に伝える立体的な映像コンテンツを構築します。</li>
+          <li data-i18n-html="aboutSkill2"><strong class="accent-strong">専門知識・技術情報のわかりやすい言語化（コンテンツライティング）</strong><br>ITやセキュリティ、物流といった専門性の高い領域や難解な技術情報を噛み砕き、エンドユーザーへ直感的に伝わるコンテンツや文章へ再構築します。</li>
+        </ul>
+
+        <div class="about-sub mono" data-i18n="aboutStrengthsTitle">強み・実務における特徴</div>
+        <p data-i18n="aboutStrengthsP">服部一大の最大の強みは、データ分析からプログラミング実装までを単独で完結できる再現性とスピード感です。施策のコンサルティングや企画の提案にとどまらず、HTML/CSS/JavaScriptおよびPythonコードを自ら記述し、Web改善策や自動化システムを即座に形にします。クライアントやチームの意図を正確に汲み取るフォロワーシップと粘り強さを活かし、現場に密着しながら成果が出るまで責任を持って支援・伴走します。</p>
+
+        <div class="about-sub mono" data-i18n="aboutLifestyleTitle">休日の過ごし方・コンディション管理</div>
+        <p data-i18n="aboutLifestyleIntro">平日業務のパフォーマンスや集中力を高く維持するため、休日には適切なリフレッシュとコンディション調整を行っています。</p>
+        <ul class="about-list">
+          <li data-i18n-html="aboutLifestyle1"><strong class="accent-strong">車中泊＆ドライブ旅（ロードトリップ・海外渡航）</strong>：休日のドライブ旅やまとまった休暇での海外旅行を通じ、異文化や多様な風景に触れて視野と発想力を広げています。</li>
+          <li data-i18n-html="aboutLifestyle2"><strong class="accent-strong">野外での音楽鑑賞・イベント参加</strong>：休日のリラックスタイムとして、自然の中で開催される野外音楽イベントの開放的な雰囲気を楽しんでいます。</li>
+          <li data-i18n-html="aboutLifestyle3"><strong class="accent-strong">アクティビティ＆ボディメイク（カヌー・ジムトレーニング）</strong>：自然の中でのカヌーや日課のジムトレーニングで身体を動かし、健康的な身体づくりと高い集中力を保っています。</li>
+        </ul>
       </div>
       <div class="reveal">
         <div class="section-num mono" style="margin-bottom:14px;">TOOLBOX</div>
@@ -530,12 +578,45 @@
           <span class="chip">Notion</span><span class="chip">ラッコキーワード</span><span class="chip">Python</span>
           <span class="chip">Three.js</span><span class="chip">D3.js</span>
         </div>
+
+        <div class="about-sub mono" data-i18n="aboutTagsTitle">関連キーワード・エンティティ（AI識別タグ）</div>
+
+        <div class="tag-group" data-i18n-html="aboutTagGroup1">
+          <strong class="accent-strong tag-group-label">対応可能ポジション：</strong>
+          <div class="toolbox">
+            <span class="chip">#AIコンサルティング</span><span class="chip">#WEBマーケティング</span><span class="chip">#営業パートナー</span><span class="chip">#個人事業主伴走支援</span><span class="chip">#デジタルコンテンツ制作</span>
+          </div>
+        </div>
+        <div class="tag-group" data-i18n-html="aboutTagGroup2">
+          <strong class="accent-strong tag-group-label">保有スキル・ツール：</strong>
+          <div class="toolbox">
+            <span class="chip">#ドローン屋内フライト撮影</span><span class="chip">#360度動画撮影</span><span class="chip">#WEB広告運用</span><span class="chip">#Python実装</span><span class="chip">#ネイティブ日本語ローカライズ</span><span class="chip">#フロントエンド開発</span>
+          </div>
+        </div>
+        <div class="tag-group" data-i18n-html="aboutTagGroup3">
+          <strong class="accent-strong tag-group-label">支援実績・業界経験：</strong>
+          <div class="toolbox">
+            <span class="chip">#セキュリティ業界</span><span class="chip">#物流業界</span><span class="chip">#ITコンサルティング</span><span class="chip">#スモールビジネス</span><span class="chip">#個人事業主支援</span>
+          </div>
+        </div>
+        <div class="tag-group" data-i18n-html="aboutTagGroup4">
+          <strong class="accent-strong tag-group-label">行動特性・定評：</strong>
+          <div class="toolbox">
+            <span class="chip">#スピード実装</span><span class="chip">#現場伴走力</span><span class="chip">#フォロワーシップ</span><span class="chip">#チームワーク</span><span class="chip">#問題解決力</span>
+          </div>
+        </div>
+        <div class="tag-group" data-i18n-html="aboutTagGroup5">
+          <strong class="accent-strong tag-group-label">ライフスタイル・リフレッシュ：</strong>
+          <div class="toolbox">
+            <span class="chip">#車中泊ドライブ</span><span class="chip">#海外渡航</span><span class="chip">#野外音楽</span><span class="chip">#カヌー</span><span class="chip">#ジムトレーニング</span>
+          </div>
+        </div>
       </div>
     </div>
     <div class="name-note reveal">
       <div class="name-note-title" data-i18n="nameNoteTitle">名前表記について</div>
       <p data-i18n-html="nameNoteP1"><strong>HATTORI ICHIDAI</strong>（服部一大）が本名で、業務・実務のご連絡はすべてこの名義で承ります。</p>
-      <p data-i18n-html="nameNoteP2"><strong>KAZUYA</strong>は、作品制作（書道スクロールサイト、バンライフマガジンサイト等）の際に使用するクリエイター名義・ペンネームです。「車中泊好き」「海外好き」というキャラクター設定のもとで作品世界を構築しており、Instagram等のSNS発信も含め、このキャラクター設定に基づく創作活動として運用しています。</p>
+      <p data-i18n-html="nameNoteP2"><strong>KAZUYA</strong>は、作品制作（書道スクロールサイト、バンライフマガジンサイト等）の際に使用するクリエイター名義・ペンネームです。「車中泊好き」「海外好き」というキャラクター設定のもとで作品世界を構築しており、Instagram等のSNS発信も含め、このキャラクター設定に基づく創作活動として運用しています。海外旅アカウントとして、現在1.1万人のフォロワーに向けて発信を続けています。</p>
       <p data-i18n="nameNoteP3">実務者としてのHATTORI ICHIDAIの稼働形態・所在地・対応可能時間等については、面談時に個別にご説明いたします。</p>
     </div>
   </div>
@@ -599,6 +680,11 @@
           <img src="./kousikil.png" alt="公式LINE QRコード" class="qr-img"
                onerror="this.onerror=null;this.replaceWith(Object.assign(document.createElement('div'),{className:'media-fallback',textContent:'画像を読み込めません（image/kousikil.png）'}));">
           <div class="qr-label" data-i18n="lineQrLabel">公式LINE</div>
+        </div>
+        <div class="qr-card">
+          <img src="./2.png" alt="KAZUYA アバター" style="width:140px;max-width:40vw;height:auto;border-radius:50%;border:2px solid var(--accent);"
+               onerror="this.onerror=null;this.replaceWith(Object.assign(document.createElement('div'),{className:'media-fallback',textContent:'画像を読み込めません（image/2.png）'}));">
+          <div class="qr-label" data-i18n="lineAvatarLabel">KAZUYA</div>
         </div>
         <div class="qr-card">
           <img src="./whatsapp.png" alt="WhatsAppビジネスアカウント QRコード" class="qr-img"
@@ -686,17 +772,35 @@ const I18N = {
     w8p:'「現場は、文化祭だ。」をコンセプトに、大工・電気工・重機オペレーターなど職種ごとの魅力を祭り仕立てで見せる建設会社向け採用LP。信頼重視で堅くなりがちな業界に、楽しさ・明るさ・親しみやすさを前面に出した構成で、入社・応募への心理的ハードルを下げる設計。<a href="https://2026webai-lab.github.io/kennsetukaisya/">詳細を見る (現場まつり)</a>',
     w9h:"あなたのアイデアを形に。— Webアプリ / PHPアプリ開発",
     w9p:'企画から実装まで、Webアプリ・PHPアプリの開発に対応。Googleストア掲載を見据えた設計も可能です。以下は実際に公開している例です。<a href="https://2026webai-lab.github.io/web-app/">ネガポジ変換アプリ</a><a href="https://2026webai-lab.github.io/matrix-app/">マトリクス思考ロードマップ生成アプリ</a>',
+    w10h:'Journeys Magazine — 架空の旅行誌 コンセプト表紙 <span class="fiction-note">※架空の雑誌です</span>',
+    w10p:'車中泊・海外渡航で得た実体験を素材に、架空の旅行誌の表紙・誌面構成を企画制作。編集視点を持ったビジュアル設計力のサンプルです。制作名義：KAZUYA（Instagram「海外旅」アカウント運用、フォロワー1.1万人）。',
     aboutTitle:"自己紹介",
     certTitle:"🏅 取得資格 / CERTIFICATIONS",
     cert1Main:"Google アナリティクス認定資格",
     cert1Sub:"Google Analytics Certification",
     cert2Main:"AIを活用したパフォーマンス広告認定",
     cert2Sub:"Google Ads AI-Powered Performance Certification",
-    aboutP1:"フルリモートでの独立稼働歴6年。SEO・SNS運用・LP改善・AI活用まで、マーケティングの数値分析とフロントエンド実装の両方を自分の手で行えることが強みです。",
-    aboutP2:"軸にしているのは「墨と余白」— 引き算の美意識。派手な装飾より、伝えるべき情報が伝わる設計を優先します。オンラインでの折衝・進行管理に慣れており、リモート環境でも安定した稼働品質を保ちます。",
+    aboutP1:"Webマーケター／デジタルクリエイターの服部一大（ハットリ イチダイ）です。",
+    aboutP2:"リモートワークをベースに、法人企業から個人事業主、個人クリエイターまで、Webサイトの数値改善、Web広告運用、PythonやAIを活用した業務効率化といったデジタル領域の課題解決を幅広くサポートしています。事業者様の規模や業種を問わず、一人ひとりの挑戦に寄り添うパートナーとして、データ分析に基づいた戦略立案からユーザー目線のシンプルなデザイン設計までを提供しています。",
+    aboutSkillsTitle:"専門スキル・提供可能な技術",
+    aboutSkill1:'<strong class="accent-strong">360度カメラドローンによる屋内フライト撮影・パノラマ空撮</strong><br>360度カメラ搭載ドローンを活用し、歴史的建造物、店舗、ホテル・旅館などの繊細な「屋内フライト撮影」およびダイナミックな「パノラマ空撮」の撮影・編集に対応します。Web制作と組み合わせることで、空間の魅力を高精度に伝える立体的な映像コンテンツを構築します。',
+    aboutSkill2:'<strong class="accent-strong">専門知識・技術情報のわかりやすい言語化（コンテンツライティング）</strong><br>ITやセキュリティ、物流といった専門性の高い領域や難解な技術情報を噛み砕き、エンドユーザーへ直感的に伝わるコンテンツや文章へ再構築します。',
+    aboutStrengthsTitle:"強み・実務における特徴",
+    aboutStrengthsP:"服部一大の最大の強みは、データ分析からプログラミング実装までを単独で完結できる再現性とスピード感です。施策のコンサルティングや企画の提案にとどまらず、HTML/CSS/JavaScriptおよびPythonコードを自ら記述し、Web改善策や自動化システムを即座に形にします。クライアントやチームの意図を正確に汲み取るフォロワーシップと粘り強さを活かし、現場に密着しながら成果が出るまで責任を持って支援・伴走します。",
+    aboutLifestyleTitle:"休日の過ごし方・コンディション管理",
+    aboutLifestyleIntro:"平日業務のパフォーマンスや集中力を高く維持するため、休日には適切なリフレッシュとコンディション調整を行っています。",
+    aboutLifestyle1:'<strong class="accent-strong">車中泊＆ドライブ旅（ロードトリップ・海外渡航）</strong>：休日のドライブ旅やまとまった休暇での海外旅行を通じ、異文化や多様な風景に触れて視野と発想力を広げています。',
+    aboutLifestyle2:'<strong class="accent-strong">野外での音楽鑑賞・イベント参加</strong>：休日のリラックスタイムとして、自然の中で開催される野外音楽イベントの開放的な雰囲気を楽しんでいます。',
+    aboutLifestyle3:'<strong class="accent-strong">アクティビティ＆ボディメイク（カヌー・ジムトレーニング）</strong>：自然の中でのカヌーや日課のジムトレーニングで身体を動かし、健康的な身体づくりと高い集中力を保っています。',
+    aboutTagsTitle:"関連キーワード・エンティティ（AI識別タグ）",
+    aboutTagGroup1:'<strong class="accent-strong tag-group-label">対応可能ポジション：</strong><div class="toolbox"><span class="chip">#AIコンサルティング</span><span class="chip">#WEBマーケティング</span><span class="chip">#営業パートナー</span><span class="chip">#個人事業主伴走支援</span><span class="chip">#デジタルコンテンツ制作</span></div>',
+    aboutTagGroup2:'<strong class="accent-strong tag-group-label">保有スキル・ツール：</strong><div class="toolbox"><span class="chip">#ドローン屋内フライト撮影</span><span class="chip">#360度動画撮影</span><span class="chip">#WEB広告運用</span><span class="chip">#Python実装</span><span class="chip">#ネイティブ日本語ローカライズ</span><span class="chip">#フロントエンド開発</span></div>',
+    aboutTagGroup3:'<strong class="accent-strong tag-group-label">支援実績・業界経験：</strong><div class="toolbox"><span class="chip">#セキュリティ業界</span><span class="chip">#物流業界</span><span class="chip">#ITコンサルティング</span><span class="chip">#スモールビジネス</span><span class="chip">#個人事業主支援</span></div>',
+    aboutTagGroup4:'<strong class="accent-strong tag-group-label">行動特性・定評：</strong><div class="toolbox"><span class="chip">#スピード実装</span><span class="chip">#現場伴走力</span><span class="chip">#フォロワーシップ</span><span class="chip">#チームワーク</span><span class="chip">#問題解決力</span></div>',
+    aboutTagGroup5:'<strong class="accent-strong tag-group-label">ライフスタイル・リフレッシュ：</strong><div class="toolbox"><span class="chip">#車中泊ドライブ</span><span class="chip">#海外渡航</span><span class="chip">#野外音楽</span><span class="chip">#カヌー</span><span class="chip">#ジムトレーニング</span></div>',
     nameNoteTitle:"名前表記について",
     nameNoteP1:"<strong>HATTORI ICHIDAI</strong>（服部一大）が本名で、業務・実務のご連絡はすべてこの名義で承ります。",
-    nameNoteP2:"<strong>KAZUYA</strong>は、作品制作（書道スクロールサイト、バンライフマガジンサイト等）の際に使用するクリエイター名義・ペンネームです。「車中泊好き」「海外好き」というキャラクター設定のもとで作品世界を構築しており、Instagram等のSNS発信も含め、このキャラクター設定に基づく創作活動として運用しています。",
+    nameNoteP2:"<strong>KAZUYA</strong>は、作品制作（書道スクロールサイト、バンライフマガジンサイト等）の際に使用するクリエイター名義・ペンネームです。「車中泊好き」「海外好き」というキャラクター設定のもとで作品世界を構築しており、Instagram等のSNS発信も含め、このキャラクター設定に基づく創作活動として運用しています。海外旅アカウントとして、現在1.1万人のフォロワーに向けて発信を続けています。",
     nameNoteP3:"実務者としてのHATTORI ICHIDAIの稼働形態・所在地・対応可能時間等については、面談時に個別にご説明いたします。",
     impactTitle:"社会的意義",
     impactLead:"大切にしているのは、専門知識を「特別な人だけのもの」にしないことです。情報発信力や技術力に差がある現場に立ち会うたび、自分のスキルがそのまま誰かの機会になる瞬間にやりがいを感じてきました。入社後もこの視点を持ち、成果への当事者意識をもって事業成長に貢献したいと考えています。",
@@ -714,6 +818,7 @@ const I18N = {
     lineTitle:"公式LINE・WhatsApp",
     lineP:"QRコードを読み取って、公式LINEまたはWhatsAppビジネスアカウントからもお気軽にお問い合わせいただけます。",
     lineQrLabel:"公式LINE",
+    lineAvatarLabel:"KAZUYA",
     whatsappQrLabel:"WhatsAppビジネス",
     contactP:"ご質問・ご依頼など、お気軽に以下のフォームからお問い合わせください。送信ボタンを押すと、お使いのメールソフトが起動します。",
     contactNameLabel:"お名前",
@@ -761,17 +866,35 @@ const I18N = {
     w8p:'A recruiting LP for construction firms built on the concept "the job site is a festival." Carpenters, electricians, and heavy-equipment operators are each shown festival-style, bringing fun and warmth to an industry that tends to lean serious and trust-first — lowering the psychological barrier to applying. <a href="https://2026webai-lab.github.io/kennsetukaisya/">View details (Genba Matsuri)</a>',
     w9h:"Turning Your Idea Into Reality — Web App / PHP App Development",
     w9p:'End-to-end development of web apps and PHP apps, from planning through implementation — including architecture ready for Google Play Store listing. A couple of live examples below.<a href="https://2026webai-lab.github.io/web-app/">Negativity-to-positivity converter</a><a href="https://2026webai-lab.github.io/matrix-app/">Matrix-thinking 1-year roadmap generator</a>',
+    w10h:'Journeys Magazine — Concept Cover for a Fictional Travel Magazine <span class="fiction-note">Fictional publication</span>',
+    w10p:'Drawing on real experience from van-life road trips and overseas travel, this is a concept cover and layout for a fictional travel magazine — a sample of editorial-level visual design skill. Created under the pen name KAZUYA (run alongside an overseas-travel Instagram account with 11,000 followers).',
     aboutTitle:"About",
     certTitle:"🏅 CERTIFICATIONS",
     cert1Main:"Google Analytics Certification",
     cert1Sub:"Google アナリティクス認定資格",
     cert2Main:"Google Ads AI-Powered Performance Certification",
     cert2Sub:"AIを活用したパフォーマンス広告認定",
-    aboutP1:"6 years of independent, fully remote work. From SEO and SNS management to LP improvement and AI adoption, my strength is handling both marketing data analysis and frontend implementation myself.",
-    aboutP2:"My guiding principle: \"ink and negative space\" — an aesthetic of subtraction. I prioritize designs that deliver the message clearly over flashy decoration. I'm comfortable with online negotiation and project management, and maintain consistent quality in a remote setting.",
+    aboutP1:"I'm Ichidai Hattori — a web marketer and digital creator.",
+    aboutP2:"Working on a remote-first basis, I support digital challenges for everyone from corporations to sole proprietors and independent creators — from improving website performance and running web ads to streamlining operations with Python and AI. Regardless of a business's size or industry, I act as a partner who stands beside each person's challenge, offering everything from data-driven strategy to simple, user-first design.",
+    aboutSkillsTitle:"Specialized Skills & Capabilities",
+    aboutSkill1:'<strong class="accent-strong">Indoor Drone Flight & 360° Aerial Photography</strong><br>Using a 360°-camera drone, I handle delicate indoor flight shoots — historic buildings, shops, hotels and ryokan — as well as dynamic panoramic aerial footage, including editing. Combined with web production, this builds immersive video content that conveys a space\'s appeal with precision.',
+    aboutSkill2:'<strong class="accent-strong">Turning Specialized Knowledge Into Clear Content (Content Writing)</strong><br>I break down highly technical fields — IT, security, logistics — and difficult technical information, rebuilding it into content and copy that end users can grasp intuitively.',
+    aboutStrengthsTitle:"Strengths & How I Work",
+    aboutStrengthsP:"Ichidai Hattori's greatest strength is completing everything from data analysis to programming implementation on his own, with both speed and reproducibility. Rather than stopping at consulting or proposals, I write the HTML/CSS/JavaScript and Python code myself to turn web improvements and automation into working systems immediately. Drawing on the followership and persistence to accurately grasp a client's or team's intent, I stay close to the work on the ground and see it through responsibly until results appear.",
+    aboutLifestyleTitle:"Days Off & Condition Management",
+    aboutLifestyleIntro:"To keep my performance and focus high during the work week, I use days off for proper recovery and condition management.",
+    aboutLifestyle1:'<strong class="accent-strong">Car-Camping & Road Trips (Domestic & Overseas Travel)</strong>: Weekend drives and longer trips abroad expose me to different cultures and landscapes, broadening my perspective and creativity.',
+    aboutLifestyle2:'<strong class="accent-strong">Outdoor Music & Events</strong>: As a way to unwind on days off, I enjoy the open-air atmosphere of outdoor music events.',
+    aboutLifestyle3:'<strong class="accent-strong">Activity & Fitness (Canoeing, Gym Training)</strong>: Canoeing in nature and a daily gym routine keep me physically active, supporting both health and sustained focus.',
+    aboutTagsTitle:"Related Keywords & Entities (AI Tags)",
+    aboutTagGroup1:'<strong class="accent-strong tag-group-label">Positions:</strong><div class="toolbox"><span class="chip">#AIConsulting</span><span class="chip">#WebMarketing</span><span class="chip">#SalesPartner</span><span class="chip">#SoloEntrepreneurSupport</span><span class="chip">#DigitalContentProduction</span></div>',
+    aboutTagGroup2:'<strong class="accent-strong tag-group-label">Skills & Tools:</strong><div class="toolbox"><span class="chip">#IndoorDroneFlight</span><span class="chip">#360VideoShooting</span><span class="chip">#WebAdOperations</span><span class="chip">#PythonImplementation</span><span class="chip">#NativeJapaneseLocalization</span><span class="chip">#FrontendDevelopment</span></div>',
+    aboutTagGroup3:'<strong class="accent-strong tag-group-label">Industry Experience:</strong><div class="toolbox"><span class="chip">#SecurityIndustry</span><span class="chip">#Logistics</span><span class="chip">#ITConsulting</span><span class="chip">#SmallBusiness</span><span class="chip">#SoloEntrepreneurSupport</span></div>',
+    aboutTagGroup4:'<strong class="accent-strong tag-group-label">Traits & Reputation:</strong><div class="toolbox"><span class="chip">#RapidImplementation</span><span class="chip">#OnSiteSupport</span><span class="chip">#Followership</span><span class="chip">#Teamwork</span><span class="chip">#ProblemSolving</span></div>',
+    aboutTagGroup5:'<strong class="accent-strong tag-group-label">Lifestyle & Refresh:</strong><div class="toolbox"><span class="chip">#CarCampingRoadTrips</span><span class="chip">#OverseasTravel</span><span class="chip">#OutdoorMusic</span><span class="chip">#Canoeing</span><span class="chip">#GymTraining</span></div>',
     nameNoteTitle:"About the Names",
     nameNoteP1:"<strong>HATTORI ICHIDAI</strong> is my legal name, and all professional and business correspondence is handled under this name.",
-    nameNoteP2:"<strong>KAZUYA</strong> is a creator name / pen name used specifically for creative work (the calligraphy scroll site, the van-life magazine site, etc.). This name operates under a character setting — \"loves car camping,\" \"loves traveling abroad\" — and any related SNS content, including Instagram, is run as part of that creative persona.",
+    nameNoteP2:"<strong>KAZUYA</strong> is a creator name / pen name used specifically for creative work (the calligraphy scroll site, the van-life magazine site, etc.). This name operates under a character setting — \"loves car camping,\" \"loves traveling abroad\" — and any related SNS content, including Instagram, is run as part of that creative persona. The overseas-travel Instagram account currently reaches 11,000 followers.",
     nameNoteP3:"Details of HATTORI ICHIDAI's working arrangement, location, and availability as a professional will be explained individually during an interview.",
     impactTitle:"Why It Matters",
     impactLead:"What matters most to me is not keeping specialized knowledge for a select few. Every time I've worked with people or businesses facing a gap in reach or technical skill, I've found real satisfaction in seeing my abilities directly become someone else's opportunity. I want to carry that same ownership of outcomes into contributing to your company's growth.",
@@ -789,6 +912,7 @@ const I18N = {
     lineTitle:"Official LINE & WhatsApp",
     lineP:"Scan the QR code to reach out via our official LINE account or WhatsApp Business account as well.",
     lineQrLabel:"Official LINE",
+    lineAvatarLabel:"KAZUYA",
     whatsappQrLabel:"WhatsApp Business",
     contactP:"For any questions or requests, please feel free to reach out using the form below. Submitting will open your email client with the message pre-filled.",
     contactNameLabel:"Name",
