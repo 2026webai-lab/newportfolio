@@ -1,0 +1,36 @@
+# HATTORI ICHIDAI（服部一大） / ATLAS TO PARADISE
+
+> 服部一大（HATTORI ICHIDAI／創作名義KAZUYA）。フルリモート6年のWebマーケター。Webコンサルティング、SEO・Webマーケティング、HP・EC制作、AI活用、セキュリティ対策と監視まで、相談から実行まで一気通貫で支援します。
+> HATTORI ICHIDAI (creative name: KAZUYA), a web marketer working fully remote for 6+ years. Web consulting, SEO and marketing, website and e-commerce development, AI adoption, security and monitoring, from consultation to execution.
+
+## Names / 名前表記
+- HATTORI ICHIDAI（服部一大）: legal name, used for all business communication / 本名・業務用の名義
+- KAZUYA: creative name for creative work and social media / 創作・SNS用のクリエイティブネーム
+
+## Services / できること
+- Web Consulting / Webコンサルティング: Consult, talk it through, meet, and execute. I work with you on your site's challenges, safety, and AI adoption, and solve them together.
+- Web Marketing / Webマーケティング: SEO, analytics (GA4), advertising, and social media management (including Instagram experience), so people can find you and get in touch.
+- Website & E-commerce Development / HP・ECサイト制作: Websites, landing pages, and e-commerce sites, plus updates and maintenance after launch.
+- Japanese Localization / 日本語ローカライズ: Turning specialized content into natural, clear Japanese.
+- AI-Powered Efficiency / AIによる業務効率化: Automating repetitive work with AI, while keeping human review in the loop.
+- Website Renewal / サイトのリニューアル: From diagnosing your current site to rebuilding it so it's easier to read and update.
+
+## Key pages
+- [Top](https://2026webai-lab.github.io/newportfolio/): profile, services, security, FAQ, contact
+- [All works](https://2026webai-lab.github.io/newportfolio/works.html)
+- [Updates](https://2026webai-lab.github.io/newportfolio/news.html)
+
+## Featured works
+- [ATLAS TO PARADISE](https://2026webai-lab.github.io/3DLP/): Descend into the world, one scroll at a time.
+- [Idea Toy Box](https://2026webai-lab.github.io/RETRO-WORKSHOP/): Take your ideas out of the box.
+- [MAKE A WISH](https://2026webai-lab.github.io/MAKE-A-WISH/): Give shape to a wish under the night sky.
+- [TABITOKI MARKET](https://2026webai-lab.github.io/newportfolio/works.html#ec-tabitoki): A travel e-commerce site for Japan-made travel goods. It includes JA/EN and JPY/USD switching, member registration, and an admin panel linked to stock.
+- [C.C.Donuts](https://2026webai-lab.github.io/newportfolio/works.html#ec-ccdonuts): A shopping site for a donut shop, with login, a cart, favorites, search, and order confirmation.
+
+## Notes
+- E-commerce sites (TABITOKI MARKET, C.C.Donuts) are fictional demo sites built for practice and proposals; no real payments occur.
+- Security measures are described only at a high level on purpose.
+
+## Contact
+- Email: 2026webai@gmail.com
+- Last updated: 2026-10-23
