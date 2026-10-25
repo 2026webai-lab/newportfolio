@@ -1,0 +1,328 @@
+{
+  "_readme": "このファイルを書き換えて build.py を実行すると、サイト全体が更新されます。日本語は ja、英語は en。**太字** は色付きの強調、\\n は改行です。",
+
+  "site": {
+    "baseUrl": "https://2026webai-lab.github.io/newportfolio/",
+    "brand": "ATLAS TO PARADISE",
+    "brandSub": { "ja": "楽園への古地図", "en": "A Map to Paradise" },
+    "personJa": "服部一大",
+    "personEn": "HATTORI ICHIDAI",
+    "alternateName": "KAZUYA",
+    "email": "2026webai@gmail.com",
+    "title": {
+      "ja": "HATTORI ICHIDAI（服部一大） | Webコンサルティング・Webマーケティング・セキュリティ",
+      "en": "HATTORI ICHIDAI | Web Consulting, Web Marketing & Security"
+    },
+    "description": {
+      "ja": "服部一大（HATTORI ICHIDAI／創作名義KAZUYA）。フルリモート6年のWebマーケター。Webコンサルティング、SEO・Webマーケティング、HP・EC制作、AI活用、セキュリティ対策と監視まで、相談から実行まで一気通貫で支援します。",
+      "en": "HATTORI ICHIDAI (creative name: KAZUYA), a web marketer working fully remote for 6+ years. Web consulting, SEO and marketing, website and e-commerce development, AI adoption, security and monitoring, from consultation to execution."
+    },
+    "ogImage": "assets/img/og.jpg",
+    "photo": "assets/img/1.jpg",
+    "icon": "assets/img/kazuya-icon.jpg",
+    "qrLine": "assets/img/kousikil.png",
+    "qrWhatsapp": "assets/img/whatsapp.png",
+    "sameAs": []
+  },
+
+  "nav": [
+    { "href": "#latest",   "label": { "ja": "最新作",       "en": "Latest" } },
+    { "href": "#security", "label": { "ja": "セキュリティ", "en": "Security" } },
+    { "href": "#services", "label": { "ja": "できること",   "en": "Services" } },
+    { "href": "#archive",  "label": { "ja": "過去の実績",   "en": "Archive" } },
+    { "href": "#about",    "label": { "ja": "自己紹介",     "en": "About" } }
+  ],
+
+  "hero": {
+    "eyebrow": { "ja": "HATTORI ICHIDAI — WEB MARKETER / CREATOR", "en": "HATTORI ICHIDAI — WEB MARKETER / CREATOR" },
+    "title": {
+      "ja": "データと美意識で、\n事業の**伸びしろ**を形にする。",
+      "en": "Turning data and design sense\ninto room for your **business to grow.**"
+    },
+    "lead": {
+      "ja": "Web改善・SEO・AI活用、そしてセキュリティまで。分析から実装、見守りまで一気通貫で支援します。",
+      "en": "Web improvement, SEO, AI adoption, and security. I support you from analysis to implementation and monitoring, end to end."
+    },
+    "ctaPrimary":   { "ja": "相談する",     "en": "Get in touch" },
+    "ctaSecondary": { "ja": "実績を見る",   "en": "View my work" },
+    "statusLabel":  { "ja": "最終更新",     "en": "Last updated" },
+    "statusActive": { "ja": "活動中",       "en": "Active" }
+  },
+
+  "stats": [
+    { "value": "6+",  "label": { "ja": "年の実務",     "en": "years of experience" } },
+    { "value": "30+", "label": { "ja": "プロジェクト", "en": "projects" } },
+    { "value": "10+", "label": { "ja": "対応業種",     "en": "industries" } }
+  ],
+  "certs": [
+    { "ja": "Google アナリティクス認定資格",     "en": "Google Analytics Certification" },
+    { "ja": "AIを活用したパフォーマンス広告認定", "en": "Google Ads AI-Powered Performance Certification" }
+  ],
+
+  "sections": {
+    "latest": {
+      "eyebrow": "LATEST WORKS",
+      "title": { "ja": "最新作｜体験型LPシリーズ", "en": "Latest Works: Experience-driven LP series" },
+      "lead":  { "ja": "スクロールで世界観を体験できるLPを3作品。いずれも自主制作のデモです。", "en": "Three landing pages you experience by scrolling. All are self-initiated demos." },
+      "more":  { "ja": "過去の実績へ", "en": "See past works" },
+      "open":  { "ja": "体験する", "en": "Experience it" }
+    },
+    "security": {
+      "eyebrow": "SECURITY",
+      "title": { "ja": "安心して任せられる、セキュリティと見守り", "en": "Security and monitoring you can rely on" },
+      "lead":  { "ja": "個人情報の流出が続く今、サイトは作って終わりにできません。安全に保ち、異変に早く気づける体制づくりまで、対応可能です。", "en": "With personal-data leaks in the news, a website can't be \"built and forgotten.\" I can help keep your site safe and set up a way to notice problems early." },
+      "available": { "ja": "対応可能", "en": "Available" },
+      "stepsTitle": { "ja": "守りの進め方", "en": "How we work" },
+      "stepsLead":  { "ja": "土台は、サイトを最新の状態に保つこと。そのうえで、防御と見守りを重ねます。", "en": "The foundation is keeping your site up to date. On top of that, defenses and monitoring are layered." },
+      "tiersTitle": { "ja": "サイトの規模に合わせて、見守りの深さを選べます", "en": "Choose the depth of monitoring by site size" },
+      "closing":    { "ja": "「入れて終わり」ではなく、設定から報告までをセットで行います。", "en": "Not \"install and done.\" I handle everything from setup to reporting as a set." },
+      "note":       { "ja": "対策の中身は公開していません。範囲と進め方は、お打ち合わせで決めます。", "en": "The details of these measures are not published. Scope and approach are decided in a meeting." },
+      "cta":        { "ja": "安全面を相談する", "en": "Discuss security" },
+      "items": [
+        { "no": "01", "title": { "ja": "セキュリティ対策", "en": "Security measures" }, "text": { "ja": "サイト・サーバーの安全面を点検し、対策を設計", "en": "Check site and server safety, then design the right measures" } },
+        { "no": "02", "title": { "ja": "監視システム",     "en": "Monitoring" },        "text": { "ja": "異変に早く気づける見守りの仕組み",           "en": "A watchful system that notices anomalies early" } },
+        { "no": "03", "title": { "ja": "万一のときの対応", "en": "Incident response" }, "text": { "ja": "切り分け・復旧・再発防止",                   "en": "Isolating the cause, recovery, and preventing recurrence" } }
+      ],
+      "steps": [
+        { "title": { "ja": "現状の棚卸し", "en": "Inventory" },            "text": { "ja": "何がどう動いているかを、まず正確に把握します。", "en": "Understand exactly what is running and how." } },
+        { "title": { "ja": "緊急の手当て", "en": "Emergency measures" },   "text": { "ja": "いま必要な対処を、優先順位をつけて行います。",   "en": "Carry out the fixes you need now, in priority order." } },
+        { "title": { "ja": "守りの設計",   "en": "Defense design" },       "text": { "ja": "サイトに合わせて、多層の防御を組み立てます。",   "en": "Build layered defenses to fit your site." } },
+        { "title": { "ja": "見守りと調整", "en": "Monitoring & tuning" },  "text": { "ja": "異変に早く気づける仕組みを入れ、精度も整えます。", "en": "Set things up so problems are noticed early, and fine-tune accuracy." } },
+        { "title": { "ja": "報告と改善",   "en": "Reporting & improvement" }, "text": { "ja": "状況をお伝えし、続けて良くしていきます。",     "en": "Report the status and keep improving." } }
+      ],
+      "tiers": [
+        { "title": { "ja": "個人・小規模サイト",     "en": "Individuals and small sites" },             "text": { "ja": "定期的な確認と、月ごとの報告。",                                         "en": "Regular checks and monthly reports." } },
+        { "title": { "ja": "中小企業・複数サイト",   "en": "Small and mid-sized businesses, multi-site" }, "text": { "ja": "自動の点検と、月ごとのレポート。",                                       "en": "Automated checks and monthly reports." } },
+        { "title": { "ja": "重要サイト・EC・予約",   "en": "Critical sites, e-commerce, booking" },     "text": { "ja": "ご契約内容に応じて、緊急時の連絡体制を含む手厚い見守りに対応します。", "en": "In-depth monitoring, including an emergency contact system, depending on your contract." } }
+      ]
+    },
+    "services": {
+      "eyebrow": "SERVICES",
+      "title": { "ja": "依頼できること", "en": "Services" }
+    },
+    "ec": {
+      "eyebrow": "E-COMMERCE",
+      "title": { "ja": "ECサイト制作", "en": "E-commerce development" },
+      "lead":  { "ja": "会員登録・ログイン・カート・注文までを備えたECサイトを2作品。どちらもPHPとSQLで構成した架空のデモサイトで、演習・ご提案用です。ECはお客様の個人情報を預かるため、安全面まで含めて設計します（対策の中身は公開していません）。", "en": "Two e-commerce sites with member registration, login, a cart, and ordering. Both are fictional demo sites built with PHP and SQL, made for practice and proposals. Because e-commerce handles customers' personal data, I design with security in mind (details are not published)." },
+      "fictional": { "ja": "架空のデモサイト", "en": "Fictional demo site" },
+      "safety":    { "ja": "安全面", "en": "Safety" },
+      "preparing": { "ja": "デモ：準備中（サーバーの更新後に公開）", "en": "Demo: coming soon (published after the server update)" },
+      "openDemo":  { "ja": "デモを見る", "en": "View the demo" }
+    },
+    "archive": {
+      "eyebrow": "ARCHIVE",
+      "title": { "ja": "過去の実績", "en": "Past works" },
+      "lead":  { "ja": "これまでに制作した作品の一覧です。カテゴリで絞り込めます。", "en": "A list of what I've built so far. You can filter by category." },
+      "all":   { "ja": "すべての実績を一覧で見る", "en": "View all works" },
+      "view":  { "ja": "見る", "en": "View" },
+      "hoursPrefix": { "ja": "制作 ", "en": "" },
+      "hoursSuffix": { "ja": "時間", "en": " hours" },
+      "topCount": 6
+    },
+    "process": {
+      "eyebrow": "PROCESS",
+      "title": { "ja": "仕事の進め方", "en": "Process" },
+      "items": [
+        { "title": { "ja": "聞く",     "en": "Listen" }, "text": { "ja": "内容が固まっていなくて大丈夫です。まず、作りたいものを聞かせてください。", "en": "It's fine if your ideas aren't settled yet. Start by telling me what you want to make." } },
+        { "title": { "ja": "形にする", "en": "Shape" },  "text": { "ja": "企画からデザイン・実装まで、一貫して進めます。",                         "en": "From planning through design and implementation, I handle it end to end." } },
+        { "title": { "ja": "育てる",   "en": "Grow" },   "text": { "ja": "公開後も、数字を見ながら改善と保守を続けます。",                         "en": "After launch, I keep improving and maintaining the site while watching the numbers." } }
+      ]
+    },
+    "about": {
+      "eyebrow": "ABOUT",
+      "title": { "ja": "自己紹介", "en": "About" },
+      "paragraphs": [
+        { "ja": "Webマーケター／デジタルクリエイターの服部一大（ハットリ イチダイ）です。リモートワークをベースに、法人から個人事業主、個人クリエイターまで、Webサイトの数値改善、Web広告運用、PythonやAIを活用した業務効率化を支援しています。", "en": "I'm HATTORI ICHIDAI, a web marketer and digital creator. Working remotely, I support corporations, sole proprietors, and individual creators with improving website performance, running web advertising, and streamlining work with Python and AI." },
+        { "ja": "データ分析からプログラミング実装までを、一人で完結できることが強みです。提案だけで終わらず、成果が出るまで伴走します。", "en": "My strength is carrying everything, from data analysis to programming, on my own. I don't stop at proposals. I stay with you until results appear." }
+      ],
+      "areas": { "ja": "対応分野：Web改善 / SEO / AI活用 / EC・LP制作 / SNS運用 / 日本語ローカライズ", "en": "Areas: Web improvement / SEO / AI adoption / E-commerce & LP development / Social media management / Japanese localization" },
+      "namesTitle": { "ja": "名前表記について", "en": "About my names" },
+      "namesText":  { "ja": "**HATTORI ICHIDAI（服部一大）**が本名で、業務のご連絡はすべてこの名義で承ります。**KAZUYA**は、創作活動やSNS運用で使うクリエイティブネームです。", "en": "**HATTORI ICHIDAI** is my legal name, and I handle all business communication under it. **KAZUYA** is a creative name I use for creative work and social media." },
+      "photoAlt": { "ja": "服部一大のポートレート", "en": "Portrait of HATTORI ICHIDAI" },
+      "iconAlt":  { "ja": "KAZUYAのアイコン", "en": "KAZUYA's avatar" }
+    },
+    "notes": {
+      "eyebrow": "NOTES",
+      "title": { "ja": "更新履歴・困りごと相談", "en": "Updates & consultations" },
+      "lead":  { "ja": "いま取り組んでいる更新と、最近よくいただく困りごとを、日付つきで載せています。解決方法は載せず、ご相談の中で一緒に実行します。", "en": "What I'm working on now, and the troubles I hear about most often, with dates. I don't publish the solutions here. We work through them together in a consultation." },
+      "troublesTitle": { "ja": "こんな困りごと、ご相談ください", "en": "Troubles we can help with" },
+      "troublesFlow":  { "ja": "相談 → お打ち合わせ → 実行まで、一緒に進めます。", "en": "Consult, meet, then execute. I work through it with you." },
+      "troubles": [
+        { "ja": "サイトが勝手に書き換えられた・見覚えのない表示が出る", "en": "My site was tampered with, or I see displays I don't recognize" },
+        { "ja": "会員・注文の個人情報が漏れないか不安",                 "en": "I'm worried about leaking members' or customers' personal data" },
+        { "ja": "問い合わせが来ない・検索で見つからない",               "en": "I get no inquiries, and I can't be found in search" },
+        { "ja": "AIを仕事に入れたいが、何から始める？",                 "en": "I want to use AI in my work, but I don't know where to start" }
+      ],
+      "types": { "update": { "ja": "更新", "en": "Update" }, "trouble": { "ja": "困りごと", "en": "Trouble" } },
+      "all":  { "ja": "更新履歴をすべて見る", "en": "See all updates" },
+      "band": 3
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": { "ja": "よくある質問", "en": "FAQ" }
+    },
+    "contact": {
+      "eyebrow": "CONTACT",
+      "title": { "ja": "作りたいものを、聞かせてください。", "en": "Tell me what you want to make." },
+      "lead":  { "ja": "個人・個人事業主・企業、どなたでも。遠方からもリモートで対応します。送信ボタンを押すと、お使いのメールソフトが起動します。", "en": "Individuals, sole proprietors, or companies, anyone is welcome. I work remotely, so distance isn't a problem. Pressing Send opens your email app." },
+      "qrTitle": { "ja": "公式LINE・WhatsAppからもご連絡いただけます", "en": "You can also reach me on LINE or WhatsApp" },
+      "lineLabel": { "ja": "公式LINE", "en": "Official LINE" },
+      "waLabel":   { "ja": "WhatsAppビジネス", "en": "WhatsApp Business" },
+      "qrMissing": { "ja": "QR画像を assets/img/ に置くと表示されます", "en": "Place the QR image in assets/img/ to show it" },
+      "form": {
+        "name":    { "ja": "お名前", "en": "Name" },
+        "email":   { "ja": "メールアドレス", "en": "Email" },
+        "topic":   { "ja": "ご相談内容", "en": "Topic" },
+        "message": { "ja": "お問い合わせ内容", "en": "Message" },
+        "send":    { "ja": "メールで送る", "en": "Send by email" },
+        "topics": [
+          { "ja": "Webコンサルティング",   "en": "Web consulting" },
+          { "ja": "Webマーケティング",     "en": "Web marketing" },
+          { "ja": "HP・ECサイト制作",      "en": "Website / e-commerce development" },
+          { "ja": "セキュリティ・見守り",  "en": "Security & monitoring" },
+          { "ja": "AI活用・業務効率化",    "en": "AI adoption" },
+          { "ja": "その他",                "en": "Other" }
+        ],
+        "subjectPrefix": { "ja": "【ポートフォリオから】", "en": "[From your portfolio] " }
+      }
+    }
+  },
+
+  "labels": {
+    "skip":  { "ja": "本文へ移動", "en": "Skip to content" },
+    "menu":  { "ja": "メニュー", "en": "Menu" },
+    "backTop": { "ja": "トップへ戻る", "en": "Back to top" },
+    "langGroup": { "ja": "言語切り替え", "en": "Language" },
+    "worksPageTitle": { "ja": "すべての実績", "en": "All works" },
+    "worksPageLead":   { "ja": "これまでに制作した作品の一覧です。カテゴリで絞り込めます。", "en": "Everything I've built so far. Filter by category." },
+    "newsPageTitle":  { "ja": "更新履歴", "en": "Updates" },
+    "newsPageLead":    { "ja": "サイトの更新と、困りごとの見出しを日付順に載せています。", "en": "Site updates and consultation topics, in date order." },
+    "filterAll": { "ja": "すべて", "en": "All" },
+    "back": { "ja": "← トップへ", "en": "← Back to top page" }
+  },
+
+  "categories": [
+    { "id": "lp3d",     "label": { "ja": "3D体験LP",   "en": "3D Experience LP" } },
+    { "id": "ec",       "label": { "ja": "ECサイト",   "en": "E-commerce" } },
+    { "id": "site",     "label": { "ja": "サイト制作", "en": "Websites" } },
+    { "id": "lp",       "label": { "ja": "LP",         "en": "LP" } },
+    { "id": "app",      "label": { "ja": "アプリ",     "en": "Apps" } },
+    { "id": "creative", "label": { "ja": "創作",       "en": "Creative" } }
+  ],
+
+  "services": [
+    { "lead": true,  "no": "01", "title": { "ja": "Webコンサルティング", "en": "Web Consulting" }, "text": { "ja": "相談 → カウンセリング → 打ち合わせ → 実行。サイトの課題、安全面、AI導入まで、困りごとを一緒に解決します。", "en": "Consult, talk it through, meet, and execute. I work with you on your site's challenges, safety, and AI adoption, and solve them together." }, "cta": { "ja": "まず相談する", "en": "Start with a consultation" } },
+    { "lead": true,  "no": "02", "title": { "ja": "Webマーケティング", "en": "Web Marketing" }, "text": { "ja": "SEO・アクセス解析（GA4）・広告運用・SNS運用（Instagram運用の経験あり）で、見つけてもらい、問い合わせにつなげます。", "en": "SEO, analytics (GA4), advertising, and social media management (including Instagram experience), so people can find you and get in touch." }, "cta": { "ja": "集客を相談する", "en": "Talk about attracting customers" } },
+    { "lead": false, "no": "03", "title": { "ja": "HP・ECサイト制作", "en": "Website & E-commerce Development" }, "text": { "ja": "HP・LP・ECの制作と、公開後の更新・保守まで。", "en": "Websites, landing pages, and e-commerce sites, plus updates and maintenance after launch." } },
+    { "lead": false, "no": "04", "title": { "ja": "日本語ローカライズ", "en": "Japanese Localization" }, "text": { "ja": "専門的な内容を、伝わる自然な日本語に。", "en": "Turning specialized content into natural, clear Japanese." } },
+    { "lead": false, "no": "05", "title": { "ja": "AIによる業務効率化", "en": "AI-Powered Efficiency" }, "text": { "ja": "繰り返し作業をAIで自動化。人の確認は残します。", "en": "Automating repetitive work with AI, while keeping human review in the loop." } },
+    { "lead": false, "no": "06", "title": { "ja": "サイトのリニューアル", "en": "Website Renewal" }, "text": { "ja": "現状診断から、更新しやすい形へ作り直します。", "en": "From diagnosing your current site to rebuilding it so it's easier to read and update." } }
+  ],
+
+  "works": [
+    { "id": "lp-atlas",  "cat": "lp3d", "latest": true, "hours": 6, "img": "assets/img/lp-atlas.jpg",
+      "title": { "ja": "ATLAS TO PARADISE", "en": "ATLAS TO PARADISE" },
+      "summary": { "ja": "世界の奥へ降りていく、没入体験。", "en": "Descend into the world, one scroll at a time." },
+      "url": "https://2026webai-lab.github.io/3DLP/" },
+    { "id": "lp-toybox", "cat": "lp3d", "latest": true, "hours": 1, "img": "assets/img/lp-toybox.jpg",
+      "title": { "ja": "アイデアのおもちゃ箱", "en": "Idea Toy Box" },
+      "summary": { "ja": "アイデアを、箱から取り出す体験。", "en": "Take your ideas out of the box." },
+      "url": "https://2026webai-lab.github.io/RETRO-WORKSHOP/" },
+    { "id": "lp-wish",   "cat": "lp3d", "latest": true, "hours": 1, "img": "assets/img/lp-wish.jpg",
+      "title": { "ja": "MAKE A WISH", "en": "MAKE A WISH" },
+      "summary": { "ja": "願いを、夜空の下で形にする体験。", "en": "Give shape to a wish under the night sky." },
+      "url": "https://2026webai-lab.github.io/MAKE-A-WISH/" },
+
+    { "id": "ec-tabitoki", "cat": "ec", "ecCard": true, "hours": 6, "img": "assets/img/ec-tabitoki.jpg",
+      "title": { "ja": "TABITOKI MARKET", "en": "TABITOKI MARKET" },
+      "summary": { "ja": "日本発のトラベル用品を集めた旅行EC。日英・円/ドル切替、会員登録、在庫連動の管理画面まで実装しています。", "en": "A travel e-commerce site for Japan-made travel goods. It includes JA/EN and JPY/USD switching, member registration, and an admin panel linked to stock." },
+      "safety": { "ja": "カード番号を扱わないデモ決済", "en": "Demo checkout, no card numbers are handled" },
+      "tech": "PHP / MySQL",
+      "demoUrl": "http://localhost/tabitoki-site/", "demoLive": false,
+      "url": "" },
+    { "id": "ec-ccdonuts", "cat": "ec", "ecCard": true, "hours": 6, "img": "assets/img/ec-ccdonuts.jpg",
+      "title": { "ja": "C.C.Donuts", "en": "C.C.Donuts" },
+      "summary": { "ja": "ドーナツ店のショッピングサイト。ログイン、カート、お気に入り、検索、購入確認までの一連の流れを実装しています。", "en": "A shopping site for a donut shop, with login, a cart, favorites, search, and order confirmation." },
+      "safety": { "ja": "購入確認までのデモで、実際の決済は行いません", "en": "A demo that ends at order confirmation; no real payment is processed" },
+      "tech": "PHP / MySQL",
+      "demoUrl": "http://localhost/ccdonuts", "demoLive": false,
+      "url": "" },
+
+    { "id": "w-reform", "cat": "site", "top": true, "hours": 30,
+      "title": { "ja": "リフォーム会社のご提案用サイト", "en": "Renovation company proposal site" },
+      "summary": { "ja": "「見る→信頼する→相談する」の導線を軸にした提案用サイト。", "en": "A proposal site built around the flow \"see, trust, consult.\"" },
+      "url": "https://2026webai-lab.github.io/-/" },
+    { "id": "w-genba", "cat": "lp", "top": true, "hours": 6,
+      "title": { "ja": "建設会社様向け 採用LP「現場まつり」", "en": "\"Genba Matsuri\" recruitment LP for a construction company" },
+      "summary": { "ja": "「現場は、文化祭だ。」の発想で、職種ごとの魅力を見せる採用LP。", "en": "A recruitment LP built on the idea \"the job site is a school festival,\" showing the appeal of each trade." },
+      "url": "https://2026webai-lab.github.io/kennsetukaisya/" },
+    { "id": "w-negapos", "cat": "app", "top": true, "hours": 6,
+      "title": { "ja": "ネガポジ変換アプリ", "en": "Negative-to-Positive converter app" },
+      "summary": { "ja": "アイデアを形にした、公開済みのWebアプリ（2本分の制作時間）。ほか1本：マトリクス思考ロードマップ生成アプリ。", "en": "A published web app that turns an idea into something you can use (6 hours covers two apps). The second is a matrix-thinking roadmap generator." },
+      "url": "https://2026webai-lab.github.io/web-app/",
+      "extra": [ { "label": { "ja": "ロードマップ生成アプリ", "en": "Roadmap generator" }, "url": "https://2026webai-lab.github.io/matrix-app/" } ] },
+    { "id": "w-shodo", "cat": "creative", "top": true, "hours": 12,
+      "title": { "ja": "書道スクロールサイト", "en": "Calligraphy scroll site" },
+      "summary": { "ja": "筆順どおりに文字が書かれていく、スクロールサイト。", "en": "A scrolling site where each character is written stroke by stroke, in the correct order." },
+      "url": "https://2026webai-lab.github.io/newportfolio/%E6%9B%B8%E9%81%93.html" },
+    { "id": "w-van", "cat": "creative", "top": true, "hours": 30,
+      "title": { "ja": "Wandering Ledger（バンライフ）", "en": "Wandering Ledger (van life)" },
+      "summary": { "ja": "バンライフを描く物語マガジン。主人公は架空の人物です。", "en": "A story magazine about van life. The protagonist is fictional." },
+      "url": "https://2026webai-lab.github.io/newportfolio/van.html" },
+    { "id": "w-taichung", "cat": "site", "top": true, "hours": 30,
+      "title": { "ja": "Taichung Travel Prototype", "en": "Taichung Travel Prototype" },
+      "summary": { "ja": "台湾の観光地・グルメ・文化を伝える観光PRサイト。", "en": "A tourism PR site introducing Taiwan's sights, food, and culture." },
+      "url": "https://2026webai-lab.github.io/travel-top/" },
+    { "id": "w-restaurant", "cat": "site", "top": false, "hours": 30,
+      "title": { "ja": "レストランご提案用サイト", "en": "Restaurant proposal site" },
+      "summary": { "ja": "料理の世界観を伝える、飲食店向けの提案用サイト。", "en": "A proposal site that conveys a restaurant's world." },
+      "url": "https://2026webai-lab.github.io/resutorant/" },
+    { "id": "w-bridal", "cat": "site", "top": false, "hours": 30,
+      "title": { "ja": "ブライダルご提案用サイト", "en": "Bridal proposal site" },
+      "summary": { "ja": "特別な一日を演出する、ブライダル向けの提案用サイト。", "en": "A proposal site for a bridal business that stages a special day." },
+      "url": "https://2026webai-lab.github.io/buraidaru/" },
+    { "id": "w-journeys", "cat": "creative", "top": false, "hours": 1,
+      "title": { "ja": "Journeys Magazine（旅行誌の表紙）", "en": "Journeys Magazine (cover)" },
+      "summary": { "ja": "架空の旅行誌の表紙・誌面構成。※架空の雑誌です。", "en": "A cover and layout for a fictional travel magazine. The magazine is fictional." },
+      "url": "" }
+  ],
+
+  "news": [
+    { "date": "2026-10-23", "type": "trouble",
+      "title": { "ja": "PHPサイトが書き換えられる？ 会員・注文の個人情報が心配な方へ", "en": "Is your PHP site being tampered with? For those worried about members' and customers' personal data" },
+      "body":  { "ja": "表示の不具合では済まず、個人情報の漏えいにもつながります。点検と守り方は、お打ち合わせの中でお伝えします。", "en": "It goes beyond display glitches and can lead to personal data leaks. Inspection and protection are explained in a meeting." },
+      "link": "#contact", "cta": { "ja": "この件を相談する", "en": "Discuss this" } },
+    { "date": "2026-10-21", "type": "update",
+      "title": { "ja": "ポートフォリオを、明るいデザインに刷新", "en": "Portfolio redesigned with a brighter look" },
+      "body":  { "ja": "体験型LP3作品とECサイト2作品を追加しました。日本語・英語の切り替えにも対応しています。", "en": "Added three experience-driven LPs and two e-commerce sites, with a Japanese/English switch." },
+      "link": "", "cta": null },
+    { "date": "2026-10-16", "type": "update",
+      "title": { "ja": "TABITOKI MARKETに、管理画面・在庫連動・会員登録を追加", "en": "Added an admin panel, stock linkage, and member registration to TABITOKI MARKET" },
+      "body":  { "ja": "日英切替に対応し、管理画面には閲覧専用の権限も用意しました。", "en": "It supports JA/EN, and the admin panel has a view-only role." },
+      "link": "", "cta": null },
+    { "date": "2026-10-14", "type": "update",
+      "title": { "ja": "TABITOKI MARKETの決済を、デモ表示に変更", "en": "Changed TABITOKI MARKET's checkout to a demo display" },
+      "body":  { "ja": "実際の課金が行われないデモであることを、画面上で明示しました。", "en": "It is made clear on screen that no real charges occur." },
+      "link": "", "cta": null }
+  ],
+
+  "faq": [
+    { "q": { "ja": "何を頼むか決まっていなくても相談できますか？", "en": "Can I consult you even if I haven't decided what to ask for?" },
+      "a": { "ja": "はい。課題や状況を伺い、必要な対応を整理するところから相談できます。", "en": "Yes. We start by organizing your challenges and situation to work out what's needed." } },
+    { "q": { "ja": "AI導入だけ相談できますか？", "en": "Can I consult only about AI adoption?" },
+      "a": { "ja": "はい。業務の流れを確認し、AIを使える箇所の整理から提案・実装まで対応します。", "en": "Yes. I review your workflow, identify where AI can help, then propose and implement." } },
+    { "q": { "ja": "セキュリティや監視だけの依頼もできますか？", "en": "Can I request only security or monitoring?" },
+      "a": { "ja": "はい。既存のサイトの点検から、見守りの仕組みづくりまで対応します。範囲はご相談で決めます。", "en": "Yes. From inspecting an existing site to setting up monitoring. The scope is decided in a consultation." } },
+    { "q": { "ja": "納期はどのくらいですか？", "en": "How long does it take?" },
+      "a": { "ja": "内容により異なります。ご相談の際に、目安をお伝えします。", "en": "It depends on the work. I'll give you an estimate when we talk." } },
+    { "q": { "ja": "料金はどのくらいですか？", "en": "How much does it cost?" },
+      "a": { "ja": "ご相談内容に合わせて、お見積りします。", "en": "I'll provide a quote based on what you need." } },
+    { "q": { "ja": "HATTORIとKAZUYA、なぜ名義が分かれているのですか？", "en": "Why do you use two names, HATTORI and KAZUYA?" },
+      "a": { "ja": "業務のご連絡は本名義（HATTORI ICHIDAI）、創作活動は創作名義（KAZUYA）と、用途で分けて運用しています。", "en": "I use my legal name (HATTORI ICHIDAI) for business and a creative name (KAZUYA) for creative work." } }
+  ],
+
+  "footer": {
+    "copyright": "© 2026 HATTORI ICHIDAI",
+    "tagline": { "ja": "ATLAS TO PARADISE — 楽園への古地図", "en": "ATLAS TO PARADISE — A Map to Paradise" }
+  }
+}

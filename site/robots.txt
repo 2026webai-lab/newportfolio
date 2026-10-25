@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://2026webai-lab.github.io/newportfolio/sitemap.xml
