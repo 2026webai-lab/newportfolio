@@ -319,6 +319,11 @@ strong{font-weight:700}
 .qr-mid__img{width:96px;height:96px;border-radius:28px;object-fit:cover;box-shadow:0 8px 24px rgba(0,0,0,.35);border:3px solid rgba(255,255,255,.9)}
 @media (max-width:640px){.qr-row{gap:12px;justify-content:center}.qr{width:130px}.qr img,.qr__ph{width:130px;height:130px}.qr-mid__img{width:72px;height:72px;border-radius:22px}}
 
+/* ループ動画 */
+.tile video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.tile:hover video{transform:scale(1.04)}
+.work-card__img video{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block}
+
 </style>
 <script type="application/ld+json">{
  "@context": "https://schema.org",
@@ -530,7 +535,7 @@ strong{font-weight:700}
 
 <footer class="site-footer">
   <div class="container footer__bar">
-    <p class="footer__brand"><span data-en="ATLAS TO PARADISE — A Map to Paradise">ATLAS TO PARADISE — 楽園への古地図</span><br><small>© 2026 HATTORI ICHIDAI</small></p>
+    <p class="footer__brand"><span data-en="ATLAS TO PARADISE — A Map to Paradise">ATLAS TO PARADISE — 楽園への古地図</span><br><small>© 2026 HATTORI ICHIDAI · build 20261026-0410</small></p>
     <p class="footer__links">
       <a href="./works.html" data-en="All works">すべての実績</a>
       <a href="./news.html" data-en="Updates">更新履歴</a>
@@ -653,6 +658,21 @@ strong{font-weight:700}
       location.href = "mailto:" + form.dataset.to + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
     });
   }
+})();
+
+/* ループ動画：画面に入ったら再生、外れたら停止。動きを減らす設定なら静止画のまま */
+(function () {
+  var vs = document.querySelectorAll("video.loop-video");
+  if (!vs.length) return;
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || !("IntersectionObserver" in window)) { vs.forEach(function (v) { v.removeAttribute("autoplay"); v.pause(); }); return; }
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (e.isIntersecting) { var p = e.target.play(); if (p && p.catch) p.catch(function () {}); }
+      else e.target.pause();
+    });
+  }, { threshold: 0.2 });
+  vs.forEach(function (v) { io.observe(v); });
 })();
 
 </script>
