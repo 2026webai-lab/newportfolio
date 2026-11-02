@@ -324,6 +324,17 @@ strong{font-weight:700}
 .tile:hover video{transform:scale(1.04)}
 .work-card__img video{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block}
 
+
+/* ---------- HOTEL & TOURISM (added 2026-11-01) ---------- */
+.hotel{display:grid;grid-template-columns:1.25fr 1fr;gap:36px;align-items:center}
+.hotel__video{border-radius:var(--radius-xl);overflow:hidden;background:#0A0F1E;box-shadow:var(--shadow)}
+.hotel__video video{display:block;width:100%;height:auto!important;aspect-ratio:16/9;object-fit:contain;background:#0A0F1E}
+.hotel__body h3{font-size:24px;line-height:1.35;margin:8px 0 10px}
+.hotel__body p{margin-bottom:10px}
+.hotel__note{font-size:13px;color:var(--muted)}
+.hotel__links{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+.btn--line{background:#fff;color:var(--accent);border-color:var(--accent)}
+@media (max-width:820px){.hotel{grid-template-columns:1fr}}
 </style>
 <script type="application/ld+json">{
  "@context": "https://schema.org",
@@ -632,7 +643,7 @@ strong{font-weight:700}
   <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="container hero__grid">
     <div class="hero__copy">
-      <p class="badge"><span class="dot" aria-hidden="true"></span><span data-en="Last updated">最終更新</span> <time datetime="2026-10-23">2026.10.23</time><span class="badge__sep">／</span><span data-en="Active">活動中</span></p>
+      <p class="badge"><span class="dot" aria-hidden="true"></span><span data-en="Last updated">最終更新</span> <time datetime="2026-11-01">2026.11.01</time><span class="badge__sep">／</span><span data-en="Active">活動中</span></p>
       <p class="eyebrow eyebrow--plain">HATTORI ICHIDAI — WEB MARKETER / CREATOR</p>
       <h1 data-en="Turning data and design sense&lt;br&gt;into room for your &lt;strong&gt;business to grow.&lt;/strong&gt;">データと美意識で、<br>事業の<strong>伸びしろ</strong>を形にする。</h1>
       <p class="lead" data-en="Web improvement, SEO, AI adoption, and security. I support you from analysis to implementation and monitoring, end to end.">Web改善・SEO・AI活用、そしてセキュリティまで。分析から実装、見守りまで一気通貫で支援します。</p>
@@ -652,8 +663,8 @@ strong{font-weight:700}
   </div>
 </section>
 <section class="container updates-band" aria-label="Updates">
-  <p class="updates-band__label"><span class="dot dot--blue" aria-hidden="true"></span><span data-en="Last updated">最終更新</span> 2026.10.23</p>
-  <ul class="updates-band__list"><li><time datetime="2026-10-23">2026.10.23</time><span class="chip" data-en="Trouble">困りごと</span><span data-en="Is your PHP site being tampered with? For those worried about members&amp;#x27; and customers&amp;#x27; personal data">PHPサイトが書き換えられる？ 会員・注文の個人情報が心配な方へ</span></li><li><time datetime="2026-10-21">2026.10.21</time><span class="chip" data-en="Update">更新</span><span data-en="Portfolio redesigned with a brighter look">ポートフォリオを、明るいデザインに刷新</span></li><li><time datetime="2026-10-16">2026.10.16</time><span class="chip" data-en="Update">更新</span><span data-en="Added an admin panel, stock linkage, and member registration to TABITOKI MARKET">TABITOKI MARKETに、管理画面・在庫連動・会員登録を追加</span></li></ul>
+  <p class="updates-band__label"><span class="dot dot--blue" aria-hidden="true"></span><span data-en="Last updated">最終更新</span> 2026.11.01</p>
+  <ul class="updates-band__list"><li><time datetime="2026-11-01">2026.11.01</time><span class="chip" data-en="Important">重要</span><span data-en="[Important] Emergency PHP security update (Oct 21)">【重要】PHPが緊急セキュリティ更新（10/21）</span></li><li><time datetime="2026-10-30">2026.10.30</time><span class="chip" data-en="Update">更新</span><span data-en="Released a promo video for hotels and tourism (self-initiated)">ホテル・観光向けPR動画を公開（自主制作）</span></li><li><time datetime="2026-10-23">2026.10.23</time><span class="chip" data-en="Trouble">困りごと</span><span data-en="Is your PHP site being tampered with? For those worried about members&amp;#x27; and customers&amp;#x27; personal data">PHPサイトが書き換えられる？ 会員・注文の個人情報が心配な方へ</span></li></ul>
   <a class="link-arrow" href="news.html" data-en="See all updates">更新履歴をすべて見る</a>
 </section>
 <section class="section" id="latest" aria-labelledby="latestTitle">
@@ -694,6 +705,7 @@ strong{font-weight:700}
     </div>
   </div>
 </section>
+<section class="section section--tint" id="hotel" aria-labelledby="hotelTitle"><div class="container"><div class="section__row"><div><p class="eyebrow">HOTEL &amp; TOURISM</p><h2 id="hotelTitle" class="section__title" data-en="Promo video and analysis for hotels and tourism">ホテル・観光向けのPR動画と分析</h2></div><a class="link-arrow" href="hotel.html" data-en="Hotel and tourism page">ホテル・観光向けページへ</a></div><div class="hotel"><div class="hotel__video"><video controls playsinline preload="metadata" poster="escape-poster.jpg" width="1280" height="720" aria-label="ESCAPE FOR A MOMENT"><source src="escape-for-a-moment.mp4" type="video/mp4"></video></div><div class="hotel__body"><p class="eyebrow">CONCEPT PROJECT</p><h3>ESCAPE FOR A MOMENT</h3><p data-en="A 30-second promo video concept for hotels and resorts. A self-initiated work, from concept to editing, produced with AI.">ホテル・リゾート向けのPR動画コンセプト（30秒）。企画から編集まで、AIを活用して制作した自主制作作品です。</p><p class="hotel__note" data-en="Independent concept film. Not commissioned by or affiliated with any hotel.">自主制作のコンセプト映像です。特定のホテルから依頼・提供を受けたものではありません。</p><div class="hotel__links"><a class="btn btn--accent" href="TSUBAKIMORI_Instagram_Case_Study_JA.pdf" target="_blank" rel="noopener" data-en="Case study (Japanese PDF)">分析レポート（日本語PDF）</a><a class="btn btn--line" href="TSUBAKIMORI_Instagram_Case_Study_EN.pdf" target="_blank" rel="noopener" data-en="Case study (English PDF)">分析レポート（英語PDF）</a></div></div></div></div></section>
 <section class="section section--tint" id="security" aria-labelledby="secTitle">
   <div class="container">
     
@@ -772,7 +784,7 @@ strong{font-weight:700}
         <p data-en="From diagnosing your current site to rebuilding it so it&amp;#x27;s easier to read and update.">現状診断から、更新しやすい形へ作り直します。</p>
         
       </li>
-    </ul>
+    <li class="svc"><span class="svc__no">07</span><h3 data-en="Video production">動画・映像制作</h3><p data-en="Promo videos for hotels, tourism, and brands, from concept to editing, produced with AI.">ホテル・観光・ブランドのPR動画を、企画から編集まで。AIを活用して制作します。</p><a class="link-arrow" href="#hotel" data-en="Watch the video">動画を見る</a></li><li class="svc"><span class="svc__no">08</span><h3 data-en="Social media content and operation">SNSコンテンツ制作・運用</h3><p data-en="From post design to analysis and improvement, based on hands-on experience. I run my own Instagram account of about 10K followers.">投稿の設計・分析・改善まで、実際の運用経験をもとに支援します。自ら運営するフォロワー約1万人のInstagramアカウントでの経験があります。</p></li><li class="svc svc--lead"><span class="svc__no">09</span><h3 data-en="Support for hotels and tourism">ホテル・観光向け支援</h3><p data-en="Instagram analysis from public data, a 30-day content plan, and promo video. For hotel and condominium operators.">公開データによるInstagram分析、30日間のコンテンツ計画、PR動画まで。ホテル・コンドミニアムの運営者の方へ。</p><a class="link-arrow" href="hotel.html" data-en="Hotel and tourism page">ホテル・観光向けページへ</a></li></ul>
   </div>
 </section>
 <section class="section section--tint" id="ec" aria-labelledby="ecTitle">
@@ -920,7 +932,7 @@ strong{font-weight:700}
       <ul class="trouble-list"><li data-en="My site was tampered with, or I see displays I don&amp;#x27;t recognize">サイトが勝手に書き換えられた・見覚えのない表示が出る</li><li data-en="I&amp;#x27;m worried about leaking members&amp;#x27; or customers&amp;#x27; personal data">会員・注文の個人情報が漏れないか不安</li><li data-en="I get no inquiries, and I can&amp;#x27;t be found in search">問い合わせが来ない・検索で見つからない</li><li data-en="I want to use AI in my work, but I don&amp;#x27;t know where to start">AIを仕事に入れたいが、何から始める？</li></ul>
       <div class="cta-line"><p class="muted" data-en="Consult, meet, then execute. I work through it with you.">相談 → お打ち合わせ → 実行まで、一緒に進めます。</p><a class="btn btn--accent btn--sm" href="#contact" data-en="Get in touch">相談する</a></div>
     </div>
-    <ul class="news">
+    <ul class="news"><li class="news__item news__item--trouble"><div class="news__meta"><time datetime="2026-11-01">2026.11.01</time> <span class="chip" data-en="Important">重要</span></div><div class="news__body"><h3 data-en="[Important] Emergency PHP security update (Oct 21)">【重要】PHPが緊急セキュリティ更新（10/21）</h3><p data-en="Fixes for two critical PHP vulnerabilities have been released. If your site runs on PHP, please check the patch status of your server. How to inspect it is explained in a consultation.">PHPの重大な脆弱性2件の修正版が公開されました。PHPで動くサイトの運営者は、サーバーの対応状況をご確認ください。点検の進め方は、ご相談の中でお伝えします。</p><a class="link-arrow" href="#contact" data-en="Discuss this">この件を相談する</a> <a class="link-arrow" href="https://www.php.net/archive/2026.php" target="_blank" rel="noopener" data-en="Official PHP notice">PHP公式の告知（英語）</a></div></li><li class="news__item"><div class="news__meta"><time datetime="2026-10-30">2026.10.30</time> <span class="chip" data-en="Update">更新</span></div><div class="news__body"><h3 data-en="Released ESCAPE FOR A MOMENT, a promo video for hotels and tourism (self-initiated)">ホテル・観光向けPR動画「ESCAPE FOR A MOMENT」を公開（自主制作）</h3><p data-en="A video concept for hotels and resorts, plus an Instagram analysis built from public data (PDF in Japanese and English).">ホテル・リゾート向けの映像コンセプトと、公開データによるInstagram分析（日本語・英語のPDF）をまとめました。</p><a class="link-arrow" href="#hotel" data-en="View">見る</a></div></li>
       <li class="news__item news__item--trouble">
         <div class="news__meta">
           <time datetime="2026-10-23">2026.10.23</time>
@@ -990,7 +1002,7 @@ strong{font-weight:700}
     <form class="form" id="contactForm" action="mailto:2026webai@gmail.com" method="post" enctype="text/plain" data-to="2026webai@gmail.com" data-prefix-ja="【ポートフォリオから】" data-prefix-en="[From your portfolio] ">
       <label><span data-en="Name">お名前</span><input name="name" type="text" autocomplete="name" required></label>
       <label><span data-en="Email">メールアドレス</span><input name="email" type="email" autocomplete="email" required></label>
-      <label><span data-en="Topic">ご相談内容</span><select name="topic"><option value="Webコンサルティング" data-en="Web consulting">Webコンサルティング</option><option value="Webマーケティング" data-en="Web marketing">Webマーケティング</option><option value="HP・ECサイト制作" data-en="Website / e-commerce development">HP・ECサイト制作</option><option value="セキュリティ・見守り" data-en="Security &amp;amp; monitoring">セキュリティ・見守り</option><option value="AI活用・業務効率化" data-en="AI adoption">AI活用・業務効率化</option><option value="その他" data-en="Other">その他</option></select></label>
+      <label><span data-en="Topic">ご相談内容</span><select name="topic"><option value="Webコンサルティング" data-en="Web consulting">Webコンサルティング</option><option value="Webマーケティング" data-en="Web marketing">Webマーケティング</option><option value="HP・ECサイト制作" data-en="Website / e-commerce development">HP・ECサイト制作</option><option value="セキュリティ・見守り" data-en="Security &amp;amp; monitoring">セキュリティ・見守り</option><option value="AI活用・業務効率化" data-en="AI adoption">AI活用・業務効率化</option><option value="動画・映像制作" data-en="Video production">動画・映像制作</option><option value="ホテル・観光PR" data-en="Hotel and tourism PR">ホテル・観光PR</option><option value="SNSコンテンツ制作・運用" data-en="Social media content">SNSコンテンツ制作・運用</option><option value="その他" data-en="Other">その他</option></select></label>
       <label><span data-en="Message">お問い合わせ内容</span><textarea name="message" rows="5" required></textarea></label>
       <button class="btn btn--light" type="submit" data-en="Send by email">メールで送る</button>
     </form>
@@ -1000,7 +1012,7 @@ strong{font-weight:700}
 
 <footer class="site-footer">
   <div class="container footer__bar">
-    <p class="footer__brand"><span data-en="ATLAS TO PARADISE — A Map to Paradise">ATLAS TO PARADISE — 楽園への古地図</span><br><small>© 2026 HATTORI ICHIDAI · build 20261026-0410</small></p>
+    <p class="footer__brand"><span data-en="ATLAS TO PARADISE — A Map to Paradise">ATLAS TO PARADISE — 楽園への古地図</span><br><small>© 2026 HATTORI ICHIDAI · build 20261101-hotel</small></p>
     <p class="footer__links">
       <a href="works.html" data-en="All works">すべての実績</a>
       <a href="news.html" data-en="Updates">更新履歴</a>
