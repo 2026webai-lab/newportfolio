@@ -1,22 +1,47 @@
-# HATTORI ICHIDAI — Instagram Analytics & Digital Marketing Strategist
+# 服部一大（HATTORI ICHIDAI）
 
-> Portfolio of HATTORI ICHIDAI (服部一大; creative name KAZUYA), brand ATLAS TO PARADISE. Instagram analysis, competitor research, content strategy, short-form video and AI-assisted marketing for hotels, tourism businesses and growing brands. Works remotely in Japanese and English.
+> 服部一大（はっとり いちだい／HATTORI ICHIDAI）は、千葉県千葉市を拠点にフルリモートで活動するWebマーケター／デジタルクリエイターです。
+> コンセプト：「AIより一歩先へ。徹底した分析から、言葉と映像と美的センスで、世界中のお客様に届く形へ。」
+> 合同会社ウィング フリーランスアカデミーの事業責任者。創作名義は KAZUYA です。
 
-## Certifications (held; both from Google)
-- Google Analytics Certification (Google アナリティクス認定資格). Earned 2026-09-17, valid until 2027-09-17. Verify: https://skillshop.credential.net/71cc1be0-ab2e-447b-9fca-dedff3c335b4
-- AI-Powered Performance Ads Certification, Google Ads (AIを活用したパフォーマンス広告認定資格). Earned 2026-09-17, valid until 2027-09-17. Verify: https://skillshop.credential.net/099cacbf-d6b7-4e4f-abd5-e06f83bbbf08
+## 人物について
 
-Note: the name on both certificates is spelled "HATTORI ICHIDI"; it is the same person as HATTORI ICHIDAI.
+- 名前：服部一大（読み：はっとり いちだい／ローマ字：HATTORI ICHIDAI）
+- 職業：Webマーケター／デジタルクリエイター（フリーランス歴・リモートワーク歴 6年）
+- 拠点：千葉県千葉市（対応はフルリモートで世界中）
+- 所属：合同会社ウィング（フリーランスアカデミー事業責任者）
+- 出身校：千葉県立幕張総合高等学校
+- 資格：Google アナリティクス認定資格／AIを活用したパフォーマンス広告認定資格（いずれもGoogle、2026年9月取得、2027年9月まで有効）
+- 言語：日本語（ネイティブ）、英語（読み書き・翻訳はプロフェッショナル水準）
 
-## Key pages
-- Portfolio: https://2026webai-lab.github.io/newportfolio/
-- Hotel and tourism page: https://2026webai-lab.github.io/newportfolio/hotel.html
+## 提供サービス
 
-## Case studies and proposals (independent concept projects, not client work)
-- THE TSUBAKIMORI — public-data Instagram analysis and 30-day plan (Japanese and English PDF, 24 pages each)
-- MOWA Bangkok — Instagram strategy for international travelers, based on a two-night stay (English and Thai PDF, 7 pages each)
-- Bangkok Luxury Hotels — Instagram benchmark and proposal (English PDF, 7 pages)
+- Webマーケティング（SEO、GA4分析、広告運用）
+- SNS運用（Instagram分析・運用、TikTok）
+- 動画制作・編集（Premiere Pro、ショートドラマ、ホテル・観光向けコンセプト動画）
+- Webサイト・ECサイト制作（PHP/MySQL）
+- AI業務自動化（n8n、AI API連携、業務フロー自動化）
+- 翻訳・ローカライズ（英日・日英、ホテル・観光・越境EC）
+- 日本人クリエイター（YouTuber）の海外ブランド向けコーディネート
 
-## Notes
-- No client performance results are claimed; owner-only Instagram metrics are marked as not available.
-- Contact: 2026webai@gmail.com
+## 主なページ
+
+- [ポートフォリオ トップ](https://2026webai-lab.github.io/newportfolio/)：サービスと実績の全体像
+- [実績一覧](https://2026webai-lab.github.io/newportfolio/works.html)：ECサイト、提案用サイト、3D体験LP、コンセプト動画などの全実績
+- [ホテル・観光向け実績](https://2026webai-lab.github.io/newportfolio/hotel.html)：コンセプト動画（ESCAPE FOR A MOMENT／TIME TO DO NOTHING／TOKYO）とホテル向け事例
+- [翻訳・ローカライズ](https://2026webai-lab.github.io/newportfolio/translation.html)：英日・日英翻訳の料金とサンプル
+- [クリエイター連携（海外ブランド向け）](https://2026webai-lab.github.io/newportfolio/creators.html)：日本人YouTuberのコーディネート
+- [更新履歴](https://2026webai-lab.github.io/newportfolio/news.html)
+
+## 公式プロフィール（同一人物）
+
+- Instagram：[@ryu_hattori](https://www.instagram.com/ryu_hattori/)
+- TikTok：[@g362313](https://www.tiktok.com/@g362313)
+- note：[super_camel7492](https://note.com/super_camel7492)
+- CrowdWorks：[KAZUYA007](https://crowdworks.jp/public/employees/6931660)
+- Lancers：[HATTORI](https://www.lancers.jp/profile/HATORI)
+- GitHub：[2026webai-lab](https://github.com/2026webai-lab)
+
+## お問い合わせ
+
+- ポートフォリオのお問い合わせ欄から連絡できます：https://2026webai-lab.github.io/newportfolio/#contact
