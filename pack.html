@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI×SNS運用 実践パック｜フリーランスアカデミー（合同会社ウィング）</title>
+<meta name="description" content="AIを使って、SNS運用を一人で回せるようになる録画講座。全6モジュール・動画12本＋手順書・テンプレート集＋個別オンライン面談30分×1回。先行販売 ¥19,800（税込）、2027年1月2日販売開始。">
+<style>
+  :root{
+    --ink:#1a1a2e; --sub:#4a4a5a; --accent:#e94560; --accent2:#0f3460;
+    --bg:#ffffff; --bg2:#f6f7fb; --line:#e3e5ee; --gold:#c9a227;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;color:var(--ink);line-height:1.8;background:var(--bg);-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  section{padding:56px 0}
+  h2{font-size:26px;line-height:1.5;margin-bottom:24px;text-align:center}
+  h2 .bar{display:block;width:48px;height:4px;background:var(--accent);margin:14px auto 0;border-radius:2px}
+  p{color:var(--sub);font-size:16px}
+  /* hero */
+  .hero{background:linear-gradient(135deg,#16213e 0%,#0f3460 60%,#533483 100%);color:#fff;padding:72px 0 64px;text-align:center}
+  .hero .brand{font-size:13px;letter-spacing:.18em;opacity:.85;margin-bottom:18px}
+  .hero h1{font-size:32px;line-height:1.55;margin-bottom:18px}
+  .hero h1 .hl{color:#ffd166}
+  .hero .lead{color:#e8eaf3;font-size:16px;max-width:620px;margin:0 auto 28px}
+  .hero .pack{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);border-radius:12px;padding:20px 18px;max-width:560px;margin:0 auto 28px;text-align:left}
+  .hero .pack .name{font-size:19px;font-weight:700;margin-bottom:6px}
+  .hero .pack .detail{font-size:14px;color:#dfe3f0}
+  .price-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:26px}
+  .price-box{background:#fff;color:var(--ink);border-radius:10px;padding:12px 22px;min-width:210px}
+  .price-box .label{font-size:13px;color:var(--sub)}
+  .price-box .amount{font-size:26px;font-weight:800}
+  .price-box.early{border:3px solid var(--gold)}
+  .price-box.early .label{color:var(--gold);font-weight:700}
+  .cta{display:inline-block;background:var(--accent);color:#fff;font-size:18px;font-weight:700;text-decoration:none;padding:16px 44px;border-radius:999px;box-shadow:0 6px 18px rgba(233,69,96,.35)}
+  .cta-note{font-size:13px;color:#cfd4e6;margin-top:14px}
+  .start-note{font-size:14px;color:#ffd166;margin-bottom:20px;font-weight:700}
+  /* lists */
+  .worries{background:var(--bg2)}
+  .check-list{list-style:none;max-width:560px;margin:0 auto}
+  .check-list li{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 18px 14px 46px;margin-bottom:12px;position:relative;font-size:16px;color:var(--ink)}
+  .check-list li::before{content:"✓";position:absolute;left:16px;top:12px;color:var(--accent);font-weight:800;font-size:18px}
+  .gains-list{list-style:none;max-width:620px;margin:0 auto}
+  .gains-list li{padding:12px 4px 12px 30px;border-bottom:1px dashed var(--line);position:relative;font-size:16px;color:var(--ink)}
+  .gains-list li::before{content:"◆";position:absolute;left:4px;color:var(--accent2);font-size:12px;top:18px}
+  /* curriculum */
+  .curriculum{background:var(--bg2)}
+  .module{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:12px;display:flex;gap:16px;align-items:flex-start}
+  .module .num{background:var(--accent2);color:#fff;font-weight:800;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:17px}
+  .module .t{font-weight:700;font-size:17px}
+  .module .d{font-size:14px;color:var(--sub)}
+  .bonus{max-width:620px;margin:18px auto 0;background:#fff8e6;border:1px solid #ecd27a;border-radius:10px;padding:14px 18px;font-size:14px;color:var(--ink)}
+  /* teacher */
+  .teacher-card{max-width:620px;margin:0 auto;border:1px solid var(--line);border-radius:12px;padding:24px}
+  .teacher-card .name{font-size:19px;font-weight:700;margin-bottom:8px}
+  /* notice */
+  .notice{background:#fff5f5;border:1px solid #f0c4c4;border-radius:12px;padding:22px;max-width:620px;margin:0 auto}
+  .notice h3{font-size:17px;margin-bottom:10px}
+  .notice li{margin-left:20px;font-size:15px;color:var(--sub)}
+  /* fit */
+  .fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:620px;margin:0 auto}
+  .fit-box{border:1px solid var(--line);border-radius:12px;padding:18px}
+  .fit-box h3{font-size:16px;margin-bottom:8px}
+  .fit-box p{font-size:14px}
+  .fit-box.good{border-color:#9fd3ae;background:#f4fbf5}
+  .fit-box.bad{border-color:#e5b4b4;background:#fdf6f6}
+  /* price section */
+  .price-sec{background:var(--bg2);text-align:center}
+  .price-sec .big{font-size:20px;margin-bottom:8px}
+  .price-sec .amount{font-size:34px;font-weight:800;color:var(--accent)}
+  .price-sec p{max-width:560px;margin:10px auto}
+  /* faq */
+  .faq{max-width:620px;margin:0 auto}
+  .faq .q{font-weight:700;font-size:16px;margin-top:20px}
+  .faq .a{font-size:15px;color:var(--sub);margin-top:4px}
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:28px 0 40px;text-align:center;font-size:13px;color:var(--sub)}
+  footer a{color:var(--accent2)}
+  .final-cta{text-align:center}
+  @media(max-width:560px){
+    .hero h1{font-size:25px}
+    h2{font-size:22px}
+    .fit-grid{grid-template-columns:1fr}
+    section{padding:44px 0}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="brand">フリーランスアカデミー｜合同会社ウィング</div>
+    <h1>AIを使って、<span class="hl">SNS運用を一人で回せる</span>ようになる。</h1>
+    <p class="lead">企画・制作・投稿・分析・改善まで、現役Webマーケターの実作業をそのまま手順化した録画講座です。</p>
+    <div class="pack">
+      <div class="name">AI×SNS運用 実践パック</div>
+      <div class="detail">全6モジュール・動画12本＋手順書・テンプレート集＋個別オンライン面談30分×1回</div>
+    </div>
+    <div class="start-note">2027年1月2日、タイ滞在中に販売開始</div>
+    <div class="price-row">
+      <div class="price-box early">
+        <div class="label">先行販売（本数限定）</div>
+        <div class="amount">¥19,800<span style="font-size:14px;font-weight:400">（税込）</span></div>
+      </div>
+      <div class="price-box">
+        <div class="label">通常価格</div>
+        <div class="amount">¥29,800<span style="font-size:14px;font-weight:400">（税込）</span></div>
+      </div>
+    </div>
+    <!-- TODO: Stripe決済リンクを発売準備段階（2026年12月〜2027年1月）で接続する -->
+    <a class="cta" href="#" id="cta-top">今すぐ申し込む</a>
+    <div class="cta-note">買い切りです。月額費用・追加の教材費はありません。</div>
+  </div>
+</header>
+
+<section class="worries">
+  <div class="wrap">
+    <h2>こんな悩みに<span class="bar"></span></h2>
+    <ul class="check-list">
+      <li>SNSを始めたが、投稿ネタが続かない</li>
+      <li>AIを使いたいが、自分の仕事への当てはめ方が分からない</li>
+      <li>投稿しても数字の読み方が分からず、改善できない</li>
+      <li>SNS運用を仕事にしたいが、実務の流れが見えない</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>この講座で得られること<span class="bar"></span></h2>
+    <ul class="gains-list">
+      <li>アカウント設計から収益化まで、SNS運用の全体の流れが一本につながる</li>
+      <li>ネタ出し・台本作成に使えるプロンプト集（そのままコピーして使える形）</li>
+      <li>ショート動画の制作フロー（撮影ではなく、編集と書き出しまでの実務手順）</li>
+      <li>インサイトとGA4の「見るべき数字だけ」の読み方と、続ける／やめるの判断基準</li>
+      <li>投稿カレンダー、分析シートなど、運用を続けるためのテンプレート一式</li>
+      <li>講師との個別オンライン面談30分×1回（購入から6か月以内）。自分のアカウントに当てはめて相談できます</li>
+    </ul>
+  </div>
+</section>
+
+<section class="curriculum">
+  <div class="wrap">
+    <h2>カリキュラム<span class="bar"></span></h2>
+    <div class="module"><div class="num">1</div><div><div class="t">設計</div><div class="d">目的とペルソナ、競合リサーチの手順</div></div></div>
+    <div class="module"><div class="num">2</div><div><div class="t">AI企画</div><div class="d">ネタ出しと台本作成（プロンプト集つき）</div></div></div>
+    <div class="module"><div class="num">3</div><div><div class="t">制作</div><div class="d">ショート動画の制作フロー（Premiere Pro実務）</div></div></div>
+    <div class="module"><div class="num">4</div><div><div class="t">投稿・運用</div><div class="d">投稿カレンダーと継続のルール</div></div></div>
+    <div class="module"><div class="num">5</div><div><div class="t">分析・改善</div><div class="d">インサイトとGA4、数字での判断基準</div></div></div>
+    <div class="module"><div class="num">6</div><div><div class="t">収益化</div><div class="d">受託業務へのつなげ方、集客導線の作り方</div></div></div>
+    <div class="bonus"><strong>特典：</strong>プロンプト集／投稿カレンダーテンプレート／分析シート／チェックリスト（PDF・スプレッドシート）</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>講師について<span class="bar"></span></h2>
+    <div class="teacher-card">
+      <div class="name">服部 一大（KAZUYA）</div>
+      <p>合同会社ウィング フリーランスアカデミー 代表責任者。Webマーケター／デジタルクリエイター、フルリモート6年。<br>
+      Instagram @ryu_hattori（フォロワー約10,400人）、TikTok @g362313「AI 収益家」を自ら運用。<br>
+      Google アナリティクス認定資格、AIを活用したパフォーマンス広告認定資格（Google、2027年9月まで有効）。<br>
+      インフルエンサー連携では100名超のクリエイターへのアプローチ実務を担当。</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="notice">
+      <h3>この講座の形式（必ずご確認ください）</h3>
+      <ul>
+        <li>録画講座です。ライブ配信・継続的な個別サポートは含まれません（個別オンライン面談30分×1回のみ含まれます）</li>
+        <li>視聴期限はありません。購入後、いつでも繰り返し視聴できます</li>
+        <li>「必ず稼げる」等の保証はいたしません。実務の手順と判断基準をお伝えする講座です</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>向いている人／向いていない人<span class="bar"></span></h2>
+    <div class="fit-grid">
+      <div class="fit-box good"><h3>向いている人</h3><p>個人事業主・店舗担当者・副業でSNS集客を始めたい人／AIを実務に使いたい人</p></div>
+      <div class="fit-box bad"><h3>向いていない人</h3><p>収益の保証を求める人／視聴だけで実践する時間を取りたくない人</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="price-sec">
+  <div class="wrap">
+    <h2>価格<span class="bar"></span></h2>
+    <p class="big">先行販売 <span class="amount">¥19,800</span>（税込）</p>
+    <p>※2027年1月2日販売開始、本数限定、終了後は通常価格 ¥29,800（税込）</p>
+    <p>お支払い：クレジットカード・デビットカード（Stripe）<br>
+    返金：デジタル商品の性質上、原則として返金はお受けしていません（詳細は特定商取引法に基づく表記をご確認ください）</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>よくある質問<span class="bar"></span></h2>
+    <div class="faq">
+      <div class="q">Q. スマホだけでも受講できますか</div>
+      <div class="a">A. 視聴はスマホで可能です。制作モジュールではPC（Premiere Pro）の画面を扱います。</div>
+      <div class="q">Q. AIツールの有料契約は必要ですか</div>
+      <div class="a">A. 無料範囲で始められる手順から説明します。有料プランが有利な場面では、その旨を明記します。</div>
+      <div class="q">Q. フリーランスアカデミーのライブ講座との違いは何ですか</div>
+      <div class="a">A. こちらは同じフリーランスアカデミーの録画講座です。自分のペースで進めたい方向けで、講師と一緒に進めたい方はライブ講座（入校）をご検討ください。録画講座の購入者がライブ講座へ進むケースもあります。</div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta" style="padding-top:0">
+  <div class="wrap">
+    <!-- TODO: Stripe決済リンクを発売準備段階で接続する -->
+    <a class="cta" href="#" id="cta-bottom">今すぐ申し込む</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="tokushoho.html">特定商取引法に基づく表記</a>／<a href="privacy.html">プライバシーポリシー</a><br>
+    © 合同会社ウィング フリーランスアカデミー
+  </div>
+</footer>
+
+</body>
+</html>
