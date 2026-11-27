@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jasmine Coffee &amp; Restaurant — คาเฟ่และร้านอาหาร พัทยา</title>
+<meta name="description" content="Jasmine Coffee & Restaurant คาเฟ่บรรยากาศอบอุ่นบนถนนพัทยาสาย 3 อาหารเช้าสไตล์อังกฤษและอเมริกัน วาฟเฟิล กาแฟ อาหารไทยและสเต๊ก เปิดทุกวัน 08:00–20:00">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Segoe UI", Tahoma, sans-serif; color:#2e2620; background:#faf6f1; line-height:1.7; }
+  .hero { position:relative; }
+  .hero img { width:100%; height:340px; object-fit:cover; display:block; }
+  .hero .overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(30,20,12,.78), rgba(30,20,12,.05) 60%); display:flex; flex-direction:column; justify-content:flex-end; padding:22px; }
+  .hero h1 { color:#fff; font-size:1.65rem; line-height:1.3; }
+  .hero .sub { color:#f3e3cf; font-size:.95rem; margin-top:4px; }
+  .badge { display:inline-block; background:#b5772c; color:#fff; font-size:.8rem; padding:2px 10px; border-radius:20px; margin-bottom:8px; width:fit-content; }
+  .wrap { max-width:760px; margin:0 auto; padding:0 18px 40px; }
+  section { margin-top:30px; }
+  h2 { font-size:1.15rem; color:#7a4d1d; border-left:4px solid #b5772c; padding-left:10px; margin-bottom:12px; }
+  .gallery { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; }
+  .gallery img { width:100%; height:150px; object-fit:cover; border-radius:10px; display:block; }
+  .menu { background:#fff; border-radius:12px; padding:16px 18px; box-shadow:0 1px 6px rgba(60,40,20,.08); }
+  .menu li { list-style:none; display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px dashed #e5d9c8; }
+  .menu li:last-child { border-bottom:none; }
+  .menu .price { color:#b5772c; font-weight:bold; white-space:nowrap; margin-left:12px; }
+  .note { font-size:.78rem; color:#8a7a68; margin-top:8px; }
+  .info { background:#fff; border-radius:12px; padding:16px 18px; box-shadow:0 1px 6px rgba(60,40,20,.08); }
+  .info p { margin:6px 0; }
+  .btns { display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+  .btn { flex:1; min-width:150px; text-align:center; text-decoration:none; padding:12px; border-radius:10px; font-weight:bold; }
+  .btn.call { background:#b5772c; color:#fff; }
+  .btn.fb { background:#1877f2; color:#fff; }
+  .btn.map { background:#fff; color:#7a4d1d; border:2px solid #b5772c; }
+  footer { margin-top:36px; font-size:.78rem; color:#8a7a68; text-align:center; }
+  footer a { color:#7a4d1d; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SYOy9Vedh_481qlQooGr1jKCPw7Nqmz9ThQsAvPSrGA95-IZ29JyaZ_d7dmZXxXMIiBQK3vdjRB3Cu404MjTkb8DBKc7dYYkp-WCI7W6-XmBg9Ku1cZ0YROtKOWNSUSY8NaAJpzk_hIZaN=w1200-h800-k-no" alt="Jasmine Coffee & Restaurant พัทยา">
+  <div class="overlay">
+    <span class="badge">★ 4.4 จากรีวิว 523 ราย บน Google</span>
+    <h1>Jasmine Coffee &amp; Restaurant</h1>
+    <p class="sub">คาเฟ่และร้านอาหารบรรยากาศอบอุ่น ถนนพัทยาสาย 3 · เปิดทุกวัน 08:00–20:00 น.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <section>
+    <h2>เกี่ยวกับร้าน</h2>
+    <p>Jasmine Coffee &amp; Restaurant เป็นคาเฟ่และร้านอาหารเล็ก ๆ ที่อบอุ่นบนถนนพัทยาสาย 3 ภายในร้านติดเครื่องปรับอากาศ เย็นสบาย ตกแต่งสวยงาม พนักงานเป็นกันเองและบริการรวดเร็ว เสิร์ฟทั้งอาหารไทยและอาหารตะวันตก ตั้งแต่อาหารเช้าสไตล์อังกฤษและอเมริกัน วาฟเฟิล กาแฟคุณภาพดี ไปจนถึงสเต๊กและอาหารไทยรสชาติถูกปากชาวต่างชาติ ในราคาสบายกระเป๋า มี Wi-Fi ฟรี และนำสัตว์เลี้ยงเข้ามาได้</p>
+  </section>
+
+  <section>
+    <h2>บรรยากาศร้าน</h2>
+    <div class="gallery">
+      <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9ShLd8A3PBf-5mM5cLJshxUwlYge037r7Z1FOJ_CbNaKSVzZeVD2A8Jrdm6D1dCVzw_n0lMKgqOPIaOYd6hScJ89VLus4f3mwRpduZHQ9mlfflrzC-gXXJ0lF1zlsRApYUezKo=w800-h600-k-no" alt="บรรยากาศภายในร้าน">
+      <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9T7JSb2uisQXxPxEA0up5VFY1N00O23tisYgm_QHvN2_q1jXc9LfknkCoJMj1Sz2yyaDQXu9CmWbwDKPZwxhmok2jbe2sBW10sJy_6w2-OIjDzRlZRiOC8kAj4pL40qA4JfbOGlFMvE3YEy=w800-h600-k-no" alt="อาหารของร้าน">
+      <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9S5YvbmimjkUBKNkIFHJ6STZLbC0Y-MpKn6GEQxizpS6_UlvLAWwk_vlIkSL5Fg4IPEgOHfUCGlnYTDAAfFOoY4036pPSdg6AyQuVJewOVIyW54nKyfPU5xt6yRG2pACqUawrdQdsLpnPRD=w800-h600-k-no" alt="เมนูแนะนำ">
+    </div>
+  </section>
+
+  <section>
+    <h2>เมนูแนะนำ</h2>
+    <div class="menu">
+      <ul>
+        <li><span>อาหารเช้าแบบอังกฤษ (English Breakfast)</span><span class="price">฿209</span></li>
+        <li><span>อาหารเช้าแบบอเมริกัน (American Breakfast)</span><span class="price">฿189</span></li>
+        <li><span>วาฟเฟิล (Waffles)</span><span class="price">฿195</span></li>
+        <li><span>ฮันนี่โทสต์ (Honey Toast)</span><span class="price">฿239</span></li>
+        <li><span>สเต๊กอกไก่ย่าง (Grilled Chicken Steak)</span><span class="price">฿189</span></li>
+        <li><span>ข้าวผัด (Fried Rice)</span><span class="price">฿119</span></li>
+      </ul>
+    </div>
+    <p class="note">* ราคาจากข้อมูลสาธารณะ (ตรวจสอบ พ.ย. 2026) อาจมีการเปลี่ยนแปลง</p>
+  </section>
+
+  <section>
+    <h2>ข้อมูลร้าน</h2>
+    <div class="info">
+      <p>📍 64/30 ถนนพัทยาสาย 3 ซอยเฉลิมพระเกียรติ 19 หนองปรือ บางละมุง ชลบุรี 20150</p>
+      <p>🕗 เปิดทุกวัน 08:00–20:00 น.</p>
+      <p>📞 096-881-5179</p>
+      <p>💰 ช่วงราคา ฿200–300</p>
+    </div>
+    <div class="btns">
+      <a class="btn call" href="tel:+66968815179">📞 โทรหาร้าน</a>
+      <a class="btn fb" href="https://www.facebook.com/Jasmine-Coffee-Restaurant-107200434918696/">Facebook ของร้าน</a>
+      <a class="btn map" href="https://www.google.com/maps/search/Jasmine+Coffee+%26+Restaurant+Pattaya+Thailand">ดูแผนที่ Google Maps</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>หน้านี้เป็นเว็บไซต์ตัวอย่าง จัดทำจากข้อมูลสาธารณะของร้าน เพื่อแสดงรูปแบบเว็บไซต์จริง<br>
+    ตัวอย่างโดย Ichidai Hattori — <a href="https://2026webai-lab.github.io/newportfolio/">ผลงาน</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
