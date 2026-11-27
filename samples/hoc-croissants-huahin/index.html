@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HOC House Of Croissants — คาเฟ่ครัวซองต์สไตล์ฝรั่งเศส หัวหิน</title>
+<meta name="description" content="HOC House Of Croissants คาเฟ่และเบเกอรี่ครัวซองต์สไตล์ฝรั่งเศสอบสดใหม่ทุกวัน ใจกลางหัวหิน เปิดทุกวัน 07:30–17:00">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Segoe UI", Tahoma, sans-serif; color:#33291c; background:#fbf7ef; line-height:1.7; }
+  .hero { position:relative; }
+  .hero img { width:100%; height:340px; object-fit:cover; display:block; }
+  .hero .overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(38,26,8,.78), rgba(38,26,8,.05) 60%); display:flex; flex-direction:column; justify-content:flex-end; padding:22px; }
+  .hero h1 { color:#fff; font-size:1.65rem; line-height:1.3; }
+  .hero .sub { color:#f3e5c8; font-size:.95rem; margin-top:4px; }
+  .badge { display:inline-block; background:#c08a2d; color:#fff; font-size:.8rem; padding:2px 10px; border-radius:20px; margin-bottom:8px; width:fit-content; }
+  .wrap { max-width:760px; margin:0 auto; padding:0 18px 40px; }
+  section { margin-top:30px; }
+  h2 { font-size:1.15rem; color:#8a5f16; border-left:4px solid #c08a2d; padding-left:10px; margin-bottom:12px; }
+  .gallery { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; }
+  .gallery img { width:100%; height:150px; object-fit:cover; border-radius:10px; display:block; }
+  .menu { background:#fff; border-radius:12px; padding:16px 18px; box-shadow:0 1px 6px rgba(70,52,20,.08); }
+  .menu li { list-style:none; display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px dashed #ecdfc4; }
+  .menu li:last-child { border-bottom:none; }
+  .menu .price { color:#c08a2d; font-weight:bold; white-space:nowrap; margin-left:12px; }
+  .note { font-size:.78rem; color:#9c8a68; margin-top:8px; }
+  .info { background:#fff; border-radius:12px; padding:16px 18px; box-shadow:0 1px 6px rgba(70,52,20,.08); }
+  .info p { margin:6px 0; }
+  .btns { display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+  .btn { flex:1; min-width:150px; text-align:center; text-decoration:none; padding:12px; border-radius:10px; font-weight:bold; }
+  .btn.call { background:#c08a2d; color:#fff; }
+  .btn.fb { background:#1877f2; color:#fff; }
+  .btn.map { background:#fff; color:#8a5f16; border:2px solid #c08a2d; }
+  footer { margin-top:36px; font-size:.78rem; color:#9c8a68; text-align:center; }
+  footer a { color:#8a5f16; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <img src="https://img02.restaurantguru.com/c813-HOC-House-Of-Croissants-Nong-Kae-interior.jpg" alt="HOC House Of Croissants หัวหิน">
+  <div class="overlay">
+    <span class="badge">★ 4.6 จากรีวิว 729 ราย บน Google</span>
+    <h1>HOC House Of Croissants</h1>
+    <p class="sub">คาเฟ่ครัวซองต์สไตล์ฝรั่งเศส อบสดใหม่ทุกวัน · เปิดทุกวัน 07:30–17:00 น.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <section>
+    <h2>เกี่ยวกับร้าน</h2>
+    <p>HOC House Of Croissants เป็นคาเฟ่และเบเกอรี่บนถนนดำเนินเกษม ใจกลางหัวหิน เชี่ยวชาญครัวซองต์สไตล์ฝรั่งเศสที่อบสดใหม่ในร้าน มองเห็นขั้นตอนการอบผ่านกระจกได้เลย มีทั้งครัวซองต์เนยคลาสสิก ครัวซองต์อัลมอนด์ รสพิเศษอย่างครัวซองต์ลิ้นจี่และไข่เค็ม เมนูอาหารเช้าอย่างเอ้กเบเนดิกต์ และกาแฟคุณภาพดี บรรยากาศอบอุ่น นั่งสบายทั้งโซนห้องแอร์และกลางแจ้ง</p>
+  </section>
+
+  <section>
+    <h2>บรรยากาศร้าน</h2>
+    <div class="gallery">
+      <img src="https://img02.restaurantguru.com/c694-HOC-House-Of-Croissants-Nong-Kae-dishes.jpg" alt="อาหารของร้าน">
+      <img src="https://img02.restaurantguru.com/cb53-HOC-House-Of-Croissants-Nong-Kae-dessert.jpg" alt="ขนมหวานของร้าน">
+      <img src="https://img02.restaurantguru.com/c0b8-Restaurant-HOC-House-Of-Croissants-design.jpg" alt="การตกแต่งภายในร้าน">
+    </div>
+  </section>
+
+  <section>
+    <h2>เมนูแนะนำ</h2>
+    <div class="menu">
+      <ul>
+        <li><span>ครัวซองต์เนย (Plain Croissant)</span><span class="price">฿70</span></li>
+        <li><span>ครัวซองต์อัลมอนด์</span></li>
+        <li><span>เอ้กเบเนดิกต์</span></li>
+        <li><span>ครอฟเฟิลช็อกโกแลต</span></li>
+        <li><span>อเมริกาโน่ส้ม</span></li>
+        <li><span>มัทฉะ</span></li>
+      </ul>
+    </div>
+    <p class="note">* ราคาจากข้อมูลสาธารณะ (ตรวจสอบ พ.ย. 2026) อาจมีการเปลี่ยนแปลง</p>
+  </section>
+
+  <section>
+    <h2>ข้อมูลร้าน</h2>
+    <div class="info">
+      <p>📍 9 ถนนดำเนินเกษม ตำบลหัวหิน อำเภอหัวหิน จังหวัดประจวบคีรีขันธ์ 77110</p>
+      <p>🕗 เปิดทุกวัน 07:30–17:00 น.</p>
+      <p>📞 094-642-5996</p>
+    </div>
+    <div class="btns">
+      <a class="btn call" href="tel:+66946425996">📞 โทรหาร้าน</a>
+      <a class="btn fb" href="https://www.facebook.com/houseofcroissants">Facebook ของร้าน</a>
+      <a class="btn map" href="https://www.google.com/maps/search/HOC+House+Of+Croissants+Damnernkasem+Rd+Hua+Hin+Thailand">ดูแผนที่ Google Maps</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>หน้านี้เป็นเว็บไซต์ตัวอย่าง จัดทำจากข้อมูลสาธารณะของร้าน เพื่อแสดงรูปแบบเว็บไซต์จริง<br>
+    ตัวอย่างโดย Ichidai Hattori — <a href="https://2026webai-lab.github.io/newportfolio/">ผลงาน</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
