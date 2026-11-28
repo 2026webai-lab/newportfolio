@@ -3,33 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Senglao Café — ຄາເຟ່ ແລະ ຮ້ານອາຫານທີ່ນະຄອນຫຼວງວຽງຈັນ</title>
-<meta name="description" content="Senglao Café ແມ່ນຄາເຟ່ ແລະ ຮ້ານອາຫານຟິວຊັນ ຢູ່ຖະໜົນໜອງໂບນ ບ້ານນາໄຊ ນະຄອນຫຼວງວຽງຈັນ ເປີດທຸກວັນ 11:00–22:00 ໂມງ. ຮ້ານໄດ້ຮັບຄະແນນ 4.3 ຈາກການຣີວິວ 626 ລາຍການໃນ Goog">
+<title>Senglao Café — ຮ້ານກາເຟ ນະຄອນຫຼວງວຽງຈັນ</title>
+<meta name="description" content="Senglao Café ຮ້ານກາເຟ ແລະ ຮ້ານອາຫານຟິວຊັນ ທີ່ຖະໜົນໜອງບອນ ນະຄອນຫຼວງວຽງຈັນ">
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:"Segoe UI", Tahoma, sans-serif; color:#2e2620; background:#faf6f1; line-height:1.7; }
-  .hero { position:relative; min-height:200px; background:#7a4d1d; }
-  .hero img { width:100%; height:340px; object-fit:cover; display:block; }
-  .hero .overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(30,20,12,.78), rgba(30,20,12,.05) 60%); display:flex; flex-direction:column; justify-content:flex-end; padding:22px; }
+  .hero { background:linear-gradient(135deg,#7a4d1d,#b5772c); padding:56px 22px 40px; }
   .hero h1 { color:#fff; font-size:1.65rem; line-height:1.3; }
   .hero .sub { color:#f3e3cf; font-size:.95rem; margin-top:4px; }
-  .badge { display:inline-block; background:#b5772c; color:#fff; font-size:.8rem; padding:2px 10px; border-radius:20px; margin-bottom:8px; width:fit-content; }
+  .badge { display:inline-block; background:rgba(255,255,255,.22); color:#fff; font-size:.8rem; padding:2px 10px; border-radius:20px; margin-bottom:8px; width:fit-content; }
   .wrap { max-width:760px; margin:0 auto; padding:0 18px 40px; }
   section { margin-top:30px; }
   h2 { font-size:1.15rem; color:#7a4d1d; border-left:4px solid #b5772c; padding-left:10px; margin-bottom:12px; }
-  .gallery { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; }
-  .gallery img { width:100%; height:150px; object-fit:cover; border-radius:10px; display:block; }
   .menu { background:#fff; border-radius:12px; padding:16px 18px; box-shadow:0 1px 6px rgba(60,40,20,.08); }
-  .menu li { list-style:none; display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px dashed #e5d9c8; }
+  .menu li { list-style:none; padding:8px 0; border-bottom:1px dashed #e5d9c8; }
   .menu li:last-child { border-bottom:none; }
-  .menu .price { color:#b5772c; font-weight:bold; white-space:nowrap; margin-left:12px; }
-  .note { font-size:.78rem; color:#8a7a68; margin-top:8px; }
   .info { background:#fff; border-radius:12px; padding:16px 18px; box-shadow:0 1px 6px rgba(60,40,20,.08); }
   .info p { margin:6px 0; }
   .btns { display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
   .btn { flex:1; min-width:150px; text-align:center; text-decoration:none; padding:12px; border-radius:10px; font-weight:bold; }
   .btn.call { background:#b5772c; color:#fff; }
   .btn.fb { background:#1877f2; color:#fff; }
+  .btn.ig { background:#c13584; color:#fff; }
   .btn.map { background:#fff; color:#7a4d1d; border:2px solid #b5772c; }
   footer { margin-top:36px; font-size:.78rem; color:#8a7a68; text-align:center; }
   footer a { color:#7a4d1d; }
@@ -38,53 +33,45 @@
 <body>
 
 <div class="hero">
-  <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RxtQLAQB3mmcjhbFcSXlpJwAzhwOpCB_TpI7q8yxXFj4z1lLDNosf4YXvly-IAc_-ohOWlO-PnF1hJBgBUPfZAJhdDh1ZS1mVVSdhjaimrJaQNtvxq-l-ybhLrBb6jt8tTa6uV7wew0RE=w203-h270-k-no" alt="Senglao Café">
-  <div class="overlay">
-    <span class="badge">★ 4.3 · ຣີວິວ Google 626 ລາຍ</span>
-    <h1>Senglao Café</h1>
-    <p class="sub">ຄາເຟ່ ແລະ ຮ້ານອາຫານທີ່ນະຄອນຫຼວງວຽງຈັນ</p>
-  </div>
+  <span class="badge">ຮ້ານກາເຟ · ວຽງຈັນ</span>
+  <h1>Senglao Café</h1>
+  <p class="sub">ຮ້ານກາເຟ ແລະ ຮ້ານອາຫານຟິວຊັນ · ນະຄອນຫຼວງວຽງຈັນ</p>
 </div>
 
 <div class="wrap">
-  <div class="btns">
-      <a class="btn call" href="tel:+856305880588">📞 ໂທຫາຮ້ານ</a>
-      <a class="btn map" href="https://www.google.com/maps/search/Senglao%20Caf%C3%A9%20Nongbone%20Road%2C%20Ban%20Naxay%2C%20Vientiane%2001000%2C%20Laos">ເບິ່ງໃນ Google Maps</a>
-  </div>
+
   <section>
     <h2>ກ່ຽວກັບຮ້ານ</h2>
-    <p>Senglao Café ແມ່ນຄາເຟ່ ແລະ ຮ້ານອາຫານຟິວຊັນ ຢູ່ຖະໜົນໜອງໂບນ ບ້ານນາໄຊ ນະຄອນຫຼວງວຽງຈັນ ເປີດທຸກວັນ 11:00–22:00 ໂມງ. ຮ້ານໄດ້ຮັບຄະແນນ 4.3 ຈາກການຣີວິວ 626 ລາຍການໃນ Google.</p>
+    <p>Senglao Café ແມ່ນຮ້ານກາເຟ ແລະ ຮ້ານອາຫານຟິວຊັນ ຕັ້ງຢູ່ຖະໜົນໜອງບອນ ບ້ານນາໄຊ ນະຄອນຫຼວງວຽງຈັນ ເປັນຈຸດພັກຜ່ອນສະບາຍໆ ສຳລັບກາເຟ ແລະ ອາຫານ ໃນນະຄອນຫຼວງ.</p>
   </section>
+
   <section>
-    <h2>ບັນຍາກາດຮ້ານ</h2>
-    <div class="gallery">
-      <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfwaOMKHLBKl23jP5bIhlPF7uRUtPw2u1YzCmbtrWWuV2DRZA6_OFaIYbuRcEMPj4HWEs3jY3odkmElvQUL04KnZ4DIPC1OgA4zZPCU9LAFooRgG8J8klVe11ZuN5uPQJ2i4I4d=w179-h120-k-no" alt="Senglao Café">
-      <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TM_cspWe6qsaEqgPvK4mV-sEmwwBmvPaE7yqezLrKDVJz9gq_NzQzIvR7M8FmTpfdKhB_S1s9wxJLCRsYB_MASZjvtsU7d4aeJxzHbnCopZsk_ZjHVqL5AwXnP39jopWrXWiT4v5GAzDw=w203-h270-k-no" alt="Senglao Café">
-      <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QfSSXgfbjiwMZI4vfjZU-jrbYS0xexKC7Qq5C89RqVbLZ-h6jq_oDiFFbRw90Lyzeu_Rc-3p7LEGTSs1np7NWmFdgPYh1F1TuP0GZYxVH0ANInieaviExsdStfjOY-xKRaA2d9ZoNal1WA=w203-h270-k-no" alt="Senglao Café">
-    </div>
-  </section>
-  <section>
-    <h2>ຈຸດເດັ່ນ</h2>
+    <h2>ຈຸດເດັ່ນຂອງຮ້ານ</h2>
     <div class="menu">
       <ul>
-        <li><span>ເປີດທຸກວັນ 11:00–22:00 ໂມງ</span></li>
-        <li><span>ຄະແນນ 4.3 ຈາກການຣີວິວ 626 ລາຍການໃນ Google</span></li>
-        <li><span>ຄາເຟ່ ແລະ ຮ້ານອາຫານຟິວຊັນ</span></li>
+        <li><span>ກາເຟ ແລະ ເຄື່ອງດື່ມ</span></li>
+        <li><span>ອາຫານຟິວຊັນ</span></li>
+        <li><span>ບັນຍາກາດສະບາຍໆ ທີ່ບ້ານນາໄຊ</span></li>
       </ul>
     </div>
   </section>
+
   <section>
     <h2>ຂໍ້ມູນຮ້ານ</h2>
     <div class="info">
       <p>📍 Nongbone Road, Ban Naxay, Vientiane 01000, Laos</p>
-      <p>🕗 Daily 11:00 AM - 10:00 PM</p>
-      <p>📞 +856305880588</p>
-      <p>★ 4.3 (ຣີວິວ Google 626 ລາຍ)</p>
+      <p>📞 +856 30 588 0588</p>
+      <p>✉️ cafesenglao@gmail.com</p>
+    </div>
+    <div class="btns">
+      <a class="btn call" href="tel:+856305880588">ໂທຫາຮ້ານ</a>
+      <a class="btn fb" href="https://www.facebook.com/senglaocafe/">Facebook</a>
+      <a class="btn map" href="https://www.google.com/maps/search/Senglao+Cafe+Nongbone+Road+Vientiane+Laos">ເບິ່ງໃນ Google Maps</a>
     </div>
   </section>
+
   <footer>
-    <p>ໜ້ານີ້ແມ່ນເວັບໄຊຕົວຢ່າງ, ສ້າງຈາກຂໍ້ມູນສາທາລະນະຂອງຮ້ານ ເພື່ອສະແດງຮູບແບບເວັບໄຊຈິງ.<br>
-    Sample by Ichidai Hattori — <a href="https://2026webai-lab.github.io/newportfolio/">Portfolio</a></p>
+    <p>ໜ້ານີ້ແມ່ນເວັບໄຊຕົວຢ່າງ ສ້າງຈາກຂໍ້ມູນສາທາລະນະຂອງຮ້ານ ເພື່ອສະແດງໃຫ້ເຫັນວ່າເວັບໄຊຈິງຈະເປັນແນວໃດ<br>Sample by Ichidai Hattori — <a href="https://2026webai-lab.github.io/newportfolio/">Portfolio</a></p>
   </footer>
 
 </div>
